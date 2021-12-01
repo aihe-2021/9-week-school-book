@@ -11,4 +11,17 @@ ul {
   list-style-type: none;
 }
 
+.cartoons {
+  display: inline-table;
+  color: white;
+  border: 10px #224a86 solid;
+  border-radius: 12px;
+  background-color: black;
+  margin: 1em;
+  padding: 10px;
+  height: 500px;
+  width: 300px;
+  text-align: center;
+}
+
 /*# sourceMappingURL=styles.css.map*/

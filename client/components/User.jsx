@@ -8,7 +8,6 @@ export default function User () {
   const userId = Number(params.id)
   const users = useSelector(state => state.users)
   const user = users.find(user => user.id === userId)
-  console.log(userId)
   const [file, setFile] = useState(null)
 
   const onFormSubmit = (e) => {
