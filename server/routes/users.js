@@ -3,7 +3,7 @@ const db = require('../db/users')
 const router = express.Router()
 const { upload, uploadImage } = require('../controllers/userpiccontroller')
 
-router.get('/', (req, res) => {
+router.get('/home', (req, res) => {
   db.getUsers()
     .then(users => {
       res.json(users)
