@@ -6,7 +6,6 @@ import { fetchUsers } from '../actions'
 
 export default function Home () {
   const { users } = useSelector(state => state)
-  console.log(users)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -16,14 +15,15 @@ export default function Home () {
   return (
     <>
       <h1> Welcome to the Users page</h1>
-      <ul>
-        {users.map(({ id, image }) => {
-          return <li key={id}>
-            <Link to={`/users/${id}`}> <img className='images' src={`/images/${image}`} /> </Link>
-          </li>
-        })}
-      </ul>
-
+      <div className='home'>
+        <ul>
+          {users.map(({ id, image }) => {
+            return <li key={id}>
+              <Link to={`/home/users/${id}`}> <img className='images' src={`/images/${image}`} /> </Link>
+            </li>
+          })}
+        </ul>
+      </div>
     </>
   )
 }
