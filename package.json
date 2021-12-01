@@ -71,8 +71,10 @@
     "webpack-cli": "^4.5.0"
   },
   "dependencies": {
+    "axios": "^0.24.0",
     "express": "^4.17.1",
     "knex": "^0.21.17",
+    "multer": "^1.4.3",
     "pg": "^8.5.1",
     "superagent": "^6.1.0"
   }
