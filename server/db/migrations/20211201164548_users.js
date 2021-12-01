@@ -1,7 +1,7 @@
 exports.up = (knex) => {
   return knex.schema.createTable('users', table => {
     table.increments('id').primary()
-    table.sting('authId')
+    table.string('authId')
     table.string('name')
     table.string('cohort')
     table.string('email')
@@ -13,6 +13,7 @@ exports.up = (knex) => {
     table.string('linkedin')
     table.string('twitter')
     table.string('instagram')
+    table.string('image')
   }
   )
 }
