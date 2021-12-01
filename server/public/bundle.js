@@ -2368,7 +2368,7 @@ __webpack_require__.r(__webpack_exports__);
 function Intro() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: "../../images/9WeekLogo.png"
-  }));
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Like a High School Yearbook for Bootcamp"));
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Intro);
