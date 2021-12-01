@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import axios from 'axios'
 
 export default function User () {
   const params = useParams()
@@ -8,6 +9,34 @@ export default function User () {
   const users = useSelector(state => state.users)
   const user = users.find(user => user.id === userId)
   console.log(userId)
+  const [file, setFile] = useState(null)
+
+  const onFormSubmit = (e) => {
+    e.preventDefault()
+
+    const formData = new FormData()
+    formData.append('profilePic', file)
+
+    const config = {
+      headers: {
+        'content-type': 'multipart/form-data'
+      }
+    }
+    const url = '/profilePic/upload'
+
+    axios.post(url, formData, config)
+      .then((response) => {
+        alert('Image Uploaded')
+        return null
+      })
+      .catch((err) => {
+        console.log('err', err)
+      })
+  }
+
+  const onInputChange = (e) => {
+    setFile(e.target.files[0])
+  }
 
   return <>
     <div className="users">
@@ -23,7 +52,13 @@ export default function User () {
       <label>{user.linkedin}</label><br/>
       <label>{user.twitter}</label><br/>
       <label>{user.instagram}</label><br/><br/><br/>
-      <label><img className='images' src={`/images/${user.image}`} /></label><br/><br/>
+      <label> <img className='images' src={`/images/${user.image}`}/>
+      </label><br/><br/>
+      <form onSubmit={onFormSubmit}>
+        <h3>Upload Profile Pic</h3>
+        <input type='file' name='profilePic' onChange={onInputChange} /><br></br>
+        <button className="uploadbutton" type="submit">Upload</button>
+      </form>
     </div>
   </>
 }

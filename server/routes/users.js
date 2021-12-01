@@ -1,7 +1,7 @@
 const express = require('express')
 const db = require('../db/users')
-
 const router = express.Router()
+const { upload, uploadImage } = require('../controllers/userpiccontroller')
 
 router.get('/', (req, res) => {
   db.getUsers()
@@ -14,5 +14,7 @@ router.get('/', (req, res) => {
       res.status(500).send('database error')
     })
 })
+
+router.post('/upload', uploadImage, upload)
 
 module.exports = router
