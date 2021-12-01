@@ -1,14 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import Home from './Home'
+import User from './User'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 function App () {
+  useEffect(() => {
+
+  }, [])
+
   return (
     <>
-      <header className="header">
-        <h1>My Collection</h1>
-      </header>
-      <section className="main">
-        {/* add your code here */}
-      </section>
+      <Router>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/users/:id' element={<User />} />
+        </Routes>
+      </Router>
     </>
   )
 }
