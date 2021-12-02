@@ -19,7 +19,7 @@ export default function Home () {
       <ul>
         {users.map(({ id, image }) => {
           return <li key={id}>
-            <Link to={`/users/${id}`}> <img className='images' src={`/images/${image}`} /> </Link>
+            <Link to={`/home/users/${id}`}> <img className='images' src={`/images/${image}`} /> </Link>
           </li>
         })}
       </ul>
