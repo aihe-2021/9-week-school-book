@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { fetchUsers } from '../actions'
+import AddUser from './AddUser'
 // import User from './User'
 
 export default function Home () {
@@ -23,6 +24,8 @@ export default function Home () {
             </li>
           })}
         </ul>
+
+        <AddUser/>
       </div>
     </>
   )

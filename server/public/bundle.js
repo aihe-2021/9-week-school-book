@@ -2249,7 +2249,8 @@ function fetchUsers() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "getUsers": () => (/* binding */ getUsers)
+/* harmony export */   "getUsers": () => (/* binding */ getUsers),
+/* harmony export */   "createUser": () => (/* binding */ createUser)
 /* harmony export */ });
 /* harmony import */ var superagent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! superagent */ "./node_modules/superagent/lib/client.js");
 /* harmony import */ var superagent__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(superagent__WEBPACK_IMPORTED_MODULE_0__);
@@ -2260,6 +2261,146 @@ function getUsers() {
     return res.body;
   });
 }
+function createUser(formData) {
+  return superagent__WEBPACK_IMPORTED_MODULE_0___default().post('/api/v1/users/add').send(formData) // send down the actual data user input in the form on browser
+  .then(function (res) {
+    return res.body;
+  }); // send back the whole new form
+}
+
+/***/ }),
+
+/***/ "./client/components/AddUser.jsx":
+/*!***************************************!*\
+  !*** ./client/components/AddUser.jsx ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _apis_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../apis/index */ "./client/apis/index.js");
+/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../index */ "./client/index.js");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+var style = {
+  display: 'block'
+};
+
+var AddUser = function AddUser() {
+  var users = _index__WEBPACK_IMPORTED_MODULE_2__.default.getState().users;
+  var initialFormData = {
+    authId: '',
+    name: '',
+    cohort: '',
+    email: '',
+    location: '',
+    Quote: '',
+    githubLink: '',
+    skills: '',
+    facebook: '',
+    linkedin: '',
+    twitter: '',
+    instagram: ''
+  }; // THEN ADD UPLOAD IMAGE COMPONENT
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(initialFormData),
+      _useState2 = _slicedToArray(_useState, 2),
+      form = _useState2[0],
+      setForm = _useState2[1];
+
+  function handleChange(event) {
+    var _event$target = event.target,
+        name = _event$target.name,
+        value = _event$target.value; // depends on what field user input
+    // if the field is authId, then name="authId" & value = "manamana"
+    // if the filed is name, then name="name" & value ="what ever user input in the name field"
+    // if the field is cohort, then name="cohort" & value = "whatever user input in the cohort field"
+
+    var newFormData = _objectSpread(_objectSpread({}, form), {}, _defineProperty({}, name, value));
+
+    setForm(newFormData);
+  }
+
+  function handleSubmit(event) {
+    // POST newFormData to database to create a new User and add it to the database on server side
+    event.preventDefault(); // hijack the freshing page the event so that we don't loose the state
+
+    (0,_apis_index__WEBPACK_IMPORTED_MODULE_1__.createUser)(form) // send down the the whole form data to API to create a new User and add it to the data on server side. This createUser function also return the whole new User (see line 13 on apiClient)
+    .then(function (newUser) {
+      setUsers([].concat(_toConsumableArray(users), [newUser])); // i want to display initial Users and new User via use effect
+
+      setForm(initialFormData); // after finish with creating a new User book and add it to the data, then it's nice to reset the state of the form to its initial state (i.e empty)
+
+      return null;
+    })["catch"](function () {});
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "add-User"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", null, "Create a new user"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", {
+    onSubmit: handleSubmit
+  }, "AuthId", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
+    htmlFor: "authId",
+    style: style
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+    id: "authId",
+    onChange: handleChange,
+    value: form.authId // this "form" here refers to the form data on line 15 which is an object made up by 4 properties id, authId, name, cohort: each property has key and value. For example, property authId has a key of "authId" and its value is to be input by the user via the form on the browser. the initial state of the form data is blank and the state is updated once user input data in the form field via browser.
+    ,
+    name: "authId"
+  })), "name", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
+    htmlFor: "name",
+    style: style
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+    id: "name",
+    onChange: handleChange,
+    value: form.name,
+    name: "name"
+  })), "cohort", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
+    htmlFor: "cohort",
+    style: style
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+    id: "cohort",
+    onChange: handleChange,
+    value: form.cohort,
+    name: "cohort"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    style: style
+  }, "create new User")));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AddUser);
 
 /***/ }),
 
@@ -2317,8 +2458,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
 /* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../actions */ "./client/actions/index.js");
+/* harmony import */ var _AddUser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./AddUser */ "./client/components/AddUser.jsx");
+
 
 
 
@@ -2341,13 +2484,13 @@ function Home() {
         image = _ref.image;
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
       key: id
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
       to: "/home/users/".concat(id)
     }, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
       className: "images",
       src: "/images/".concat(image)
     }), " "));
-  }))));
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_AddUser__WEBPACK_IMPORTED_MODULE_3__.default, null)));
 }
 
 /***/ }),
@@ -40998,8 +41141,8 @@ function symbolObservablePonyfill(root) {
 /************************************************************************/
 /******/ 	// startup
 /******/ 	// Load entry module
+/******/ 	// This entry module is referenced by other modules so it can't be inlined
 /******/ 	__webpack_require__("./client/index.js");
-/******/ 	// This entry module used 'exports' so it can't be inlined
 /******/ 	__webpack_require__("./client/styles/index.scss");
 /******/ })()
 ;
