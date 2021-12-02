@@ -2,14 +2,14 @@ const express = require('express')
 const path = require('path')
 
 const server = express()
-const userRoute = require('./routes/userRoute')
+const users = require('./routes/users')
 
-const userPicUpload = require('./routes/userRoute')
+const userPicUpload = require('./routes/users')
 
 server.use('/profilePic', userPicUpload)
 server.use(express.json())
 server.use(express.static(path.join(__dirname, 'public')))
 
-server.use('/api/v1/users', userRoute)
+server.use('/api/v1/users', users)
 
 module.exports = server
