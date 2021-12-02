@@ -18,11 +18,8 @@ function Navbar () {
         </ul>
       </nav>
 
-      <footer>
-        <p>@ Enspiral Dev Academy Alumni 2021</p>
-      </footer>
-    </>
 
+    </>
   )
 }
 
