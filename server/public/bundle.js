@@ -2283,7 +2283,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _apis_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../apis/index */ "./client/apis/index.js");
-/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../index */ "./client/index.js");
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -2312,32 +2311,42 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
+var initialFormData = {
+  authId: '',
+  name: '',
+  cohort: '',
+  email: '',
+  location: '',
+  Quote: '',
+  githubLink: '',
+  skills: '',
+  facebook: '',
+  linkedin: '',
+  twitter: '',
+  instagram: ''
+};
 var style = {
   display: 'block'
 };
 
 var AddUser = function AddUser() {
-  var users = _index__WEBPACK_IMPORTED_MODULE_2__.default.getState().users;
-  var initialFormData = {
-    authId: '',
-    name: '',
-    cohort: '',
-    email: '',
-    location: '',
-    Quote: '',
-    githubLink: '',
-    skills: '',
-    facebook: '',
-    linkedin: '',
-    twitter: '',
-    instagram: ''
-  }; // THEN ADD UPLOAD IMAGE COMPONENT
-
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(initialFormData),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
       _useState2 = _slicedToArray(_useState, 2),
-      form = _useState2[0],
-      setForm = _useState2[1];
+      users = _useState2[0],
+      setUsers = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(initialFormData),
+      _useState4 = _slicedToArray(_useState3, 2),
+      form = _useState4[0],
+      setForm = _useState4[1];
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    (0,_apis_index__WEBPACK_IMPORTED_MODULE_1__.getUsers)().then(function (result) {
+      return setUsers(result);
+    })["catch"](function (err) {
+      return console.log(err.message);
+    });
+  }, []); // THEN ADD UPLOAD IMAGE COMPONENT
 
   function handleChange(event) {
     var _event$target = event.target,
@@ -2507,14 +2516,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./App */ "./client/components/App.jsx");
+
 
 
 
 function Intro() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: "../../images/9WeekLogo.png"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Like a High School Yearbook for Bootcamp"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Like a High School Yearbook for Bootcamp"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
     to: "/home"
   }, "HOME"));
 }
@@ -41141,8 +41152,8 @@ function symbolObservablePonyfill(root) {
 /************************************************************************/
 /******/ 	// startup
 /******/ 	// Load entry module
-/******/ 	// This entry module is referenced by other modules so it can't be inlined
 /******/ 	__webpack_require__("./client/index.js");
+/******/ 	// This entry module used 'exports' so it can't be inlined
 /******/ 	__webpack_require__("./client/styles/index.scss");
 /******/ })()
 ;

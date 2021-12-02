@@ -1,28 +1,33 @@
-import React, { useState } from 'react'
-import { createUser } from '../apis/index'
-import store from '../index'
+import React, { useState, useEffect } from 'react'
+import { createUser, getUsers } from '../apis/index'
+
+const initialFormData = {
+  authId: '',
+  name: '',
+  cohort: '',
+  email: '',
+  location: '',
+  Quote: '',
+  githubLink: '',
+  skills: '',
+  facebook: '',
+  linkedin: '',
+  twitter: '',
+  instagram: ''
+}
 
 const style = { display: 'block' }
 
 const AddUser = () => {
-  const users = store.getState().users
-  const initialFormData = {
-    authId: '',
-    name: '',
-    cohort: '',
-    email: '',
-    location: '',
-    Quote: '',
-    githubLink: '',
-    skills: '',
-    facebook: '',
-    linkedin: '',
-    twitter: '',
-    instagram: ''
-  }
-  // THEN ADD UPLOAD IMAGE COMPONENT
-
+  const [users, setUsers] = useState([])
   const [form, setForm] = useState(initialFormData)
+  useEffect(() => {
+    getUsers()
+      .then(result => setUsers(result))
+      .catch(err => console.log(err.message))
+  }, [])
+
+  // THEN ADD UPLOAD IMAGE COMPONENT
 
   function handleChange (event) {
     const { name, value } = event.target
