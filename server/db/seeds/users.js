@@ -170,7 +170,7 @@ exports.seed = function (knex) {
           email: 'this@email.net',
           location: 'Wellington',
           Quote: 'This is a quote',
-          githubLink: 'https://github.com/jojo-sexton',
+          githubLink: 'https://github.com/joshuavial',
           skills: 'coding wizard',
           facebook: 'jv@facebook.com',
           linkedin: 'jv@linkedin',
