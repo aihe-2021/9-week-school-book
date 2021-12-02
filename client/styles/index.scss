@@ -8,6 +8,10 @@ body {
   font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+ul {
+  list-style-type: none;
+}
+
 // NAVBAR
 .navbar {
   background-color: black;
@@ -53,10 +57,44 @@ body {
   // border: 1px solid red;
 }
 
-// COHORT
+// HOME
 
-ul {
-  list-style-type: none;
+.home_tittle {
+  text-align: center;
+  padding: 5%;
+}
+
+.home__container {
+  // border: 1px solid red;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  // justify-content: space-between;
+  justify-content: center;
+}
+
+.home__item-list {
+  // border: 1px solid green;
+  width: 32%;
+  height: auto;
+  position: relative;
+  background-color: white;
+  padding-bottom: 3%;
+  border-radius: 4px;
+  margin: 5px;
+  box-shadow: 1px 2px 2px #cccccc;
+}
+
+.card-images {
+  position: relative;
+  margin: 10px;
+  width: 90%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
 }
 
 // FOOTER
@@ -79,4 +117,22 @@ footer p {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/**************
+*    tablet   *
+**************/
+@media screen and (min-width: 601px) and (max-width: 799px) {
+  .home__container {
+    width: 90%;
+  }
+}
+
+/**************
+*    Mobile   *
+**************/
+@media screen and (max-width: 600px) {
+  .home__container {
+    width: 95%;
+  }
 }

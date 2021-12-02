@@ -15,11 +15,11 @@ export default function Home () {
 
   return (
     <>
-      <h1> Welcome to the Users page</h1>
-      <ul>
+      <h1 className='home_tittle'> Welcome to the Users page</h1>
+      <ul className='home__container'>
         {users.map(({ id, image }) => {
-          return <li key={id}>
-            <Link to={`/home/users/${id}`}> <img className='images' src={`/images/${image}`} /> </Link>
+          return <li className='home__item-list' key={id}>
+            <Link className='home__item-card' to={`/home/users/${id}`}> <img className='card-images' src={`/images/${image}`} /> </Link>
           </li>
         })}
       </ul>
