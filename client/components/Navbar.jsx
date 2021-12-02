@@ -10,7 +10,7 @@ function Navbar () {
             <Link to='/'>&#x0007B; 9 WEEK BOOK &#x0007D;</Link>
           </li>
           <li>
-            <Link to='/home'>Cohort</Link>
+            <Link to='/home'>Aihe - 2021</Link>
           </li>
           <li>
             <Link className='navbar__right' to='/'>Login</Link>
