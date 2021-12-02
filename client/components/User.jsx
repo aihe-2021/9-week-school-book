@@ -1,15 +1,28 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import axios from 'axios'
+import { fetchUsers, setUsers } from '../actions'
+import { getUsers } from '../apis'
 
 export default function User () {
   const params = useParams()
   const userId = Number(params.id)
-  const users = useSelector(state => state.users)
-  const user = users.find(user => user.id === userId)
-  console.log(userId)
+  const [users, setUsers] = useState([{ name: '' }])
+  // const users = useSelector(state => state.users)
+
   const [file, setFile] = useState(null)
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    const showUsers = getUsers()
+    setUsers(showUsers)
+    // const user = users.find(user => user.id === userId)
+    // dispatch(fetchUsers()
+    //   .then(users => setUsers(users)))
+  }, [])
+
+  const user = users.find(user => user.id === userId)
 
   const onFormSubmit = (e) => {
     e.preventDefault()

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 
 import Navbar from './Navbar'
 import Home from './Home'
@@ -16,9 +16,9 @@ function App () {
       <Router>
         <Navbar />
         <Routes>
-          <Route path='/' element={<Intro />} />
-          <Route path='/home' element={<Home />} />
           <Route path='/home/users/:id' element={<User />} />
+          <Route path='/home' element={<Home />} />
+          <Route path='/' element={<Intro />} />
         </Routes>
       </Router>
     </>

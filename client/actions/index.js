@@ -13,8 +13,7 @@ export function fetchUsers () {
   return (dispatch) => {
     return getUsers()
       .then(users => {
-        dispatch(setUsers(users))
-        return null
+        return dispatch(setUsers(users))
       })
       .catch(e => {
         console.log(e)

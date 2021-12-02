@@ -6,7 +6,6 @@ import { fetchUsers } from '../actions'
 
 export default function Home () {
   const { users } = useSelector(state => state)
-  console.log(users)
   const dispatch = useDispatch()
 
   useEffect(() => {
