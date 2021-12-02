@@ -2418,30 +2418,32 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 function User() {
   var params = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_5__.useParams)();
   var userId = Number(params.id);
+  var users = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useSelector)(function (state) {
+    return state.users;
+  });
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([{
-    name: ''
-  }]),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
       _useState2 = _slicedToArray(_useState, 2),
-      users = _useState2[0],
-      setUsers = _useState2[1]; // const users = useSelector(state => state.users)
-
-
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
-      _useState4 = _slicedToArray(_useState3, 2),
-      file = _useState4[0],
-      setFile = _useState4[1];
+      file = _useState2[0],
+      setFile = _useState2[1];
 
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch)();
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    var showUsers = (0,_apis__WEBPACK_IMPORTED_MODULE_4__.getUsers)();
-    setUsers(showUsers); // const user = users.find(user => user.id === userId)
-    // dispatch(fetchUsers()
-    //   .then(users => setUsers(users)))
-  }, []);
-  var user = users.find(function (user) {
-    return user.id === userId;
-  });
+    (0,_apis__WEBPACK_IMPORTED_MODULE_4__.getUsers)().then(function (res) {
+      return dispatch((0,_actions__WEBPACK_IMPORTED_MODULE_3__.setUsers)(res));
+    })["catch"](function (e) {
+      return console.log(e.message);
+    });
+  }, [users]);
+  var user;
+
+  if (users[0].id) {
+    user = users.find(function (user) {
+      return user.id === userId;
+    });
+  } else {
+    user = [];
+  }
 
   var onFormSubmit = function onFormSubmit(e) {
     e.preventDefault();
