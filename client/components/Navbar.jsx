@@ -1,21 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { getAuth, signInWithPopup, setPersistence, browserSessionPersistence, inMemoryPersistence, GithubAuthProvider, signOut } from 'firebase/auth'
+import { getAuth, signInWithPopup, setPersistence, browserSessionPersistence, GithubAuthProvider, signOut } from 'firebase/auth'
 
-function Navbar () {
+export default function Navbar () {
   function login () {
     const auth = getAuth()
-    // const auth = getAuth();
-    // setPersistence(auth, inMemoryPersistence)
     setPersistence(auth, browserSessionPersistence)
       .then(() => {
         const provider = new GithubAuthProvider()
         return signInWithPopup(auth, provider)
-
-        // .catch((error) => {
-        //   const errorMessage = error.message
-        //   console.log(errorMessage)
-        // })
       })
 
       .then((result) => {
@@ -26,7 +19,6 @@ function Navbar () {
         // The signed-in user info.
         const user = result.user // get the uid from this obj
 
-        // console.log(credential, user)
         return null
       })
       .catch((error) => {
@@ -40,12 +32,7 @@ function Navbar () {
   function signout () {
     const auth = getAuth()
     auth.signOut().then((result) => {
-      // console.log(result)
-      // console.log(token)
-      // Sign-out successful.
-      // console.log(auth)
       console.log('sign out sucessful')
-      // console.log(auth)
       return null
     }).catch((error) => {
       console.log(error.message)
@@ -63,17 +50,15 @@ function Navbar () {
             <Link to='/home'>Cohort</Link>
           </li>
           <li>
-            <Link className='navbar__right' to='/'>Login</Link>
+            <button onClick={login} className='navbar__right'>Login</button>
+          </li>
+          <li>
+            <button onClick={signout} className='navbar__right'>Sign Out</button>
           </li>
         </ul>
       </nav>
 
-      <footer>
-        <p>@ Enspiral Dev Academy Alumni 2021</p>
-      </footer>
     </>
 
   )
 }
-
-export default Navbar
