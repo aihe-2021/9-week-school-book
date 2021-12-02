@@ -2289,39 +2289,15 @@ __webpack_require__.r(__webpack_exports__);
 
 function App() {
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {}, []);
-<<<<<<< HEAD
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.BrowserRouter, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Navbar__WEBPACK_IMPORTED_MODULE_1__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Routes, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
-    path: "/",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Intro__WEBPACK_IMPORTED_MODULE_4__.default, null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
-||||||| 9ea180e
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.BrowserRouter, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Routes, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
-    path: "/",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Intro__WEBPACK_IMPORTED_MODULE_3__.default, null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
-=======
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.HashRouter, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Routes, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
-    path: "/home/users/:id",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_User__WEBPACK_IMPORTED_MODULE_2__.default, null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
->>>>>>> main
-    path: "/home",
-<<<<<<< HEAD
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Home__WEBPACK_IMPORTED_MODULE_2__.default, null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.HashRouter, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Navbar__WEBPACK_IMPORTED_MODULE_1__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Routes, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
     path: "/home/users/:id",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_User__WEBPACK_IMPORTED_MODULE_3__.default, null)
-||||||| 9ea180e
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Home__WEBPACK_IMPORTED_MODULE_1__.default, null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
-    path: "/home/users/:id",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_User__WEBPACK_IMPORTED_MODULE_2__.default, null)
-=======
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Home__WEBPACK_IMPORTED_MODULE_1__.default, null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
+    path: "/home",
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Home__WEBPACK_IMPORTED_MODULE_2__.default, null)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
     path: "/",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Intro__WEBPACK_IMPORTED_MODULE_3__.default, null)
->>>>>>> main
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Intro__WEBPACK_IMPORTED_MODULE_4__.default, null)
   }))));
 }
 
@@ -2359,38 +2335,24 @@ function Home() {
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     dispatch((0,_actions__WEBPACK_IMPORTED_MODULE_2__.fetchUsers)());
   }, []);
-<<<<<<< HEAD
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
     className: "home_tittle"
   }, " Welcome to the Users page"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", {
     className: "home__container"
   }, users.map(function (_ref) {
-||||||| 9ea180e
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, " Welcome to the Users page"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, users.map(function (_ref) {
-=======
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, " Welcome to the Users page"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "home"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, users.map(function (_ref) {
->>>>>>> main
     var id = _ref.id,
         image = _ref.image;
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
       className: "home__item-list",
       key: id
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
-<<<<<<< HEAD
       className: "home__item-card",
       to: "/home/users/".concat(id)
-||||||| 9ea180e
-      to: "/users/".concat(id)
-=======
-      to: "/home/users/".concat(id)
->>>>>>> main
     }, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
       className: "card-images",
       src: "/images/".concat(image)
     }), " "));
-  }))));
+  })));
 }
 
 /***/ }),
@@ -2407,7 +2369,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
 
 
 
@@ -2417,17 +2378,9 @@ function Intro() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     className: "intro__logo",
     src: "../../images/9WeekLogo.png"
-<<<<<<< HEAD
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", {
     className: "intro__text"
   }, "Like a High School Yearbook for Bootcamp"));
-||||||| 9ea180e
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Like a High School Yearbook for Bootcamp"));
-=======
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Like a High School Yearbook for Bootcamp"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
-    to: "/home"
-  }, "HOME"));
->>>>>>> main
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Intro);
