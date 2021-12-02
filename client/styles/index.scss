@@ -1,9 +1,10 @@
-body {
-  position: absolute;
-  top: 0;
-  left: 0;
+* {
   margin: 0;
-  padding: 20px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -11,16 +12,127 @@ ul {
   list-style-type: none;
 }
 
-.cartoons {
-  display: inline-table;
-  color: white;
-  border: 10px #224a86 solid;
-  border-radius: 12px;
+// NAVBAR
+.navbar {
   background-color: black;
-  margin: 1em;
-  padding: 10px;
-  height: 500px;
-  width: 300px;
+  color: white;
+  width: 100%;
+  height: 75px;
+  font-weight: 300;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 10px 6px -10px #777;
+}
+
+.navbar li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  padding: 8px 20px;
+}
+
+.navbar li a:hover {
+  color: #e84e3d;
+}
+
+.navbar li a:active {
+  color: white;
+}
+
+// INTRO
+
+.intro__container {
+  width: 100%;
   text-align: center;
-  
+}
+
+.intro__logo {
+  width: 70%;
+  margin-top: 8%;
+}
+
+.intro__text {
+  margin-top: 2%;
+  // border: 1px solid red;
+}
+
+// HOME
+
+.home_tittle {
+  text-align: center;
+  padding: 5%;
+}
+
+.home__container {
+  // border: 1px solid red;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  // justify-content: space-between;
+  justify-content: center;
+}
+
+.home__item-list {
+  // border: 1px solid green;
+  width: 32%;
+  height: auto;
+  position: relative;
+  background-color: white;
+  padding-bottom: 3%;
+  border-radius: 4px;
+  margin: 5px;
+  box-shadow: 1px 2px 2px #cccccc;
+}
+
+.card-images {
+  position: relative;
+  margin: 10px;
+  width: 90%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+// FOOTER
+
+footer {
+  width: 100%;
+  height: 75px;
+  background: black;
+  position: absolute;
+  bottom: 0;
+}
+
+footer p {
+  width: 100%;
+  height: 75px;
+  background: black;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/**************
+*    tablet   *
+**************/
+@media screen and (min-width: 601px) and (max-width: 799px) {
+  .home__container {
+    width: 90%;
+  }
+}
+
+/**************
+*    Mobile   *
+**************/
+@media screen and (max-width: 600px) {
+  .home__container {
+    width: 95%;
+  }
 }
