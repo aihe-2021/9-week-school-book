@@ -89,12 +89,10 @@ ul {
 }
 
 .user__container {
-  border: 1px solid red;
   width: 100%;
 }
 
 .user__container-red {
-  border: 1px solid blue;
   width: 100%;
   height: 200px;
   background: red;
@@ -115,13 +113,37 @@ ul {
 }
 
 .user__profile-info {
-  border: 1px solid red;
   width: 25%;
+  margin-left: 20px;
 }
 
 .user__profile-form {
-  border: 1px solid red;
   width: 50%;
+  text-align: center;
+  display: inline-block;
+  align-self: flex-end;
+}
+
+.button {
+  border: 1px solid black;
+  margin-left: 20px;
+  border-radius: 25px;
+  padding: 5px 60px;
+  text-align: center;
+  transition-duration: 0.4s;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: black;
+  color: #e84e3d;
+}
+
+.file {
+  margin-left: 105px;
+  cursor: pointer;
 }
 
 footer {

@@ -62,13 +62,13 @@ export default function User () {
       </div>
       <div className='user__profile'>
         <div className='user__profile-info'>
-          <label><h3>Name:</h3><h4>{user.name}</h4></label>
-          <label><h3>Cohort:</h3><h4>{user.cohort}</h4></label>
-          <label><h3>Email:</h3><h4>{user.email}</h4></label>
-          <label><h3>Location:</h3><h4>{user.location}</h4></label>
-          <label><h3>Quote:</h3><h4>{user.quote}</h4></label>
-          <label><h3>Git Hub:</h3><h4>{user.githubLink}</h4></label>
-          <label><h3>Skill Set:</h3><h4>{user.skills}</h4></label>
+          <label><h3>Name:</h3><h4>{user.name}</h4></label><br/>
+          <label><h3>Cohort:</h3><h4>{user.cohort}</h4></label><br/>
+          <label><h3>Email:</h3><h4>{user.email}</h4></label><br/>
+          <label><h3>Location:</h3><h4>{user.location}</h4></label><br/>
+          <label><h3>Quote:</h3><h4>{user.quote}</h4></label><br/>
+          <label><h3>Git Hub:</h3><h4>{user.githubLink}</h4></label><br/>
+          <label><h3>Skill Set:</h3><h4>{user.skills}</h4></label><br/>
           <h3>Socials:</h3>
           <label>{user.facebook}</label><br/>
           <label>{user.linkedin}</label><br/>
@@ -77,9 +77,9 @@ export default function User () {
         </div>
         <div className='user__profile-form'>
           <form onSubmit={onFormSubmit}>
-            <h3>Upload Profile Pic</h3>
-            <input type='file' name='profilePic' onChange={onInputChange} /><br></br>
-            <button className="uploadbutton" type="submit">Upload</button>
+            <h3>Upload Profile Pic:</h3><br/>
+            <input className='file' type='file' name='profilePic' onChange={onInputChange} /><br/><br/>
+            <button className="button" type="submit">Upload</button>
           </form>
         </div>
       </div>
