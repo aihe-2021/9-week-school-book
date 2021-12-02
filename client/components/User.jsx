@@ -80,7 +80,7 @@ export default function User () {
         <div className='user__profile-form'>
           <form onSubmit={onFormSubmit}>
             <h3>Upload Profile Pic:</h3>
-            <p>Instructions: When you upload your image please make sure the filename is <em>your-name</em>.jpg starting with a capital letter - eg David.jpg or JV.jpg. This will ensure the image will update properly in the database.</p><br/>
+            <p><strong>Instructions:</strong> When you upload your image please make sure the filename is <em>your-name</em>.jpg starting with a capital letter <br/> - eg David.jpg or JV.jpg. This will ensure the image will update properly in the database.</p><br/>
             <input className='file' type='file' name='profilePic' onChange={onInputChange} /><br/><br/>
             <button className="button" type="submit">Upload</button>
           </form>
