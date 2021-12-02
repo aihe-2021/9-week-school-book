@@ -2262,6 +2262,16 @@ function getUsers() {
 
 /***/ }),
 
+/***/ "./client/cacheUser.js":
+/*!*****************************!*\
+  !*** ./client/cacheUser.js ***!
+  \*****************************/
+/***/ (() => {
+
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/danny/Desktop/EDA/dev-academy/bootcamp/week-7/9-week-school-book/client/cacheUser.js: Const declarations require an initialization value (11:22)\n\n\u001b[0m \u001b[90m  9 |\u001b[39m       user\u001b[33m.\u001b[39mgetIdToken()\u001b[0m\n\u001b[0m \u001b[90m 10 |\u001b[39m         \u001b[33m.\u001b[39mthen(token \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 11 |\u001b[39m           \u001b[36mconst\u001b[39m github\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 12 |\u001b[39m           console\u001b[33m.\u001b[39mlog(token)\u001b[0m\n\u001b[0m \u001b[90m 13 |\u001b[39m         }) \u001b[90m//  use token to set the state\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 14 |\u001b[39m       \u001b[90m// console.log(user.accessToken) // this is the access token\u001b[39m\u001b[0m\n    at Object._raise (/Users/danny/Desktop/EDA/dev-academy/bootcamp/week-7/9-week-school-book/node_modules/@babel/core/node_modules/@babel/parser/lib/index.js:776:17)\n    at Object.raiseWithData (/Users/danny/Desktop/EDA/dev-academy/bootcamp/week-7/9-week-school-book/node_modules/@babel/core/node_modules/@babel/parser/lib/index.js:769:17)\n    at Object.raise (/Users/danny/Desktop/EDA/dev-academy/bootcamp/week-7/9-week-school-book/node_modules/@babel/core/node_modules/@babel/parser/lib/index.js:737:17)\n    at Object.parseVar (/Users/danny/Desktop/EDA/dev-academy/bootcamp/week-7/9-week-school-book/node_modules/@babel/core/node_modules/@babel/parser/lib/index.js:12513:18)\n    at Object.parseVarStatement (/Users/danny/Desktop/EDA/dev-academy/bootcamp/week-7/9-week-school-book/node_modules/@babel/core/node_modules/@babel/parser/lib/index.js:12321:10)\n    at Object.parseStatementContent (/Users/danny/Desktop/EDA/dev-academy/bootcamp/week-7/9-week-school-book/node_modules/@babel/core/node_modules/@babel/parser/lib/index.js:11913:21)\n    at Object.parseStatement (/Users/danny/Desktop/EDA/dev-academy/bootcamp/week-7/9-week-school-book/node_modules/@babel/core/node_modules/@babel/parser/lib/index.js:11846:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/danny/Desktop/EDA/dev-academy/bootcamp/week-7/9-week-school-book/node_modules/@babel/core/node_modules/@babel/parser/lib/index.js:12428:25)\n    at Object.parseBlockBody (/Users/danny/Desktop/EDA/dev-academy/bootcamp/week-7/9-week-school-book/node_modules/@babel/core/node_modules/@babel/parser/lib/index.js:12419:10)\n    at Object.parseBlock (/Users/danny/Desktop/EDA/dev-academy/bootcamp/week-7/9-week-school-book/node_modules/@babel/core/node_modules/@babel/parser/lib/index.js:12403:10)");
+
+/***/ }),
+
 /***/ "./client/components/App.jsx":
 /*!***********************************!*\
   !*** ./client/components/App.jsx ***!
@@ -2274,13 +2284,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
-/* harmony import */ var _Navbar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Navbar */ "./client/components/Navbar.jsx");
-/* harmony import */ var _Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Home */ "./client/components/Home.jsx");
-/* harmony import */ var _User__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./User */ "./client/components/User.jsx");
-/* harmony import */ var _Intro__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Intro */ "./client/components/Intro.jsx");
-/* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Footer */ "./client/components/Footer.jsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var _firebase_config__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../firebase-config */ "./client/firebase-config.js");
+/* harmony import */ var _cacheUser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../cacheUser */ "./client/cacheUser.js");
+/* harmony import */ var _cacheUser__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_cacheUser__WEBPACK_IMPORTED_MODULE_2__);
+Object(function webpackMissingModule() { var e = new Error("Cannot find module 'firebase/app'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+/* harmony import */ var _Navbar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Navbar */ "./client/components/Navbar.jsx");
+/* harmony import */ var _Home__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Home */ "./client/components/Home.jsx");
+/* harmony import */ var _User__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./User */ "./client/components/User.jsx");
+/* harmony import */ var _Intro__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Intro */ "./client/components/Intro.jsx");
+/* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Footer */ "./client/components/Footer.jsx");
+
+
+
 
 
 
@@ -2290,17 +2307,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function App() {
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {}, []);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.HashRouter, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Navbar__WEBPACK_IMPORTED_MODULE_1__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Routes, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
+  Object(function webpackMissingModule() { var e = new Error("Cannot find module 'firebase/app'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())(_firebase_config__WEBPACK_IMPORTED_MODULE_1__.firebaseConfig);
+  (0,_cacheUser__WEBPACK_IMPORTED_MODULE_2__.cacheUser)();
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.HashRouter, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Navbar__WEBPACK_IMPORTED_MODULE_4__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Routes, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
     path: "/home/users/:id",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_User__WEBPACK_IMPORTED_MODULE_3__.default, null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_User__WEBPACK_IMPORTED_MODULE_6__.default, null)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
     path: "/home",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Home__WEBPACK_IMPORTED_MODULE_2__.default, null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Home__WEBPACK_IMPORTED_MODULE_5__.default, null)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
     path: "/",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Intro__WEBPACK_IMPORTED_MODULE_4__.default, null)
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Footer__WEBPACK_IMPORTED_MODULE_5__.default, null)));
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Intro__WEBPACK_IMPORTED_MODULE_7__.default, null)
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Footer__WEBPACK_IMPORTED_MODULE_8__.default, null)));
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
@@ -2423,18 +2441,61 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+Object(function webpackMissingModule() { var e = new Error("Cannot find module 'firebase/auth'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+
 
 
 
 function Navbar() {
+  function login() {
+    var auth = Object(function webpackMissingModule() { var e = new Error("Cannot find module 'firebase/auth'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())(); // const auth = getAuth();
+    // setPersistence(auth, inMemoryPersistence)
+
+    Object(function webpackMissingModule() { var e = new Error("Cannot find module 'firebase/auth'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())(auth, Object(function webpackMissingModule() { var e = new Error("Cannot find module 'firebase/auth'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())).then(function () {
+      var provider = new Object(function webpackMissingModule() { var e = new Error("Cannot find module 'firebase/auth'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())();
+      return Object(function webpackMissingModule() { var e = new Error("Cannot find module 'firebase/auth'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())(auth, provider); // .catch((error) => {
+      //   const errorMessage = error.message
+      //   console.log(errorMessage)
+      // })
+    }).then(function (result) {
+      // This gives you a GitHub Access Token. You can use it to access the GitHub API.
+      var credential = Object(function webpackMissingModule() { var e = new Error("Cannot find module 'firebase/auth'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())(result);
+      var token = credential.accessToken; // The signed-in user info.
+
+      var user = result.user; // get the uid from this obj
+      // console.log(credential, user)
+
+      return null;
+    })["catch"](function (error) {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.log(errorMessage);
+    }); // )
+  }
+
+  function signout() {
+    var auth = Object(function webpackMissingModule() { var e = new Error("Cannot find module 'firebase/auth'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())();
+    auth.signOut().then(function (result) {
+      // console.log(result)
+      // console.log(token)
+      // Sign-out successful.
+      // console.log(auth)
+      console.log('sign out sucessful'); // console.log(auth)
+
+      return null;
+    })["catch"](function (error) {
+      console.log(error.message);
+    });
+  }
+
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("nav", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", {
     className: "navbar"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
     to: "/"
-  }, "{ 9 WEEK BOOK }")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
+  }, "{ 9 WEEK BOOK }")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
     to: "/home"
-  }, "Aihe - 2021")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
+  }, "Aihe - 2021")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
     className: "navbar__right",
     to: "/"
   }, "Login")))));
@@ -2579,6 +2640,29 @@ function User() {
     type: "submit"
   }, "Upload"))))));
 }
+
+/***/ }),
+
+/***/ "./client/firebase-config.js":
+/*!***********************************!*\
+  !*** ./client/firebase-config.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "firebaseConfig": () => (/* binding */ firebaseConfig)
+/* harmony export */ });
+var firebaseConfig = {
+  apiKey: 'AIzaSyCpumWg15_dceq1Uen_3USdX4HBL2D5-ME',
+  authDomain: 'test-1c7a3.firebaseapp.com',
+  projectId: 'test-1c7a3',
+  storageBucket: 'test-1c7a3.appspot.com',
+  messagingSenderId: '413051954965',
+  appId: '1:413051954965:web:d97556ccdfc42ec9afab1c',
+  measurementId: 'G-DF2HPKH4J4'
+};
 
 /***/ }),
 
