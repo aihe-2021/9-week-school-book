@@ -67,13 +67,13 @@ export default function User () {
           <label><h3>Email:</h3><h4>{user.email}</h4></label><br/>
           <label><h3>Location:</h3><h4>{user.location}</h4></label><br/>
           <label><h3>Quote:</h3><h4>{user.quote}</h4></label><br/>
-          <label><h3>Git Hub:</h3><h4>{user.githubLink}</h4></label><br/>
+          <label><h3>Git Hub:</h3><h4><a href={`${user.githubLink}`}>Git Hub Profile</a></h4></label><br/>
           <label><h3>Skill Set:</h3><h4>{user.skills}</h4></label><br/>
           <h3>Socials:</h3>
-          <label>{user.facebook}</label><br/>
-          <label>{user.linkedin}</label><br/>
-          <label>{user.twitter}</label><br/>
-          <label>{user.instagram}</label>
+          <label><a href={`${user.facebook}`}>Facebook</a></label><br/>
+          <label><a href={`${user.linkedin}`}>LinkedIn</a></label><br/>
+          <label><a href={`${user.twitter}`}>Twitter</a></label><br/>
+          <label><a href={`${user.instagram}`}>Instagram</a></label>
         </div>
         <div className='user__profile-form'>
           <form onSubmit={onFormSubmit}>
