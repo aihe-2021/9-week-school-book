@@ -54,7 +54,8 @@ ul {
 
 .intro__text {
   margin-top: 2%;
-  // border: 1px solid red;
+  margin-bottom: 3%;
+  padding-bottom: 6%;
 }
 
 // HOME
@@ -65,18 +66,15 @@ ul {
 }
 
 .home__container {
-  // border: 1px solid red;
   width: 80%;
   margin-left: auto;
   margin-right: auto;
   display: flex;
   flex-wrap: wrap;
-  // justify-content: space-between;
   justify-content: center;
 }
 
 .home__item-list {
-  // border: 1px solid green;
   width: 32%;
   height: auto;
   position: relative;
@@ -97,15 +95,12 @@ ul {
   overflow: hidden;
 }
 
-// USERS 
+// USERS
 .user__container {
-  // border: 1px solid red;
   width: 100%;
-  
 }
 .user__container-red {
-  // border: 1px solid blue;
-  width:100%;
+  width: 100%;
   height: 200px;
   background: #e84e3d;
 }
@@ -121,15 +116,12 @@ ul {
   width: 100%;
   margin-top: 130px;
   display: flex;
-
 }
 .user__profile-info {
-  // border: 1px solid red;
   width: 25%;
   margin-left: 20px;
 }
 .user__profile-form {
-  // border: 1px solid red;
   width: 50%;
   text-align: center;
   display: inline-block;
@@ -160,8 +152,7 @@ footer {
   width: 100%;
   height: 75px;
   background: black;
-  position: absolute;
-  bottom: 0;
+  margin-top: 3%;
 }
 
 .fab {
@@ -177,7 +168,6 @@ footer p {
   height: 75px;
   background: black;
   color: white;
-  position: absolute;
   bottom: 0;
   display: flex;
   justify-content: center;

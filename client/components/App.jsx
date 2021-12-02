@@ -5,6 +5,7 @@ import Navbar from './Navbar'
 import Home from './Home'
 import User from './User'
 import Intro from './Intro'
+import Footer from './Footer'
 
 function App () {
   useEffect(() => {
@@ -20,6 +21,7 @@ function App () {
           <Route path='/home' element={<Home />} />
           <Route path='/' element={<Intro />} />
         </Routes>
+        <Footer />
       </Router>
     </>
   )
