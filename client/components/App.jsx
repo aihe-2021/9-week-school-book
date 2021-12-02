@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import { HashRouter as Router, Routes, Route } from 'react-router-dom'
-
+import { firebaseConfig } from '../firebase-config'
+import { cacheUser } from '../cacheUser'
+import { initializeApp } from 'firebase/app'
 import Navbar from './Navbar'
 import Home from './Home'
 import User from './User'
@@ -8,9 +10,8 @@ import Intro from './Intro'
 import Footer from './Footer'
 
 function App () {
-  useEffect(() => {
-
-  }, [])
+  initializeApp(firebaseConfig)
+  cacheUser()
 
   return (
     <>
