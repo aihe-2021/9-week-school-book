@@ -109,9 +109,10 @@ ul {
 .user-image {
   margin-top: 100px;
   margin-left: 80px;
-  border-radius: 50%;
-  width: 200px;
-  height: 200px;
+  // border-radius: 50%;
+  // width: 200px;
+  // height: 200px;
+  clip-path: circle(35% at 50% 50%);
 }
 .user__profile {
   width: 100%;
@@ -163,8 +164,6 @@ footer {
   font-size: 2rem;
   padding: 5px;
 }
-
-
 
 footer p {
   width: 100%;
