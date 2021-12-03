@@ -341,6 +341,23 @@ exports.seed = function (knex) {
           twitter: 'walid@twitter',
           instagram: 'walid@instagram',
           image: 'Walid.jpg'
+        },
+        {
+          id: 21,
+          authId: '',
+          name: 'Ysabel Taya Guiang',
+          cohort: 'aihe-21',
+          teacher: 'true',
+          email: 'this@email.net',
+          location: 'Auckland',
+          Quote: 'This is a quote',
+          githubLink: 'https://github.com/ysabel-guiang',
+          skills: 'coding, motherhood',
+          facebook: 'ysabel@facebook.com',
+          linkedin: 'ysabel@linkedin',
+          twitter: 'ysabel@twitter',
+          instagram: 'ysabel@instagram',
+          image: 'Ysabel.jpg'
         }
       ])
     })
