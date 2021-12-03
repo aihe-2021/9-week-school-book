@@ -6,19 +6,16 @@ export function cacheUser () {
   auth.onAuthStateChanged(user => {
     if (user) {
       console.log('user logged in', user)
-      // user.getIdToken()
-      //   .then(token => {
-      //     // const github
-      //     console.log(token)
-      //   })
-      //  use token to set the state
-      // console.log(user.accessToken) // this is the access token
-    // set the state for signed out
-    // dispatch the token
+      user.getIdToken()
+        .then(token => {
+          console.log(token)
+          return null
+        })
+        .catch(err => {
+          console.log(err)
+        })
     } else {
       console.log('user logged out')
-      // set the state for signed out
-      // console.log(user.accessToken) // this is the access token
     }
   })
 }
