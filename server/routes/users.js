@@ -28,4 +28,17 @@ router.get('/:id', (req, res) => {
 // UPLOAD PHOTO:
 router.post('/upload', uploadImage, upload)
 
+router.patch('/:userId', (req, res) => {
+  const { name, email, location, quote, skills, facebook, linkedin, twitter, instagram } = req.body
+  const userId = req.params.userId
+  db.updateUser(userId, { name, email, location, quote, skills, facebook, linkedin, twitter, instagram })
+    .then((updatedUser) => {
+      res.json(updatedUser)
+      return null
+    })
+    .catch(e => {
+      res.status(500).send(e.message)
+    })
+})
+
 module.exports = router

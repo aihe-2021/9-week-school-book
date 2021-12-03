@@ -119,38 +119,75 @@ ul {
   // height: 200px;
   clip-path: circle(35% at 50% 50%);
 }
+.inputFields {
+  text-align: right;
+}
 .user__profile {
   width: 100%;
-  margin-top: 130px;
+  margin-top: 10%;
   display: flex;
 }
 .user__profile-info {
-  width: 25%;
+  width: 15%;
   margin-left: 20px;
+  
 }
-.user__profile-form {
-  width: 50%;
-  text-align: center;
+.use__profile-middle {
+  width: 70%;
+}
+.user__profileImage-form {
+  width: 15%;
+  padding: 5px;
+  margin-top: 50px;
+  margin-right: 5%;
+  box-sizing: border-box;
+  height: 450px;
+  color: white;
+  transition-duration: 0.8s;
+}
+.user__profileImage-form:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.Image-Upload {
+  position: relative;
   display: inline-block;
-  align-self: flex-end;
 }
-.button {
-  border: 1px solid black;
-  margin-left: 20px;
-  border-radius: 25px;
-  padding: 5px 60px;
-  text-align: center;
-  transition-duration: 0.4s;
-  display: inline-block;
-  font-size: 16px;
-  cursor: pointer;
-}
-.button:hover {
+
+.Image-Upload .Image-Upload-Text {
+  visibility: hidden;
   background-color: black;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 5px 5px;
+  position: absolute;
+  margin-top: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.Image-Upload:hover .Image-Upload-Text {
+  visibility: visible;
+}
+.edit {
+  background-color: black;
+  border-radius: 5px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  cursor: pointer;
+  font-size: 18px;
+  height: 30px;
+  margin-top: 10px;
+  text-align: center;
+  width: 100%;
+}
+.edit:hover {
   color: #e84e3d;
 }
 .file {
-  margin-left: 105px;
   cursor: pointer;
 }
 
