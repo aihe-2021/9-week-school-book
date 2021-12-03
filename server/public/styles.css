@@ -79,6 +79,11 @@ ul {
   border-radius: 4px;
   margin: 5px;
   box-shadow: 1px 2px 2px #cccccc;
+  padding: 10px;
+}
+
+.home__item-list:hover {
+  box-shadow: 2px 4px 4px #e84e3d;
 }
 
 .card-images {
