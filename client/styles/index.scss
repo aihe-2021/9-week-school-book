@@ -109,9 +109,10 @@ ul {
 .user-image {
   margin-top: 100px;
   margin-left: 80px;
-  border-radius: 50%;
-  width: 200px;
-  height: 200px;
+  // border-radius: 50%;
+  // width: 200px;
+  // height: 200px;
+  clip-path: circle(35% at 50% 50%);
 }
 .user__profile {
   width: 100%;
@@ -147,6 +148,32 @@ ul {
   margin-left: 105px;
   cursor: pointer;
 }
+
+// CATEGORY 
+.btn-container {
+  margin-bottom: 4rem;
+  display: flex;
+  justify-content: center;
+}
+
+.filter-btn {
+  background: transparent;
+  border-color: transparent;
+  font-size: 1rem;
+  text-transform: capitalize;
+  margin: 0 0.5rem;
+  letter-spacing: 1px;
+  padding: 0.375rem 0.75rem;
+  color: var(--clr-gold);
+  cursor: pointer;
+  transition: var(--transition);
+  border-radius: var(--radius);
+}
+.filter-btn:hover {
+  background: var(--clr-gold);
+  color: var(--clr-white);
+}
+
 // FOOTER
 
 footer {
@@ -163,8 +190,6 @@ footer {
   font-size: 2rem;
   padding: 5px;
 }
-
-
 
 footer p {
   width: 100%;
