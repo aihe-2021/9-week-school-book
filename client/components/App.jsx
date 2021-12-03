@@ -12,6 +12,8 @@ import Footer from './Footer'
 function App () {
   initializeApp(firebaseConfig)
   cacheUser()
+  // useEffect(() => {
+  // }, [])
 
   return (
     <>
