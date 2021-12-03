@@ -51,6 +51,8 @@ ul {
 
 .intro__text {
   margin-top: 2%;
+  margin-bottom: 3%;
+  padding-bottom: 6%;
 }
 
 .home_tittle {
@@ -65,6 +67,7 @@ ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 10%;
 }
 
 .home__item-list {
@@ -88,12 +91,77 @@ ul {
   overflow: hidden;
 }
 
+.user__container {
+  width: 100%;
+}
+
+.user__container-red {
+  width: 100%;
+  height: 200px;
+  background: #e84e3d;
+}
+
+.user-image {
+  margin-top: 100px;
+  margin-left: 80px;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+
+.user__profile {
+  width: 100%;
+  margin-top: 130px;
+  display: flex;
+}
+
+.user__profile-info {
+  width: 25%;
+  margin-left: 20px;
+}
+
+.user__profile-form {
+  width: 50%;
+  text-align: center;
+  display: inline-block;
+  align-self: flex-end;
+}
+
+.button {
+  border: 1px solid black;
+  margin-left: 20px;
+  border-radius: 25px;
+  padding: 5px 60px;
+  text-align: center;
+  transition-duration: 0.4s;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: black;
+  color: #e84e3d;
+}
+
+.file {
+  margin-left: 105px;
+  cursor: pointer;
+}
+
 footer {
   width: 100%;
   height: 75px;
   background: black;
-  position: absolute;
+  margin-top: 3%;
+  position: fixed;
   bottom: 0;
+}
+
+.fab {
+  color: #e84e3d;
+  font-size: 2rem;
+  padding: 5px;
 }
 
 footer p {
@@ -101,7 +169,6 @@ footer p {
   height: 75px;
   background: black;
   color: white;
-  position: absolute;
   bottom: 0;
   display: flex;
   justify-content: center;

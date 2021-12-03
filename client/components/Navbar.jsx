@@ -47,7 +47,7 @@ export default function Navbar () {
             <Link to='/'>&#x0007B; 9 WEEK BOOK &#x0007D;</Link>
           </li>
           <li>
-            <Link to='/home'>Cohort</Link>
+            <Link to='/home'>Aihe - 2021</Link>
           </li>
           <li>
             <button onClick={login} className='navbar__right'>Login</button>
@@ -59,6 +59,5 @@ export default function Navbar () {
       </nav>
 
     </>
-
   )
 }

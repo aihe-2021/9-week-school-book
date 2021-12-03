@@ -4,6 +4,7 @@ exports.up = (knex) => {
     table.string('authId')
     table.string('name')
     table.string('cohort')
+    table.string('teacher')
     table.string('email')
     table.string('location')
     table.string('quote')

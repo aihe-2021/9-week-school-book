@@ -54,26 +54,38 @@ export default function User () {
   }
 
   return <>
-    <div className="users">
-      <label>Name:{user.name}</label><br/>
-      <label>Cohort:{user.cohort}</label><br/>
-      <label>Email:{user.email}</label><br/>
-      <label>Location:{user.location}</label><br/>
-      <label>Quote:{user.quote}</label><br/>
-      <label>Git Hub:{user.githubLink}</label><br/>
-      <label>Skill Set:{user.skills}</label><br/>
-      <h4>Socials:</h4>
-      <label>{user.facebook}</label><br/>
-      <label>{user.linkedin}</label><br/>
-      <label>{user.twitter}</label><br/>
-      <label>{user.instagram}</label><br/><br/><br/>
-      <label> <img className='images' src={`/images/${user.image}`}/>
-      </label><br/><br/>
-      <form onSubmit={onFormSubmit}>
-        <h3>Upload Profile Pic</h3>
-        <input type='file' name='profilePic' onChange={onInputChange} /><br></br>
-        <button className="uploadbutton" type="submit">Upload</button>
-      </form>
+
+    <div className="user__container">
+      <div className='user__container-red'>
+        <label> <img className='user-image' src={`/images/${user.image}`}/>
+        </label>
+      </div>
+      <div className='user__profile'>
+        <div className='user__profile-info'>
+          <div className="socialmedia">
+            <label><a href={`${user.facebook}`}><i className="fab fa-facebook"></i></a></label>
+            <label><a href={`${user.linkedin}`}><i className="fab fa-linkedin"></i></a></label>
+            <label><a href={`${user.twitter}`}><i className="fab fa-twitter-square"></i></a></label>
+            <label><a href={`${user.instagram}`}><i className="fab fa-instagram"></i></a></label>
+          </div>
+          <label><h3>Name:</h3><h4>{user.name}</h4></label><br/>
+          <label><h3>Cohort:</h3><h4>{user.cohort}</h4></label><br/>
+          <label><h3>Email:</h3><h4>{user.email}</h4></label><br/>
+          <label><h3>Location:</h3><h4>{user.location}</h4></label><br/>
+          <label><h3>Quote:</h3><h4>{user.quote}</h4></label><br/>
+          <label><h3>Git Hub:</h3><h4><a href={`${user.githubLink}`}><i className="fab fa-github"></i></a></h4></label><br/>
+          <label><h3>Skill Set:</h3><h4>{user.skills}</h4></label><br/>
+          {/* <h3>Socials:</h3> */}
+        </div>
+        <div className='user__profile-form'>
+          <form onSubmit={onFormSubmit}>
+            <h3>Upload Profile Pic:</h3>
+            <p><strong>Instructions:</strong> When you upload your image please make sure the filename is <em>your-name</em>.jpg starting with a capital letter <br/> - eg David.jpg or JV.jpg. This will ensure the image will update properly in the database.</p><br/>
+            <input className='file' type='file' name='profilePic' onChange={onInputChange} /><br/><br/>
+            <button className="button" type="submit">Upload</button>
+          </form>
+        </div>
+      </div>
     </div>
   </>
 }
