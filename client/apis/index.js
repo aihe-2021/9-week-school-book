@@ -6,3 +6,12 @@ export function getUsers () {
     .get(userURL)
     .then(res => res.body)
 }
+
+export function updateUser (id, user) {
+  return request
+    .patch(`${userURL}/${id}`)
+    .send(user)
+    .then(res => {
+      return res.body
+    })
+}
