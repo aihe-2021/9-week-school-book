@@ -169,6 +169,10 @@ ul {
   visibility: visible;
 }
 
+.user__profileUpdate-form input {
+  width: 100%;
+}
+
 .edit {
   background-color: black;
   border-radius: 5px;

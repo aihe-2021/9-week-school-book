@@ -358,6 +358,23 @@ exports.seed = function (knex) {
           twitter: 'ysabel@twitter',
           instagram: 'ysabel@instagram',
           image: 'Ysabel.jpg'
+        },
+        {
+          id: 22,
+          authId: '',
+          name: 'Tom King',
+          cohort: 'aihe-21',
+          teacher: 'true',
+          email: 'this@email.net',
+          location: 'Wellington',
+          Quote: 'This is a quote',
+          githubLink: '',
+          skills: 'Job hunter extraordinaire',
+          facebook: 'tom@facebook.com',
+          linkedin: 'tom@linkedin',
+          twitter: 'tom@twitter',
+          instagram: 'tom@instagram',
+          image: 'icon.png'
         }
       ])
     })
