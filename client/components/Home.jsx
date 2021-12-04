@@ -27,9 +27,9 @@ export default function Home () {
     <>
       <h1 className='home_tittle'>Students and Facilitators</h1>
       <div className='btn-container'>
-        <button className='filter-bton' onClick={() => setFilter('all')}>All</button>
-        <button className='filter-bton' onClick={() => setFilter('teachers')}>Teachers</button>
-        <button className='filter-bton' onClick={() => setFilter('students')}>Students</button>
+        <button className='filter-btn' onClick={() => setFilter('all')}>All</button>
+        <button className='filter-btn' onClick={() => setFilter('teachers')}>Teachers</button>
+        <button className='filter-btn' onClick={() => setFilter('students')}>Students</button>
       </div>
       <ul className='home__container'>
         {filteredUsers.map(({ id, name, image }) => {
