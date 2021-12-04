@@ -13,7 +13,6 @@ export default function User () {
 
   const [file, setFile] = useState(null)
   const dispatch = useDispatch()
-
   useEffect(() => {
     getUsers()
       .then(res => dispatch(setUsers(res)))
