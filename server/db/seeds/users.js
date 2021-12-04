@@ -374,7 +374,7 @@ exports.seed = function (knex) {
           linkedin: 'tom@linkedin',
           twitter: 'tom@twitter',
           instagram: 'tom@instagram',
-          image: 'icon.png'
+          image: 'Tom.jpg'
         }
       ])
     })
