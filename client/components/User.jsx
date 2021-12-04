@@ -66,7 +66,7 @@ export default function User () {
 
     <div className="user__container">
       <div className='user__container-red'>
-        <label> <img className='user-image' src={`/images/${user.image}`}/>
+        <label> <img className='user-image' src={'images/' + user.image}/>
         </label>
       </div>
       <div className='user__profile'>
