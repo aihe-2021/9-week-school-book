@@ -65,10 +65,8 @@ export default function User () {
   return <>
 
     <div className="user__container">
-     
-      <div className='user__container-redRow'>
-        <div className='user__container-red'>
-        <label> <img className='user-image' src={`/images/${user.image}`}/>
+      <div className='user__container-red'>
+        <label> <img className='user-image' src={'images/' + user.image}/>
         </label>
         </div>
       </div>
@@ -104,6 +102,6 @@ export default function User () {
         </div>
 
       </div>
-    </div>
+  
   </>
 }
