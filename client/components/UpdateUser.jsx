@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { updateUser } from '../apis'
 
 const EditUser = ({ id, updateTheUser }) => {
+  // I would move this outside of the component
   const formInfo = {
     name: '',
     email: '',
@@ -18,6 +19,7 @@ const EditUser = ({ id, updateTheUser }) => {
   const [form, setForm] = useState(formInfo)
   const [showForm, setShowForm] = useState(false)
 
+  // id is already in scope so you don't need to pass it in via the event handler
   function handleSubmit (evt, id) {
     evt.preventDefault()
     updateUser(id, form)
@@ -36,6 +38,8 @@ const EditUser = ({ id, updateTheUser }) => {
     setForm(newForm)
   }
 
+  // this seems like an inelegant way of refreshing your data
+  // updateTheUser callback should be able to manage the global state appropriately
   function refreshPage () {
     window.location.reload(false)
   }

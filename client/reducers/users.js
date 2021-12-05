@@ -1,5 +1,6 @@
 import { SET_USERS } from '../actions'
 
+// do you really need an empty initial user? Could this just be an empty array?
 const initialState = [{
   id: 0,
   authId: '',

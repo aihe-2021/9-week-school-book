@@ -12,11 +12,12 @@ export default function User () {
 
   const [file, setFile] = useState(null)
 
+  // this could be made simpler - call find, if not found show a loading / user not found message
   let user
   if (users[0].id) {
     user = users.find(user => user.id === userId)
   } else {
-    user = []
+    user = [] // do you really wnat user to default to an array? I would have expected it to be an object
   }
 
   const onFormSubmit = (e) => {
@@ -25,12 +26,14 @@ export default function User () {
     const formData = new FormData()
     formData.append('profilePic', file)
 
+    // I would extract this in to it's own api client file
     const config = {
       headers: {
         'content-type': 'multipart/form-data'
       }
     }
-    const url = '/profilePic/upload'
+    // since you know the user id you probably want to post it down so you can do things like delete the old pics
+    const url = '/profilePic/upload' // just using the /api/v1/users/upload route would make your routes simpler
 
     axios.post(url, formData, config)
       .then((response) => {

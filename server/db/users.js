@@ -16,6 +16,7 @@ function getOne (oneId, db = connection) {
     .select()
     .where('id', oneId)
     .first()
+    // I would typically leave the then and catch for the routes
     .then(user => { return user })
     .catch(e => { throw new Error(`User with id ${oneId} not found`) })
 }
@@ -23,6 +24,7 @@ function getOne (oneId, db = connection) {
 function updateUser (id, data, db = connection) {
   const keys = Object.keys(data)
   const newData = {}
+  // what happens if I want to intentionally make a field an empty string? e.g. delete my facebook profile
   for (let i = 0; i < keys.length; i++) {
     if (data[keys[i]] !== '') {
       newData[keys[i]] = data[keys[i]]
@@ -34,6 +36,7 @@ function updateUser (id, data, db = connection) {
     .then(() => {
       return getOne(id, db)
     })
+    // I would typically leave the catch for the routes
     .catch(err => {
       console.error(err)
       throw err

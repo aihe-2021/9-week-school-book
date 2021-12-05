@@ -28,6 +28,7 @@ router.get('/:id', (req, res) => {
 // UPLOAD PHOTO:
 router.post('/upload', uploadImage, upload)
 
+// I would keep param naming consistent with the get route above
 router.patch('/:userId', (req, res) => {
   const { name, email, location, quote, skills, facebook, linkedin, twitter, instagram } = req.body
   const userId = req.params.userId
