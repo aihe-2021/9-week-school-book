@@ -1,6 +1,6 @@
 import { getAuth } from 'firebase/auth'
 import { useDispatch } from 'react-redux'
-import { setUser, clearUser } from './actions/userInfo'
+import { setUser, clearUser, authenticateUser } from './actions/userInfo'
 
 import { verifyUser } from './apis'
 
@@ -10,28 +10,16 @@ export function cacheUser () {
 
   // const t = firebase.auth().currentUser.getToken()
 
-  auth.onAuthStateChanged(user => {
+  auth.onAuthStateChanged((user) => {
     if (user) {
-      // METHOD A //
       user.getIdToken()
-        .then(token => verifyUser(token))
-        .catch(e => console.log(e))
-
-      // METHOD B //
-      // const token = user.auth.currentUser.accessToken
-
-      // console.log(token)
-      // const userData = {
-      //   token,
-      //   name: user.displayName,
-      //   email: user.email,
-      //   image: user.photoURL,
-      //   authID: user.uid,
-      //   githubUsername: user.reloadUserInfo.screenName
-      // }
-      // dispatch(setUser(userData))
-      // verifyUser(token)
-      // console.log(token)
+        .then(token => {
+          dispatch(authenticateUser(token))
+          return null
+        })
+        .catch(e => console.log(e)) // if the user was not verified => log error signing in to the account
+    } else {
+      dispatch(clearUser())
     }
   })
 }

@@ -17,7 +17,7 @@ export default function Navbar () {
         const credential = GithubAuthProvider.credentialFromResult(result)
         const token = credential.accessToken
         // verifyUser(token)
-        console.log('provider token', token)
+        // console.log('provider token', token)
         // The signed-in user info.
         const user = result.user // get the uid from this obj
 

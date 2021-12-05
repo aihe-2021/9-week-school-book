@@ -11,6 +11,11 @@ export function getUsers () {
 export function verifyUser (token) {
   return request
     .get(userVerification)
+    // .set('authorization', 'Bearer 1234')
     .set('authorization', `Bearer ${token}`)
-    .then(res => console.log(res.body))
+    .then(res => {
+      console.log('this is the api route', res.body)
+      const user = res.body
+      return user
+    })
 }
