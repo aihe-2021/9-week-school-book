@@ -65,9 +65,12 @@ export default function User () {
   return <>
 
     <div className="user__container">
-      <div className='user__container-red'>
+     
+      <div className='user__container-redRow'>
+        <div className='user__container-red'>
         <label> <img className='user-image' src={`/images/${user.image}`}/>
         </label>
+        </div>
       </div>
       <div className='user__profile'>
         <div className='user__profile-info'>
@@ -85,8 +88,8 @@ export default function User () {
           <label><h3>Quote:</h3><h4>{user.quote}</h4></label><br/>
           <label><h3>Skill Set:</h3><h4>{user.skills}</h4></label><br/>
         </div>
-        <div className='use__profile-middle'>
-        </div>
+        {/* <div className='use__profile-middle'>
+        </div> */}
         <div className='user__profileImage-form'>
           <form onSubmit={onFormSubmit}>
             <div className='Image-Upload'><h3 style={{ textDecoration: 'underline' }}>Hover For Upload Image Info</h3>
