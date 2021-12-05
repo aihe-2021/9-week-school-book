@@ -57,7 +57,8 @@ ul {
 
 .home_tittle {
   text-align: center;
-  padding: 5%;
+  padding-top: 5%;
+  padding-bottom: 1%;
 }
 
 .home__container {
@@ -82,6 +83,12 @@ ul {
   padding: 10px;
 }
 
+.home__item-list p {
+  text-align: center;
+  font-weight: 700;
+  padding: 5%;
+}
+
 .home__item-list:hover {
   box-shadow: 2px 4px 4px #e84e3d;
 }
@@ -101,13 +108,11 @@ ul {
   min-height: 100vh;
   flex-direction: row;
   margin: 0;
-  border: 1px solid yellow;
 }
 
 .user__container-redRow {
   width: 20%;
   flex: 1;
-  border: 1px solid red;
 }
 
 .user__container-red {
@@ -118,27 +123,34 @@ ul {
 
 .user-image {
   margin-top: 100px;
-  margin-left: 80px;
+  margin-left: 40%;
   clip-path: circle(35% at 50% 50%);
 }
 
 .user__profile {
   flex-direction: row;
-  width: 80%;
-  border: 1px solid blue;
+  width: 75%;
   padding: 5%;
+}
+
+.user__profile h3 {
+  font-weight: 800;
+  padding-bottom: 2px;
 }
 
 .user__profile-info {
   width: 100%;
-  border: 1px solid purple;
+  padding: 2%;
 }
 
 .fab {
-  color: #e84e3d;
+  color: #3097aa;
   font-size: 2rem;
-  padding: 5px;
-  border: 1px solid pink;
+  padding: 2% 2% 2% 0;
+}
+
+.fab:hover {
+  color: #c4c4c4;
 }
 
 .inputFields {
@@ -228,11 +240,12 @@ ul {
   cursor: pointer;
   transition: var(--transition);
   border-radius: var(--radius);
+  border: 1px solid #f3f3f3;
+  border-radius: 5%;
 }
 
 .filter-btn:hover {
-  background: var(--clr-gold);
-  color: var(--clr-white);
+  border-bottom: 1px solid #e84e3d;
 }
 
 footer {
@@ -262,6 +275,16 @@ footer p {
   .home__container {
     width: 90%;
   }
+
+  .user__container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .user__profile {
+    width: 100%;
+    padding: 5%;
+  }
 }
 /**************
 *    Mobile   *
@@ -269,6 +292,18 @@ footer p {
 @media screen and (max-width: 600px) {
   .home__container {
     width: 95%;
+    border: 1px solid orange;
+  }
+
+  .user__container {
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid orange;
+  }
+
+  .user__profile {
+    width: 100%;
+    padding: 5%;
   }
 }
 

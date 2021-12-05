@@ -62,7 +62,8 @@ ul {
 
 .home_tittle {
   text-align: center;
-  padding: 5%;
+  padding-top: 5%;
+  padding-bottom: 1%;
 }
 
 .home__container {
@@ -86,6 +87,11 @@ ul {
   box-shadow: 1px 2px 2px #cccccc;
   padding: 10px;
 }
+.home__item-list p {
+  text-align: center;
+  font-weight: 700;
+  padding: 5%;
+}
 
 .home__item-list:hover {
   box-shadow: 2px 4px 4px #e84e3d;
@@ -108,13 +114,13 @@ ul {
   min-height: 100vh;
   flex-direction: row;
   margin: 0;
-  border: 1px solid rgb(255, 255, 0);
+  // border: 1px solid rgb(255, 255, 0);
 }
 
 .user__container-redRow {
   width: 20%;
   flex: 1;
-  border: 1px solid red;
+  // border: 1px solid red;
 }
 .user__container-red {
   width: 70%;
@@ -124,29 +130,42 @@ ul {
 
 .user-image {
   margin-top: 100px;
-  margin-left: 80px;
+  margin-left: 40%;
   clip-path: circle(35% at 50% 50%);
 }
 
 .user__profile {
-  // display: flex;
   flex-direction: row;
-  width: 80%;
-  border: 1px solid blue;
+  width: 75%;
+  // border: 1px solid blue;
   padding: 5%;
+}
+
+.user__profile h3 {
+  // color: #c4c4c4;
+  font-weight: 800;
+  padding-bottom: 2px;
 }
 
 .user__profile-info {
   width: 100%;
-  // margin-left: 20px;
-  border: 1px solid purple;
+  padding: 2%;
+  // border: 1px solid purple;
 }
 
 .fab {
-  color: #e84e3d;
+  // color: #c4c4c4;
+  // color: #e84e3d;
+  color: #3097aa;
+  // color: black;
   font-size: 2rem;
-  padding: 5px;
-  border: 1px solid pink;
+  padding: 2% 2% 2% 0;
+  // border: 1px solid pink;
+}
+.fab:hover {
+  // color: #e84e3d;
+  color: #c4c4c4;
+  // color: #3097aa;
 }
 
 .inputFields {
@@ -156,6 +175,7 @@ ul {
 // .use__profile-middle {
 //   width: 70%;
 // }
+
 .user__profileImage-form {
   width: 15%;
   padding: 5px;
@@ -236,10 +256,11 @@ ul {
   cursor: pointer;
   transition: var(--transition);
   border-radius: var(--radius);
+  border: 1px solid #f3f3f3;
+  border-radius: 5%;
 }
 .filter-btn:hover {
-  background: var(--clr-gold);
-  color: var(--clr-white);
+  border-bottom: 1px solid #e84e3d;
 }
 
 // FOOTER
@@ -271,6 +292,16 @@ footer p {
   .home__container {
     width: 90%;
   }
+
+  .user__container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .user__profile {
+    width: 100%;
+    padding: 5%;
+  }
 }
 
 /**************
@@ -279,5 +310,16 @@ footer p {
 @media screen and (max-width: 600px) {
   .home__container {
     width: 95%;
+    border: 1px solid orange;
+  }
+  .user__container {
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid orange;
+  }
+
+  .user__profile {
+    width: 100%;
+    padding: 5%;
   }
 }
