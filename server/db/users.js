@@ -21,9 +21,15 @@ function getOne (oneId, db = connection) {
 }
 
 function updateUser (id, data, db = connection) {
-  const { name, email, location, quote, skills, facebook, linkedin, twitter, instagram } = data
+  const keys = Object.keys(data)
+  const newData = {}
+  for (let i = 0; i < keys.length; i++) {
+    if (data[keys[i]] !== '') {
+      newData[keys[i]] = data[keys[i]]
+    }
+  }
   return db('users')
-    .update({ name, email, location, quote, skills, facebook, linkedin, twitter, instagram })
+    .update(newData)
     .where({ id })
     .then(() => {
       return getOne(id, db)

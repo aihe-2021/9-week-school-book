@@ -20,7 +20,6 @@ const EditUser = ({ id, updateTheUser }) => {
 
   function handleSubmit (evt, id) {
     evt.preventDefault()
-
     updateUser(id, form)
       .then((updatedUser) => {
         updateTheUser(updatedUser)
@@ -43,31 +42,32 @@ const EditUser = ({ id, updateTheUser }) => {
       {showForm &&
       <form onSubmit={evt => { handleSubmit(evt, id) }}>
         <ul><br/>
-          <li> <input placeholder='Name' id='name' onChange={handleChange} value={form.name} name='name'/>
+          <li>
+            <label htmlFor='name'><input placeholder='Name' id='name' onChange={handleChange} value={form.name} name='name'/></label>
           </li>
           <li>
-            <input placeholder='Email' id='email' onChange={handleChange} value={form.email} name='email'/>
+            <label htmlFor='email'><input placeholder='Email' id='email' onChange={handleChange} value={form.email} name='email'/></label>
           </li>
           <li>
-            <input placeholder='Location' id='location' onChange={handleChange} value={form.location} name='location'/>
+            <label htmlFor='location'><input placeholder='Location' id='location' onChange={handleChange} value={form.location} name='location'/></label>
           </li>
           <li>
-            <input placeholder='Quote' id='quote' onChange={handleChange} value={form.quote} name='quote'/>
+            <label htmlFor='quote'><input placeholder='Quote' id='quote' onChange={handleChange} value={form.quote} name='quote'/></label>
           </li>
           <li>
-            <input placeholder='Skills' id='skills' onChange={handleChange} value={form.skills} name='skills'/>
+            <label htmlFor='skills'><input placeholder='Skills' id='skills' onChange={handleChange} value={form.skills} name='skills'/></label>
           </li>
           <li>
-            <input placeholder='Facebook' id='facebook' onChange={handleChange} value={form.facebook} name='facebook'/>
+            <label htmlFor='facebook'><input placeholder='Facebook' id='facebook' onChange={handleChange} value={form.facebook} name='facebook'/></label>
           </li>
           <li>
-            <input placeholder='LinkedIn' id='linkedin' onChange={handleChange} value={form.linkedin} name='linkedin'/>
+            <label htmlFor='linkedin'><input placeholder='LinkedIn' id='linkedin' onChange={handleChange} value={form.linkedin} name='linkedin'/></label>
           </li>
           <li>
-            <input placeholder='Twitter' id='twitter' onChange={handleChange} value={form.twitter} name='twitter'/>
+            <label htmlFor='twitter'><input placeholder='Twitter' id='twitter' onChange={handleChange} value={form.twitter} name='twitter'/></label>
           </li>
           <li>
-            <input placeholder='Instagram' id='instagram' onChange={handleChange} value={form.instagram} name='instagram'/>
+            <label htmlFor='instagram'><input placeholder='Instagram' id='instagram' onChange={handleChange} value={form.instagram} name='instagram'/></label>
           </li>
         </ul>
         <button className='edit'>Click to Submit</button>
