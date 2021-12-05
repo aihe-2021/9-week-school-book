@@ -36,6 +36,10 @@ const EditUser = ({ id, updateTheUser }) => {
     setForm(newForm)
   }
 
+  function refreshPage () {
+    window.location.reload(false)
+  }
+
   return (
     <div>
       <button className='edit' onClick={() => { setShowForm(!showForm) }}>Click to Edit</button>
@@ -70,7 +74,7 @@ const EditUser = ({ id, updateTheUser }) => {
             <label htmlFor='instagram'><input placeholder='Instagram' id='instagram' onChange={handleChange} value={form.instagram} name='instagram'/></label>
           </li>
         </ul>
-        <button className='edit'>Click to Submit</button>
+        <button onClick={() => { refreshPage() }} className='edit'>Click to Submit</button>
       </form>}
     </div>
   )
