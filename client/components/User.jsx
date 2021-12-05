@@ -63,7 +63,6 @@ export default function User () {
   }
 
   return <>
-
     <div className="user__container">
       <div className='user__container-redRow'>
         <div className='user__container-red'>
@@ -91,10 +90,10 @@ export default function User () {
 
         <div className='user__profileImage-form'>
           <form onSubmit={onFormSubmit}>
-            <div className='Image-Upload'><h3 style={{ textDecoration: 'underline' }}>Hover For Upload Image Info</h3>
+            <input className='file' type='file' name='profilePic' onChange={onInputChange} /><br /><br />
+            <div className='Image-Upload'><h3 className="imageInstructions" style={{ textDecoration: 'underline' }}>Hover For Upload Image Info</h3>
               <span className='Image-Upload-Text'><p>When you upload your image <br />please make sure the filename is <em>your-name</em>.jpg <br />starting with a capital letter - eg David.jpg or JV.jpg. <br />This will ensure the image will update<br /> properly in the database.</p></span><br />
             </div>
-            <input className='file' type='file' name='profilePic' onChange={onInputChange} /><br /><br />
             <button className='edit' type="submit">Upload</button>
           </form>
           <div className='user__profileUpdate-form'>
