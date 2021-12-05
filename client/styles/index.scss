@@ -137,6 +137,7 @@ ul {
 .user__profile {
   flex-direction: row;
   width: 75%;
+  height: 80vh;
   // border: 1px solid blue;
   padding: 5%;
 }
@@ -148,6 +149,7 @@ ul {
 }
 
 .user__profile-info {
+  margin-top: -100px;
   width: 100%;
   padding: 2%;
   // border: 1px solid purple;
@@ -177,16 +179,16 @@ ul {
 // }
 
 .user__profileImage-form {
-  width: 15%;
+  max-width: 20%;
   padding: 20px;
-  margin-top: 50px;
+  margin-top: 10px;
   margin-right: 5%;
   box-sizing: border-box;
   border-radius: 12px;
   height: 450px;
   color: white;
   transition-duration: 0.8s;
-  border: 1px solid green;
+  // border: 1px solid green;
 }
 .user__profileImage-form:hover {
   background-color: rgba(0, 0, 0, 0.3);
