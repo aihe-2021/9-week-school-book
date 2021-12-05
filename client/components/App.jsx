@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
 import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import { firebaseConfig } from '../firebase-config'
 import { cacheUser } from '../cacheUser'
@@ -8,10 +9,16 @@ import Home from './Home'
 import User from './User'
 import Intro from './Intro'
 import Footer from './Footer'
+import { fetchUsers } from '../actions'
 
 function App () {
   initializeApp(firebaseConfig)
   cacheUser()
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(fetchUsers())
+  }, [])
 
   return (
     <>

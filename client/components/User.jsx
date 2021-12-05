@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import axios from 'axios'
 import { setUsers } from '../actions'
-import { getUsers } from '../apis'
 import UpdateUser from './UpdateUser'
 
 export default function User () {
@@ -12,12 +11,6 @@ export default function User () {
   const users = useSelector(state => state.users)
 
   const [file, setFile] = useState(null)
-  const dispatch = useDispatch()
-  useEffect(() => {
-    getUsers()
-      .then(res => dispatch(setUsers(res)))
-      .catch(e => console.log(e.message))
-  }, [users])
 
   let user
   if (users[0].id) {
@@ -63,11 +56,10 @@ export default function User () {
   }
 
   return <>
-
     <div className="user__container">
       <div className='user__container-redRow'>
         <div className='user__container-red'>
-          <img className='user-image' src={'images/' + user.image} />
+          {user.image && <img className='user-image' src={'images/' + user.image} />}
         </div>
       </div>
       <div className='user__profile'>
@@ -86,15 +78,12 @@ export default function User () {
           <label><h3>Quote:</h3><h4>{user.quote}</h4></label><br />
           <label><h3>Skill Set:</h3><h4>{user.skills}</h4></label><br />
         </div>
-        {/* <div className='use__profile-middle'>
-        </div> */}
-
         <div className='user__profileImage-form'>
           <form onSubmit={onFormSubmit}>
-            <div className='Image-Upload'><h3 style={{ textDecoration: 'underline' }}>Hover For Upload Image Info</h3>
+            <input className='file' type='file' name='profilePic' onChange={onInputChange} /><br /><br />
+            <div className='Image-Upload'><h3 className="imageInstructions" style={{ textDecoration: 'underline' }}>Hover For Upload Image Info</h3>
               <span className='Image-Upload-Text'><p>When you upload your image <br />please make sure the filename is <em>your-name</em>.jpg <br />starting with a capital letter - eg David.jpg or JV.jpg. <br />This will ensure the image will update<br /> properly in the database.</p></span><br />
             </div>
-            <input className='file' type='file' name='profilePic' onChange={onInputChange} /><br /><br />
             <button className='edit' type="submit">Upload</button>
           </form>
           <div className='user__profileUpdate-form'>

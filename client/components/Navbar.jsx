@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { getAuth, signInWithPopup, setPersistence, browserSessionPersistence, GithubAuthProvider, signOut } from 'firebase/auth'
+import { getAuth, signInWithPopup, setPersistence, browserSessionPersistence, GithubAuthProvider } from 'firebase/auth'
 
 export default function Navbar () {
   function login () {
@@ -15,14 +15,17 @@ export default function Navbar () {
         // This gives you a GitHub Access Token. You can use it to access the GitHub API.
         const credential = GithubAuthProvider.credentialFromResult(result)
         const token = credential.accessToken
+        console.log(token)
 
         // The signed-in user info.
         const user = result.user // get the uid from this obj
+        console.log(user)
 
         return null
       })
       .catch((error) => {
         const errorCode = error.code
+        console.log(errorCode)
         const errorMessage = error.message
         console.log(errorMessage)
       })
@@ -32,7 +35,7 @@ export default function Navbar () {
   function signout () {
     const auth = getAuth()
     auth.signOut().then((result) => {
-      console.log('sign out sucessful')
+      console.log('sign out successful')
       return null
     }).catch((error) => {
       console.log(error.message)

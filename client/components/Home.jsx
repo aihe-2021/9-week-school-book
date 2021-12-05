@@ -1,16 +1,10 @@
-import React, { useEffect, useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { fetchUsers } from '../actions'
 
 export default function Home () {
   const [filter, setFilter] = useState('all')
   const { users } = useSelector(state => state)
-  const dispatch = useDispatch()
-
-  useEffect(() => {
-    dispatch(fetchUsers())
-  }, [])
 
   let filteredUsers = users
   if (filter === 'teachers') {
@@ -34,7 +28,7 @@ export default function Home () {
       <ul className='home__container'>
         {filteredUsers.map(({ id, name, image }) => {
           return <li className='home__item-list' key={id}>
-            <Link className='home__item-card' to={`/home/users/${id}`}> <img className='card-images' src={`/images/${image}`} /> </Link>
+            <Link className='home__item-card' to={`/home/users/${id}`}> {image && <img className='card-images' src={'images/' + image} />} </Link>
             <p>{name}</p>
           </li>
         })}
