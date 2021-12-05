@@ -159,10 +159,11 @@ ul {
 
 .user__profileImage-form {
   width: 15%;
-  padding: 5px;
+  padding: 20px;
   margin-top: 50px;
   margin-right: 5%;
   box-sizing: border-box;
+  border-radius: 12px;
   height: 450px;
   color: white;
   transition-duration: 0.8s;
@@ -173,9 +174,21 @@ ul {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
+.imageInstructions {
+  text-align: center;
+}
+
+.imageInstructions:hover {
+  color: #e84e3d;
+  background-color: black;
+  border-radius: 5px;
+  padding: 5px 5px;
+}
+
 .Image-Upload {
   position: relative;
   display: inline-block;
+  cursor: help;
 }
 
 .Image-Upload .Image-Upload-Text {
@@ -194,6 +207,10 @@ ul {
 
 .Image-Upload:hover .Image-Upload-Text {
   visibility: visible;
+  color: #e84e3d;
+  padding: 7px;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .user__profileUpdate-form input {
