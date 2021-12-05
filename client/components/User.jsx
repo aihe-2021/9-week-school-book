@@ -88,11 +88,13 @@ export default function User () {
         <div className='use__profile-middle'>
         </div>
         <div className='user__profileImage-form'>
-          <form onSubmit={onFormSubmit}>
-            <div className='Image-Upload'><h3 style={{ textDecoration: 'underline' }}>Hover For Upload Image Info</h3>
-              <span className='Image-Upload-Text'><p>When you upload your image <br/>please make sure the filename is <em>your-name</em>.jpg <br/>starting with a capital letter - eg David.jpg or JV.jpg. <br/>This will ensure the image will update<br/> properly in the database.</p></span><br/>
-            </div>
+
+          <div className='Image-Upload'>
+            <span className='Image-Upload-Text'><p>When you upload your image please make sure the filename is <br/> <em>your-name</em>.jpg starting with a capital letter - eg David.jpg or JV.jpg. <br/>This will ensure the image will update<br/> properly in the database.</p></span><br/>
             <input className='file' type='file' name='profilePic' onChange={onInputChange} /><br/><br/>
+            <h3 className="imageInstructions">Display Image Upload Instructions</h3>
+          </div>
+          <form onSubmit={onFormSubmit}>
             <button className='edit' type="submit">Upload</button>
           </form>
           <div className='user__profileUpdate-form'>
