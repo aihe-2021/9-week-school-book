@@ -55,6 +55,13 @@ export default function User () {
     }
   }
 
+  const f = (e) => {
+    e.preventDefault()
+    const t = document.getElementById('input').value
+    document.getElementById('outputtext').innerHTML = t
+    return false
+  }
+
   return <>
     <div className="user__container">
       <div className='user__container-redRow'>
@@ -91,7 +98,13 @@ export default function User () {
           </div>
         </div>
       </div>
-
+      <div className="inputText">
+        <h1 id="outputtext"></h1>
+        <div id="box">
+          <input type="text" id="input" placeholder="Enter text" autoCapitalize="off" />
+          <button onClick={f} type="button" id="submitbutton">Click Me!</button>
+        </div>
+      </div>
     </div>
   </>
 }
