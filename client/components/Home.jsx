@@ -4,7 +4,13 @@ import { Link } from 'react-router-dom'
 
 export default function Home () {
   const [filter, setFilter] = useState('all')
+
+  const [teachers, setTeachers] = useState('Students and Teachers')
   const { users } = useSelector(state => state)
+
+  const setTitle = (teachers) => {
+    setTeachers(teachers)
+  }
 
   let filteredUsers = users
   if (filter === 'teachers') {
@@ -19,11 +25,11 @@ export default function Home () {
 
   return (
     <>
-      <h1 className='home_tittle'>Students and Facilitators</h1>
+      <h1 className='home_tittle'>{`${teachers}`}</h1>
       <div className='btn-container'>
-        <button className='filter-btn' onClick={() => setFilter('all')}>All</button>
-        <button className='filter-btn' onClick={() => setFilter('teachers')}>Teachers</button>
-        <button className='filter-btn' onClick={() => setFilter('students')}>Students</button>
+        <button className='filter-btn' onClick={() => setFilter('all')(setTitle('Students and Teachers'))}>All</button>
+        <button className='filter-btn' onClick={() => setFilter('teachers')(setTitle('Teachers'))}>Teachers</button>
+        <button className='filter-btn' onClick={() => setFilter('students')(setTitle('Students'))}>Students</button>
       </div>
       <ul className='home__container'>
         {filteredUsers.map(({ id, name, image }) => {
