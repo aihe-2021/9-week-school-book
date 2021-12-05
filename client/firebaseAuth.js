@@ -1,8 +1,6 @@
 import { useDispatch } from 'react-redux'
-import { setUser, clearUser, authenticateUser } from './actions/user'
+import { clearUser, authenticateUser } from './actions/user'
 import { getAuth, signInWithPopup, setPersistence, browserSessionPersistence, GithubAuthProvider, signOut } from 'firebase/auth'
-
-import { verifyUser } from './apis'
 
 export function listenForUser () {
   const auth = getAuth()

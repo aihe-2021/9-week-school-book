@@ -1,6 +1,6 @@
 import request from 'superagent'
 const userURL = '/api/v1/users'
-const userVerification = '/api/v1/userverification'
+const userVerification = '/api/v1/login'
 
 export function getUsers () {
   return request

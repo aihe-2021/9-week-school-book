@@ -1,4 +1,4 @@
-const { initializeApp, getAuth } = require('firebase-admin/app')
+const { initializeApp } = require('firebase-admin/app')
 const admin = require('firebase-admin')
 const projectId = 'test-1c7a3'
 const serviceAccount = require('./serviceAccount.json')

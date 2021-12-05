@@ -1,15 +1,8 @@
 import { SET_USER, CLEAR_USER } from '../actions/user'
 
-const emptyUser = {
-  token: '',
-  name: '',
-  email: '',
-  image: '',
-  authID: '',
-  githubUsername: ''
-}
+const emptyUser = []
 
-export function userInfo (state = emptyUser, action) {
+export function user (state = emptyUser, action) {
   switch (action.type) {
     case SET_USER:
       return action.user
