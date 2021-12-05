@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const checkJwt = require('../firebaseConfig/chekJwt')
+const checkJwt = require('../firebaseConfig/checkJwt')
 
 router.get('/', checkJwt, (req, res) => {
   const uid = req.user?.uid // this verifies the user and sends back the id

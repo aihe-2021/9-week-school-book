@@ -16,16 +16,11 @@ export function clearUser () {
 }
 
 export function authenticateUser (token) {
-  console.log('authenticate user')
   return (dispatch) => {
-    console.log('userinfo')
     return verifyUser(token)
-      .then(users => {
-        console.log('user has been verified as', users)
-        return dispatch(setUser(users))
-      })
-      .catch(e => {
-        console.log(e)
+      .then(users => dispatch(setUser(users)))
+      .catch(error => {
+        console.log(error)
       })
   }
 }
