@@ -13,7 +13,6 @@ export function verifyUser (token) {
     .get(userVerification)
     .set('authorization', `Bearer ${token}`)
     .then(res => {
-      console.log('this is the api route', res.body)
       const user = res.body
       return user
     })
