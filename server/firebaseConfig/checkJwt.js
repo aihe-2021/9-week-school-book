@@ -7,6 +7,10 @@ initializeApp({
   credential: admin.credential.cert(serviceAccount),
   projectId: projectId
 })
+// require user
+// ==> check that the req.user is legit
+// ==> if the user is bounced, send back a '403'
+// ==> otherwise the console on the server side will blow up
 
 const checkJwt = async (req, res, next) => {
   const token = req.headers.authorization.split(' ')[1]
