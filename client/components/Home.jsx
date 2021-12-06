@@ -11,8 +11,6 @@ export default function Home () {
 
   }, [users])
 
-  // const [group, setGroup] = useState('all')
-
   // const [filter, setFilter] = useState('all')
   // const [teachers, setTeachers] = useState('Students and Teachers')
   // const setTitle = (teachers) => {
