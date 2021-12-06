@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import axios from 'axios'
 import { setUsers } from '../actions'
 import UpdateUser from './UpdateUser'
 
@@ -10,40 +9,11 @@ export default function User () {
   const userId = Number(params.id)
   const users = useSelector(state => state.users)
 
-  const [file, setFile] = useState(null)
-
   let user
   if (users[0].id) {
     user = users.find(user => user.id === userId)
   } else {
     user = {}
-  }
-
-  const onFormSubmit = (e) => {
-    e.preventDefault()
-
-    const formData = new FormData()
-    formData.append('profilePic', file)
-
-    const config = {
-      headers: {
-        'content-type': 'multipart/form-data'
-      }
-    }
-    const url = '/profilePic/upload'
-
-    axios.post(url, formData, config)
-      .then((response) => {
-        alert('Image Uploaded')
-        return null
-      })
-      .catch((err) => {
-        console.log('err', err)
-      })
-  }
-
-  const onInputChange = (e) => {
-    setFile(e.target.files[0])
   }
 
   function updateTheUser (updatedUser) {
@@ -97,13 +67,6 @@ export default function User () {
 
     {/* USER UPDATE  */}
     <div className='user__profileImage-form'>
-      <form onSubmit={onFormSubmit}>
-        <input className='file' type='file' name='profilePic' onChange={onInputChange} /><br /><br />
-        <div className='Image-Upload'><h3 className="imageInstructions" style={{ textDecoration: 'underline' }}>Hover For Upload Image Info</h3>
-          <span className='Image-Upload-Text'><p>When you upload your image <br />please make sure the filename is <em>your-name</em>.jpg <br />starting with a capital letter - eg David.jpg or JV.jpg. <br />This will ensure the image will update<br /> properly in the database.</p></span><br />
-        </div>
-        <button className='edit' type="submit">Upload</button>
-      </form>
       <div className='user__profileUpdate-form'>
         <UpdateUser id={user.id} updateTheUser={updateTheUser} user={user} />
       </div>
