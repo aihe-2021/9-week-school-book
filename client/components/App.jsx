@@ -1,9 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { HashRouter as Router, Routes, Route } from 'react-router-dom'
-import { firebaseConfig } from '../firebase-config'
-import { cacheUser } from '../cacheUser'
-import { initializeApp } from 'firebase/app'
+import { listenForUser } from '../firebaseAuth'
 import Navbar from './Navbar'
 import Home from './Home'
 import User from './User'
@@ -12,8 +10,7 @@ import Footer from './Footer'
 import { fetchUsers } from '../actions'
 
 function App () {
-  initializeApp(firebaseConfig)
-  cacheUser()
+  listenForUser()
   const dispatch = useDispatch()
 
   useEffect(() => {

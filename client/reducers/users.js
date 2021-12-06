@@ -15,8 +15,7 @@ const initialState = [{
   twitter: '',
   instagram: '',
   image: ''
-}
-]
+}]
 
 export default function users (state = initialState, action) {
   switch (action.type) {

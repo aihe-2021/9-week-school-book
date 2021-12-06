@@ -16,7 +16,7 @@ export default function User () {
   if (users[0].id) {
     user = users.find(user => user.id === userId)
   } else {
-    user = []
+    user = {}
   }
 
   const onFormSubmit = (e) => {
@@ -78,7 +78,7 @@ export default function User () {
     <div className="user__container">
 
       {/* USER PROFILE  */}
-     
+
       <div className='user__profile-info'>
         <h2>User Information</h2>
         <label><h3>Cohort:</h3><h4>{user.cohort}</h4></label><br />
@@ -87,7 +87,7 @@ export default function User () {
         <label><h3>Quote:</h3><h4>{user.quote}</h4></label><br />
         <label><h3>Skill Set:</h3><h4>{user.skills}</h4></label><br />
       </div>
-   
+
       {/* USER COMMENT  */}
       <div className='use__profile-comment'>
         <h2>Leave a comment</h2>
