@@ -58,8 +58,18 @@ export default function User () {
   return <>
 
     {/* PHOTO CONTAINER  */}
+    <div className='user__container-redRow'>
+      <h1>Users Profile</h1>
+    </div>
     <div className='user__container-red'>
       {user.image && <img className='user-image' src={'images/' + user.image} />}
+      <div className="socialmedia">
+              <label><a href={`${user.facebook}`}><i className="fab fa-facebook"></i></a></label>
+              <label><a href={`${user.linkedin}`}><i className="fab fa-linkedin"></i></a></label>
+              <label><a href={`${user.twitter}`}><i className="fab fa-twitter-square"></i></a></label>
+              <label><a href={`${user.instagram}`}><i className="fab fa-instagram"></i></a></label>
+              <label><a href={`${user.githubLink}`}><i className="fab fa-github"></i></a></label>
+          </div>
     </div>
 
 
@@ -74,13 +84,7 @@ export default function User () {
           <label><h3>Location:</h3><h4>{user.location}</h4></label><br />
           <label><h3>Quote:</h3><h4>{user.quote}</h4></label><br />
           <label><h3>Skill Set:</h3><h4>{user.skills}</h4></label><br />
-            <div className="socialmedia">
-              <label><a href={`${user.facebook}`}><i className="fab fa-facebook"></i></a></label>
-              <label><a href={`${user.linkedin}`}><i className="fab fa-linkedin"></i></a></label>
-              <label><a href={`${user.twitter}`}><i className="fab fa-twitter-square"></i></a></label>
-              <label><a href={`${user.instagram}`}><i className="fab fa-instagram"></i></a></label>
-              <label><a href={`${user.githubLink}`}><i className="fab fa-github"></i></a></label>
-          </div>
+      
         </div>
       </div>
       {/* USER COMMENT  */}

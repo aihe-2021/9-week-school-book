@@ -110,6 +110,13 @@ ul {
   margin: 0;
 }
 
+.user__container-redRow {
+  width: 100%;
+  background: #3097aa;
+  text-align: center;
+  padding: 3%;
+}
+
 .user__container-red {
   width: 100%;
   height: 100%;
@@ -125,8 +132,7 @@ ul {
   flex-direction: row;
   width: 75%;
   height: 80vh;
-  padding: 5%;
-  margin-top: 100px;
+  margin-top: 50px;
   border-right: 3px solid #e84e3d;
 }
 
@@ -136,29 +142,26 @@ ul {
 }
 
 .user__profile-info {
-  margin-top: -100px;
   width: 100%;
   padding: 2%;
+  padding-left: 300px;
 }
 
 .user__profile-info h2 {
   text-align: center;
   margin-bottom: 10%;
-  color: white;
-  background: #3097aa;
   padding: 1%;
 }
 
 .socialmedia {
-  margin-top: 10%;
-  padding: 1%;
+  margin-top: 1%;
   text-align: center;
 }
 
 .fab {
   color: black;
   font-size: 2rem;
-  padding: 0% 2% 0% 2%;
+  padding: 0.5%;
 }
 
 .fab:hover {
@@ -171,7 +174,8 @@ ul {
 
 .use__profile-comment {
   width: 70%;
-  margin-top: 100px;
+  margin-top: 50px;
+  padding-right: 300px;
   padding-left: 3%;
   border-left: 1px solid #e84e3d;
   margin-right: 3%;
@@ -180,8 +184,6 @@ ul {
 .use__profile-comment h2 {
   text-align: center;
   margin-bottom: 10%;
-  color: white;
-  background: #3097aa;
   padding: 1%;
 }
 
