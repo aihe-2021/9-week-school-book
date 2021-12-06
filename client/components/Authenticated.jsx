@@ -1,23 +1,16 @@
 import React from 'react'
-import { getAuth } from 'firebase/auth'
+import { useSelector } from 'react-redux'
 
-function isAuthenticated () {
-  const auth = getAuth()
-  // const athenticated = firebase.auth().currentUser
-  console.log(auth)
-  // return athenticated
-  return true
-}
-
-// console.log(auth)
 export function IfAuthenticated ({ children }) {
-  return isAuthenticated()
+  const user = useSelector(state => state.user)
+  return user.token
     ? <>{ children }</>
     : null
 }
 
 export function IfNotAuthenticated ({ children }) {
-  return !isAuthenticated()
+  const user = useSelector(state => state.user)
+  return !user.token
     ? <>{ children }</>
     : null
 }

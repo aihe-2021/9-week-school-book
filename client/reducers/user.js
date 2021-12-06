@@ -1,6 +1,6 @@
 import { SET_USER, CLEAR_USER } from '../actions/user'
 
-const emptyUser = []
+const emptyUser = {}
 
 export function user (state = emptyUser, action) {
   switch (action.type) {

@@ -14,16 +14,16 @@ export default function Navbar () {
           <li>
             <Link to='/home'>Aihe - 2021</Link>
           </li>
-          <li>
-            <IfNotAuthenticated>
+          <IfNotAuthenticated>
+            <li>
               <button onClick={login} className='navbar__right'>Signup | Login</button>
-            </IfNotAuthenticated>
-          </li>
-          <li>
-            <IfAuthenticated>
+            </li>
+          </IfNotAuthenticated>
+          <IfAuthenticated>
+            <li>
               <button onClick={logout} className='navbar__right'>Sign Out</button>
-            </IfAuthenticated>
-          </li>
+            </li>
+          </IfAuthenticated>
         </ul>
       </nav>
 

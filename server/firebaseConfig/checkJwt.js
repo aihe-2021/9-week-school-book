@@ -7,6 +7,8 @@ initializeApp({
   credential: admin.credential.cert(serviceAccount),
   projectId: projectId
 })
+// require user
+// ==> check
 
 const checkJwt = async (req, res, next) => {
   const token = req.headers.authorization.split(' ')[1]
@@ -15,6 +17,7 @@ const checkJwt = async (req, res, next) => {
     req.user = { ...user, token }
   } catch (err) {
     console.log(err)
+    // send a 403
   }
   next()
 }
