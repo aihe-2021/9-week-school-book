@@ -3,6 +3,7 @@ const path = require('path')
 
 const server = express()
 const users = require('./routes/users')
+const loginSignup = require('./routes/user')
 
 // const userPicUpload = require('./routes/users')
 
@@ -11,5 +12,6 @@ server.use(express.json())
 server.use(express.static(path.join(__dirname, 'public')))
 
 server.use('/api/v1/users', users)
+server.use('/api/v1/login', loginSignup)
 
 module.exports = server
