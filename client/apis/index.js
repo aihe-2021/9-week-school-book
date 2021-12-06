@@ -31,14 +31,14 @@ export function updateUser (id, user) {
 // comments functions
 
 export function getCommentsByUserId (userId) {
-  return request.get(`/v1/users/${userId}/comments`)
+  return request.get(`${userURL}/${userId}/comments`)
     .then(res => {
       return res.body
     })
 }
 
 export function addCommentByUserId (userId, comment) {
-  return request.post(`/v1/users/${userId}/comments`)
+  return request.post(`${userURL}/${userId}/comments`)
     .send(comment)
     .then(res => {
       return res.body
@@ -46,7 +46,7 @@ export function addCommentByUserId (userId, comment) {
 }
 
 export function updateComment (comment) {
-  return request.patch(`/v1/comments/${comment.id}`)
+  return request.patch(`${userURL}/comments/${comment.id}`)
     .send(comment)
     .then(res => {
       return res.body
@@ -54,6 +54,6 @@ export function updateComment (comment) {
 }
 
 export function deleteComment (commentId) {
-  return request.del(`/v1/comments/${commentId}`)
+  return request.del(`${userURL}/comments/${commentId}`)
     .then(res => res)
 }
