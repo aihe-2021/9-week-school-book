@@ -111,7 +111,7 @@ ul {
 
 .user__container {
   display: flex;
-  min-height: 100vh;
+  height: auto;
   flex-direction: row;
   margin: 0;
   // border: 1px solid rgb(255, 255, 0);
@@ -122,15 +122,16 @@ ul {
   flex: 1;
   // border: 1px solid red;
 }
+
 .user__container-red {
-  width: 70%;
+  width: 60%;
   height: 100%;
   background: #e84e3d;
 }
 
 .user-image {
   margin-top: 100px;
-  margin-left: 40%;
+  // margin-left: 5%;
   clip-path: circle(35% at 50% 50%);
 }
 
@@ -140,10 +141,11 @@ ul {
   height: 80vh;
   // border: 1px solid blue;
   padding: 5%;
+  margin-top: 100px;
+  border-right: 3px solid #e84e3d;
 }
 
 .user__profile h3 {
-  // color: #c4c4c4;
   font-weight: 800;
   padding-bottom: 2px;
 }
@@ -154,32 +156,55 @@ ul {
   padding: 2%;
   // border: 1px solid purple;
 }
+.user__profile-info h2 {
+  text-align: center;
+  margin-bottom: 10%;
+  color: white;
+  background: #3097aa;
+  padding: 1%;
+}
+.socialmedia {
+  // background: #3097aa;
+  margin-top: 10%;
+  padding: 1%;
+  text-align: center;
+}
 
 .fab {
-  // color: #c4c4c4;
-  // color: #e84e3d;
-  color: #3097aa;
-  // color: black;
+  color: black;
   font-size: 2rem;
-  padding: 2% 2% 2% 0;
+  padding: 0% 2% 0% 2%;
   // border: 1px solid pink;
 }
 .fab:hover {
-  // color: #e84e3d;
   color: #c4c4c4;
-  // color: #3097aa;
 }
 
 .inputFields {
   text-align: right;
 }
 
-// .use__profile-middle {
-//   width: 70%;
-// }
+.use__profile-comment {
+  width: 70%;
+  margin-top: 100px;
+  // border: 1px solid aquamarine;
+  padding-left: 3%;
+  border-left: 1px solid #e84e3d;
+  margin-right: 3%;
+}
+.use__profile-comment h2 {
+  text-align: center;
+  margin-bottom: 10%;
+  color: white;
+  background: #3097aa;
+  padding: 1%;
+}
 
 .user__profileImage-form {
-  max-width: 20%;
+  // max-width: 20%;
+  margin-left: auto;
+  width: 70%;
+  flex-direction: column;
   padding: 20px;
   margin-top: 10px;
   margin-right: 5%;
@@ -188,7 +213,7 @@ ul {
   height: 450px;
   color: white;
   transition-duration: 0.8s;
-  // border: 1px solid green;
+  border: 1px solid green;
 }
 .user__profileImage-form:hover {
   background-color: rgba(0, 0, 0, 0.3);
@@ -199,16 +224,16 @@ ul {
 }
 
 .imageInstructions:hover {
-color:#e84e3d;
-background-color: black;
-border-radius: 5px;
-padding: 5px 5px;
+  color: #e84e3d;
+  background-color: black;
+  border-radius: 5px;
+  padding: 5px 5px;
 }
 
 .Image-Upload {
   position: relative;
   display: inline-block;
-  cursor:help;
+  cursor: help;
 }
 
 .Image-Upload .Image-Upload-Text {
@@ -223,16 +248,14 @@ padding: 5px 5px;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  
 }
 
 .Image-Upload:hover .Image-Upload-Text {
   visibility: visible;
-  color:#e84e3d;
+  color: #e84e3d;
   padding: 7px;
   font-weight: bold;
   font-size: 14px;
-
 }
 
 .user__profileUpdate-form input {
@@ -312,16 +335,36 @@ footer p {
 @media screen and (min-width: 601px) and (max-width: 799px) {
   .home__container {
     width: 90%;
+    border: 1px solid orange;
   }
 
   .user__container {
     flex-direction: column;
     width: 100%;
+    border: 1px solid red;
   }
 
   .user__profile {
     width: 100%;
     padding: 5%;
+    border: 1px solid green;
+  }
+
+  .user-image {
+    margin-left: 20%;
+    clip-path: circle(35% at 50% 50%);
+  }
+
+  .user__container-redRow {
+    width: 100%;
+    height: 500px;
+    border: 1px solid red;
+  }
+
+  .user__container-red {
+    width: 100%;
+    height: 50%;
+    border: 1px solid rgb(104, 53, 110);
   }
 }
 
@@ -336,11 +379,28 @@ footer p {
   .user__container {
     flex-direction: column;
     width: 100%;
-    border: 1px solid orange;
+    border: 1px solid red;
   }
 
   .user__profile {
     width: 100%;
     padding: 5%;
+    border: 1px solid green;
+  }
+
+  .user__container-redRow {
+    width: 100%;
+    height: 500px;
+    border: 1px solid red;
+  }
+
+  .user__container-red {
+    width: 100%;
+    height: 50%;
+    border: 1px solid rgb(104, 53, 110);
+  }
+
+  .user-image {
+    clip-path: circle(35% at 50% 50%);
   }
 }
