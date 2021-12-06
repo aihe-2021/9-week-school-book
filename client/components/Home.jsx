@@ -41,10 +41,10 @@ export default function Home () {
     if (group === 'All') {
       setDisplayGroup(userData)
     } else if (group === 'Teachers') {
-      const teachers = userData.filter(user => user.teacher === true)
+      const teachers = userData.filter(user => user.teacher === 'true')
       setDisplayGroup(teachers)
     } else if (group === 'Students') {
-      const students = userData.filter(user => user.teacher === false)
+      const students = userData.filter(user => user.teacher === 'false')
       setDisplayGroup(students)
     }
   }
