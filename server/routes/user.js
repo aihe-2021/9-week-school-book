@@ -13,29 +13,31 @@ router.get('/', checkJwt, (req, res) => {
   const { name, uid, email, picture, token } = req.user
 
   const userProfile = { name, authId: uid, image: picture, email }
-  // const {token} =
 
-  async function handleUser (userObj) {
+  async function handleUser (userObj, token) {
     const userIdExists = await checkUserIdExists(userObj.authId)
-    if (!userIdExists[0]['count(`authId`)']) {
+    if (!userIdExists[0].n) {
       const userNameExists = await checkUserNameExists(userObj.name)
-      if (userNameExists[0]['count(`name`)']) {
+      if (userNameExists[0].n) {
         return updateUserId(userObj)
           .then(() => getUserData(userObj))
-          .then(userdata => res.json(Object.assign(userdata, { token })))
+          .then(userdata => res.json(Object.assign(userdata[0], { token })))
           .catch(error => console.log(error))
       } else {
         return addUser(userObj)
           .then(() => getUserData(userObj))
-          .then(userdata => res.json(Object.assign(userdata, { token })))
+          .then(userdata => res.json(Object.assign(userdata[0], { token })))
       }
     } else {
       return getUserData(userObj)
-        .then(userdata => res.json(Object.assign(userdata, { token })))
+        .then(userdata => {
+          return res.json(Object.assign(userdata[0], { token }))
+        })
+        .catch(error => console.log(error))
     }
   }
 
-  handleUser(userProfile)
+  handleUser(userProfile, token)
 })
 
 module.exports = router

@@ -6,13 +6,13 @@ const connection = knex(config)
 
 function checkUserIdExists (uid, db = connection) {
   return db('users')
-    .count('authId')
+    .count('authId as n')
     .where('authId', uid)
 }
 
 function checkUserNameExists (name, db = connection) {
   return db('users')
-    .count('name')
+    .count('authId as n')
     .where('name', name)
 }
 

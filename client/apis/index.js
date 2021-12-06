@@ -14,6 +14,7 @@ export function verifyUser (token) {
     .set('authorization', `Bearer ${token}`)
     .then(res => {
       const user = res.body
+      console.log(user)
       return user
     })
 }
