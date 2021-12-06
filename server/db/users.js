@@ -20,7 +20,28 @@ function getOne (oneId, db = connection) {
     .catch(e => { throw new Error(`User with id ${oneId} not found`) })
 }
 
+function updateUser (id, data, db = connection) {
+  const keys = Object.keys(data)
+  const newData = {}
+  for (let i = 0; i < keys.length; i++) {
+    if (data[keys[i]] !== '') {
+      newData[keys[i]] = data[keys[i]]
+    }
+  }
+  return db('users')
+    .update(newData)
+    .where({ id })
+    .then(() => {
+      return getOne(id, db)
+    })
+    .catch(err => {
+      console.error(err)
+      throw err
+    })
+}
+
 module.exports = {
   getUsers,
-  getOne
+  getOne,
+  updateUser
 }

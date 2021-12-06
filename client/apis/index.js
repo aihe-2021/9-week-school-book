@@ -18,3 +18,12 @@ export function verifyUser (token) {
       return user
     })
 }
+
+export function updateUser (id, user) {
+  return request
+    .patch(`${userURL}/${id}`)
+    .send(user)
+    .then(res => {
+      return res.body
+    })
+}

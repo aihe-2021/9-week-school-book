@@ -62,7 +62,8 @@ ul {
 
 .home_tittle {
   text-align: center;
-  padding: 5%;
+  padding-top: 5%;
+  padding-bottom: 1%;
 }
 
 .home__container {
@@ -84,6 +85,16 @@ ul {
   border-radius: 4px;
   margin: 5px;
   box-shadow: 1px 2px 2px #cccccc;
+  padding: 10px;
+}
+.home__item-list p {
+  text-align: center;
+  font-weight: 700;
+  padding: 5%;
+}
+
+.home__item-list:hover {
+  box-shadow: 2px 4px 4px #e84e3d;
 }
 
 .card-images {
@@ -97,56 +108,182 @@ ul {
 }
 
 // USERS
+
 .user__container {
-  width: 100%;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: row;
+  margin: 0;
+  // border: 1px solid rgb(255, 255, 0);
+}
+
+.user__container-redRow {
+  width: 20%;
+  flex: 1;
+  // border: 1px solid red;
 }
 .user__container-red {
-  width: 100%;
-  height: 200px;
+  width: 70%;
+  height: 100%;
   background: #e84e3d;
 }
 
 .user-image {
   margin-top: 100px;
-  margin-left: 80px;
-  border-radius: 50%;
-  width: 200px;
-  height: 200px;
+  margin-left: 40%;
+  clip-path: circle(35% at 50% 50%);
 }
+
 .user__profile {
-  width: 100%;
-  margin-top: 130px;
-  display: flex;
+  flex-direction: row;
+  width: 75%;
+  height: 80vh;
+  // border: 1px solid blue;
+  padding: 5%;
 }
+
+.user__profile h3 {
+  // color: #c4c4c4;
+  font-weight: 800;
+  padding-bottom: 2px;
+}
+
 .user__profile-info {
-  width: 25%;
-  margin-left: 20px;
+  margin-top: -100px;
+  width: 100%;
+  padding: 2%;
+  // border: 1px solid purple;
 }
-.user__profile-form {
-  width: 50%;
+
+.fab {
+  // color: #c4c4c4;
+  // color: #e84e3d;
+  color: #3097aa;
+  // color: black;
+  font-size: 2rem;
+  padding: 2% 2% 2% 0;
+  // border: 1px solid pink;
+}
+.fab:hover {
+  // color: #e84e3d;
+  color: #c4c4c4;
+  // color: #3097aa;
+}
+
+.inputFields {
+  text-align: right;
+}
+
+// .use__profile-middle {
+//   width: 70%;
+// }
+
+.user__profileImage-form {
+  max-width: 20%;
+  padding: 20px;
+  margin-top: 10px;
+  margin-right: 5%;
+  box-sizing: border-box;
+  border-radius: 12px;
+  height: 450px;
+  color: white;
+  transition-duration: 0.8s;
+  // border: 1px solid green;
+}
+.user__profileImage-form:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.imageInstructions {
   text-align: center;
-  display: inline-block;
-  align-self: flex-end;
 }
-.button {
-  border: 1px solid black;
-  margin-left: 20px;
-  border-radius: 25px;
-  padding: 5px 60px;
-  text-align: center;
-  transition-duration: 0.4s;
-  display: inline-block;
-  font-size: 16px;
-  cursor: pointer;
+
+.imageInstructions:hover {
+color:#e84e3d;
+background-color: black;
+border-radius: 5px;
+padding: 5px 5px;
 }
-.button:hover {
+
+.Image-Upload {
+  position: relative;
+  display: inline-block;
+  cursor:help;
+}
+
+.Image-Upload .Image-Upload-Text {
+  visibility: hidden;
   background-color: black;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 5px 5px;
+  position: absolute;
+  margin-top: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  
+}
+
+.Image-Upload:hover .Image-Upload-Text {
+  visibility: visible;
+  color:#e84e3d;
+  padding: 7px;
+  font-weight: bold;
+  font-size: 14px;
+
+}
+
+.user__profileUpdate-form input {
+  width: 100%;
+}
+.edit {
+  background-color: black;
+  border-radius: 5px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  cursor: pointer;
+  font-size: 18px;
+  height: 30px;
+  margin-top: 10px;
+  text-align: center;
+  width: 100%;
+}
+.edit:hover {
   color: #e84e3d;
 }
 .file {
-  margin-left: 105px;
   cursor: pointer;
 }
+
+// CATEGORY
+.btn-container {
+  margin-bottom: 4rem;
+  display: flex;
+  justify-content: center;
+}
+
+.filter-btn {
+  background: transparent;
+  border-color: transparent;
+  font-size: 1rem;
+  text-transform: capitalize;
+  margin: 0 0.5rem;
+  letter-spacing: 1px;
+  padding: 0.375rem 0.75rem;
+  color: var(--clr-gold);
+  cursor: pointer;
+  transition: var(--transition);
+  border-radius: var(--radius);
+  border: 1px solid #f3f3f3;
+  border-radius: 5%;
+}
+.filter-btn:hover {
+  border-bottom: 1px solid #e84e3d;
+}
+
 // FOOTER
 
 footer {
@@ -157,14 +294,6 @@ footer {
   position: fixed;
   bottom: 0;
 }
-
-.fab {
-  color: #e84e3d;
-  font-size: 2rem;
-  padding: 5px;
-}
-
-
 
 footer p {
   width: 100%;
@@ -184,6 +313,16 @@ footer p {
   .home__container {
     width: 90%;
   }
+
+  .user__container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .user__profile {
+    width: 100%;
+    padding: 5%;
+  }
 }
 
 /**************
@@ -192,5 +331,16 @@ footer p {
 @media screen and (max-width: 600px) {
   .home__container {
     width: 95%;
+    border: 1px solid orange;
+  }
+  .user__container {
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid orange;
+  }
+
+  .user__profile {
+    width: 100%;
+    padding: 5%;
   }
 }
