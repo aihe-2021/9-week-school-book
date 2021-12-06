@@ -56,42 +56,57 @@ export default function User () {
   }
 
   return <>
-    <div className="user__container">
-      <div className='user__container-redRow'>
-        <div className='user__container-red'>
-          {user.image && <img className='user-image' src={'images/' + user.image} />}
-        </div>
+
+    {/* INTRO CONTAINER  */}
+    <div className='user__container-red'>
+      <h1>{user.name}</h1>
+    </div>
+    <div className='user__container-image'>
+
+      {user.image && <img className='user-image' src={'images/' + user.image} />}
+
+      <div className="socialmedia">
+        <label><a href={`${user.facebook}`}><i className="fab fa-facebook"></i></a></label>
+        <label><a href={`${user.linkedin}`}><i className="fab fa-linkedin"></i></a></label>
+        <label><a href={`${user.twitter}`}><i className="fab fa-twitter-square"></i></a></label>
+        <label><a href={`${user.instagram}`}><i className="fab fa-instagram"></i></a></label>
+        <label><a href={`${user.githubLink}`}><i className="fab fa-github"></i></a></label>
       </div>
-      <div className='user__profile'>
-        <div className='user__profile-info'>
-          <label><h2>{user.name}</h2></label><br />
-          <div className="socialmedia">
-            <label><a href={`${user.facebook}`}><i className="fab fa-facebook"></i></a></label>
-            <label><a href={`${user.linkedin}`}><i className="fab fa-linkedin"></i></a></label>
-            <label><a href={`${user.twitter}`}><i className="fab fa-twitter-square"></i></a></label>
-            <label><a href={`${user.instagram}`}><i className="fab fa-instagram"></i></a></label>
-            <label><a href={`${user.githubLink}`}><i className="fab fa-github"></i></a></label>
-          </div>
-          <label><h3>Cohort:</h3><h4>{user.cohort}</h4></label><br />
-          <label><h3>Email:</h3><h4>{user.email}</h4></label><br />
-          <label><h3>Location:</h3><h4>{user.location}</h4></label><br />
-          <label><h3>Quote:</h3><h4>{user.quote}</h4></label><br />
-          <label><h3>Skill Set:</h3><h4>{user.skills}</h4></label><br />
-        </div>
-        <div className='user__profileImage-form'>
-          <form onSubmit={onFormSubmit}>
-            <input className='file' type='file' name='profilePic' onChange={onInputChange} /><br /><br />
-            <div className='Image-Upload'><h3 className="imageInstructions" style={{ textDecoration: 'underline' }}>Display Image Upload Instructions</h3>
-              <span className='Image-Upload-Text'><p>When you upload your image <br />please make sure the filename is <em>your-name</em>.jpg <br />starting with a capital letter - eg David.jpg or JV.jpg. <br />This will ensure the image will update<br /> properly in the database.</p></span><br />
-            </div>
-            <button className='edit' type="submit">Upload</button>
-          </form>
-          <div className='user__profileUpdate-form'>
-            <UpdateUser id={user.id} updateTheUser={updateTheUser} user={user} />
-          </div>
-        </div>
+    </div>
+
+    {/* SECOND CONTAINER  */}
+    <div className="user__container">
+
+      {/* USER PROFILE  */}
+
+      <div className='user__profile-info'>
+        <h2>User Information</h2>
+        <label><h3>Cohort:</h3><h4>{user.cohort}</h4></label><br />
+        <label><h3>Email:</h3><h4>{user.email}</h4></label><br />
+        <label><h3>Location:</h3><h4>{user.location}</h4></label><br />
+        <label><h3>Quote:</h3><h4>{user.quote}</h4></label><br />
+        <label><h3>Skill Set:</h3><h4>{user.skills}</h4></label><br />
       </div>
 
+      {/* USER COMMENT  */}
+      <div className='use__profile-comment'>
+        <h2>Leave a comment</h2>
+      </div>
+
+    </div>
+
+    {/* USER UPDATE  */}
+    <div className='user__profileImage-form'>
+      <form onSubmit={onFormSubmit}>
+        <input className='file' type='file' name='profilePic' onChange={onInputChange} /><br /><br />
+        <div className='Image-Upload'><h3 className="imageInstructions" style={{ textDecoration: 'underline' }}>Hover For Upload Image Info</h3>
+          <span className='Image-Upload-Text'><p>When you upload your image <br />please make sure the filename is <em>your-name</em>.jpg <br />starting with a capital letter - eg David.jpg or JV.jpg. <br />This will ensure the image will update<br /> properly in the database.</p></span><br />
+        </div>
+        <button className='edit' type="submit">Upload</button>
+      </form>
+      <div className='user__profileUpdate-form'>
+        <UpdateUser id={user.id} updateTheUser={updateTheUser} user={user} />
+      </div>
     </div>
   </>
 }
