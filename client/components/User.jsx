@@ -16,7 +16,7 @@ export default function User () {
   if (users[0].id) {
     user = users.find(user => user.id === userId)
   } else {
-    user = []
+    user = {}
   }
 
   const onFormSubmit = (e) => {

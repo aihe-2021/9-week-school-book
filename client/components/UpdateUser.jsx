@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-
 import { updateUser } from '../apis'
 
 const EditUser = ({ id, updateTheUser }) => {
