@@ -63,7 +63,7 @@ export default function User () {
     </div>
     <div className='user__container-image'>
 
-      {user.image && <img className='user-image' src={'images/' + user.image} />}
+      {user.image && <img className='user-image' src={user.image} />}
 
       <div className="socialmedia">
         <label><a href={`${user.facebook}`}><i className="fab fa-facebook"></i></a></label>
