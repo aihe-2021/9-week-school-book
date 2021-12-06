@@ -8,7 +8,9 @@ initializeApp({
   projectId: projectId
 })
 // require user
-// ==> check
+// ==> check that the req.user is legit
+// ==> if the user is bounced, send back a '403'
+// ==> otherwise the console on the server side will blow up
 
 const checkJwt = async (req, res, next) => {
   const token = req.headers.authorization.split(' ')[1]
@@ -17,7 +19,6 @@ const checkJwt = async (req, res, next) => {
     req.user = { ...user, token }
   } catch (err) {
     console.log(err)
-    // send a 403
   }
   next()
 }
