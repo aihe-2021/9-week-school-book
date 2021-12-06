@@ -22,7 +22,7 @@ function App () {
       <Router>
         <Navbar />
         <Routes>
-          <Route path='/home/users/:id' element={<User />} />
+          <Route path='/home/users/:id/*' element={<User />} />
           <Route path='/home' element={<Home />} />
           <Route path='/' element={<Intro />} />
         </Routes>

@@ -4,6 +4,8 @@ const config = require('./knexfile')[env]
 
 const connection = knex(config)
 
+const allCommentsData = ['id', 'userId', 'datePosted', 'comment']
+
 // RETURN ALL USERS
 
 function getUsers (db = connection) {
@@ -40,8 +42,54 @@ function updateUser (id, data, db = connection) {
     })
 }
 
+// comment stuff
+
+function getComments (postId, db = connection) {
+  return db('comments').select(allCommentsData).where({ postId })
+}
+
+function getComment (commentId, db = connection) {
+  return db('comments').select(allCommentsData).where({ id: commentId }).first()
+}
+
+function addComment (postId, comment, db = connection) {
+  const datePosted = new Date(Date.now())
+  return db('comments')
+    .insert({
+      post_id: postId,
+      comment,
+      date_posted: datePosted
+    })
+    .then(([commentId]) => {
+      return getComment(commentId)
+    })
+}
+
+function updateComment (commentId, comment, db = connection) {
+  return db('comments')
+    .update({ comment })
+    .where({ id: commentId })
+    .then(() => {
+      return getComment(commentId)
+    })
+}
+
+function deleteComment (commentId, db = connection) {
+  return db('comments').where({ id: commentId }).delete()
+}
+
+function deleteCommentsByUserId (userId, db = connection) {
+  return db('comments').where({ user_id: userId }).delete()
+}
+
 module.exports = {
   getUsers,
   getOne,
-  updateUser
+  updateUser,
+  getComments,
+  getComment,
+  addComment,
+  updateComment,
+  deleteComment,
+  deleteCommentsByUserId
 }
