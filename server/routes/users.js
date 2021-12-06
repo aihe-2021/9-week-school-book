@@ -1,7 +1,6 @@
 const express = require('express')
 const db = require('../db/users')
 const router = express.Router()
-const { upload, uploadImage } = require('../controllers/userpiccontroller')
 
 // GET ALL USERS
 router.get('/', (req, res) => {
@@ -24,9 +23,6 @@ router.get('/:id', (req, res) => {
       console.log(e.message)
     })
 })
-
-// UPLOAD PHOTO:
-router.post('/upload', uploadImage, upload)
 
 router.patch('/:id', (req, res) => {
   const { name, email, location, quote, skills, facebook, linkedin, twitter, instagram } = req.body

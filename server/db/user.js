@@ -16,9 +16,9 @@ function checkUserNameExists (name, db = connection) {
     .where('name', name)
 }
 
-function updateUserId ({ name, authId, email }, db = connection) {
+function updateUserId ({ name, authId, email, image }, db = connection) {
   return db('users')
-    .update({ authId, email })
+    .update({ authId, email, image })
     .where('name', name)
 }
 
