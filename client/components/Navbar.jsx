@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { login, logout } from '../firebaseAuth'
+import { IfAuthenticated, IfNotAuthenticated } from './Authenticated'
 
 export default function Navbar () {
   return (
@@ -14,10 +15,14 @@ export default function Navbar () {
             <Link to='/home'>Aihe - 2021</Link>
           </li>
           <li>
-            <button onClick={login} className='navbar__right'>Signup | Login</button>
+            <IfNotAuthenticated>
+              <button onClick={login} className='navbar__right'>Signup | Login</button>
+            </IfNotAuthenticated>
           </li>
           <li>
-            <button onClick={logout} className='navbar__right'>Sign Out</button>
+            <IfAuthenticated>
+              <button onClick={logout} className='navbar__right'>Sign Out</button>
+            </IfAuthenticated>
           </li>
         </ul>
       </nav>
