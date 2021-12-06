@@ -11,7 +11,6 @@ import { fetchUsers } from '../actions'
 
 function App () {
   listenForUser()
-  
   const dispatch = useDispatch()
 
   useEffect(() => {
