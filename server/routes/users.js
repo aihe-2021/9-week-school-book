@@ -37,33 +37,4 @@ router.patch('/:id', (req, res) => {
     })
 })
 
-// comment stuff
-
-router.get('/:userId/comments', (req, res) => {
-  const id = req.params.userId
-  db.getComments(id)
-    .then((comments) => {
-      res.json(comments)
-      return null
-    })
-    .catch(e => {
-      console.log(e.message)
-      res.status(500).json({ message: 'database error' })
-    })
-})
-
-router.post('/:userId/comments', (req, res) => {
-  const id = req.params.userId
-  const comment = req.body.comment
-  db.addComment(id, comment)
-    .then((comment) => {
-      res.json(comment)
-      return null
-    })
-    .catch(e => {
-      console.log(e.message)
-      res.status(500).json({ message: 'database error' })
-    })
-})
-
 module.exports = router

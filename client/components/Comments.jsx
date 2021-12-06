@@ -1,8 +1,7 @@
 import React from 'react'
-import { Link, Route, Routes } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import Comment from './Comment'
-import CommentForm from './CommentForm'
 function Comments (props) {
   const { userId, comments, fetchComments } = props
   return (
@@ -10,21 +9,10 @@ function Comments (props) {
       <p>
         <Link
           className='pure-button'
-          to={`/users/${userId}/comments/new`}>
+          to={`/users/${props.userId}/comments/new`}>
             Add A New Comment
         </Link>
       </p>
-      <Routes>
-        <Route
-          path={`/users/${userId}/comments/new`}
-          render={props => (
-            <CommentForm
-              fetchComments={fetchComments}
-              {...props}
-            />
-          )}
-        />
-      </Routes>
       <div>
         {comments.map(comment => (
           <Comment

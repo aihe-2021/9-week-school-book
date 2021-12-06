@@ -45,16 +45,15 @@ function Comment (props) {
                   Delete
                 </button>
               </p>
-
             </div>
           )}
         />
       </Routes>
       <Routes>
-        <Route path='/posts/:postId/comments/:commentId' render={(routerProps) => (
+        <Route path='/users/:userId/comments/:commentId' render={(routerProps) => (
           <User
             fetchUsers={props.fetchUsers}
-            post={props.users.find(user => (
+            user={props.users.find(user => (
               user.id === Number(routerProps.match.params.id)
             ))}
             {...routerProps}

@@ -44,19 +44,19 @@ function updateUser (id, data, db = connection) {
 
 // comment stuff
 
-function getComments (postId, db = connection) {
-  return db('comments').select(allCommentsData).where({ postId })
+function getComments (userId, db = connection) {
+  return db('comments').select(allCommentsData).where({ userId })
 }
 
 function getComment (commentId, db = connection) {
   return db('comments').select(allCommentsData).where({ id: commentId }).first()
 }
 
-function addComment (postId, comment, db = connection) {
+function addComment (userId, comment, db = connection) {
   const datePosted = new Date(Date.now())
   return db('comments')
     .insert({
-      post_id: postId,
+      user_id: userId,
       comment,
       date_posted: datePosted
     })

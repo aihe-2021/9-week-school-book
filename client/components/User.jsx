@@ -14,13 +14,11 @@ export default function User (props) {
   const [errorMessage, setErrorMessage] = useState('')
   const [comments, setComments] = useState([])
 
-  // useEffect(() => {
-  //   const id = props.users.id || props.match.params.id
-  //   console.log(id)
-  //   if (id) {
-  //     fetchComments(id)
-  //   }
-  // }, [])
+  useEffect(() => {
+    if (userId) {
+      fetchComments(userId)
+    }
+  }, [])
 
   function fetchComments (userId) {
     getCommentsByUserId(userId)
@@ -94,7 +92,7 @@ export default function User (props) {
 
       {props.path !== '/' &&
         <Comments
-          postId={userId}
+          userId={userId}
           comments={comments}
           fetchComments={fetchComments}
         />

@@ -8,6 +8,7 @@ import User from './User'
 import Intro from './Intro'
 import Footer from './Footer'
 import { fetchUsers } from '../actions'
+import CommentForm from './CommentForm'
 
 function App () {
   listenForUser()
@@ -25,6 +26,7 @@ function App () {
           <Route path='/home/users/:id/*' element={<User />} />
           <Route path='/home' element={<Home />} />
           <Route path='/' element={<Intro />} />
+          <Route path='/users/:userId/comments/new' element={<CommentForm />} />
         </Routes>
         <Footer />
       </Router>
