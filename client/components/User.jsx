@@ -56,13 +56,14 @@ export default function User () {
   }
 
   return <>
+
+    {/* PHOTO CONTAINER  */}
+    <div className='user__container-red'>
+      {user.image && <img className='user-image' src={'images/' + user.image} />}
+    </div>
+
+
     <div className="user__container">
-      <div className='user__container-redRow'>
-        {/* PHOTO CONTAINER  */}
-        <div className='user__container-red'>
-          {user.image && <img className='user-image' src={'images/' + user.image} />}
-        </div>
-      </div>
       {/* USER PROFILE  */}
       <div className='user__profile'>
         <div className='user__profile-info'>

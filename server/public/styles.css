@@ -110,19 +110,14 @@ ul {
   margin: 0;
 }
 
-.user__container-redRow {
-  width: 20%;
-  flex: 1;
-}
-
 .user__container-red {
-  width: 60%;
+  width: 100%;
   height: 100%;
-  background: #e84e3d;
+  text-align: center;
 }
 
 .user-image {
-  margin-top: 100px;
+  margin-top: 50px;
   clip-path: circle(35% at 50% 50%);
 }
 
