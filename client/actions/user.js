@@ -21,6 +21,7 @@ export function authenticateUser (token) {
       .then(users => dispatch(setUser(users)))
       .catch(error => {
         console.log(error)
+        return error
       })
   }
 }
