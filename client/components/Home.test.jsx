@@ -15,10 +15,7 @@ describe('<Home />', () => {
     dispatch: jest.fn(),
     subscribe: jest.fn()
   }
-  test('calls fetchUsers on render', () => {
-    render(<Provider store={fakeStore}><Router><Home /></Router></Provider>)
-    expect(fakeStore.dispatch).toHaveBeenCalledWith({ type: 'SET_USERS' })
-  })
+
   test('displays users from state', () => {
     render(<Provider store={fakeStore}><Router><Home /></Router></Provider>)
     const listItems = screen.getAllByRole('listitem')
