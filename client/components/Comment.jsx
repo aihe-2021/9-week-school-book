@@ -1,6 +1,6 @@
 import React from 'react'
-import { Route, Routes, Link } from 'react-router-dom'
-import CommentForm from './CommentForm'
+import { Link } from 'react-router-dom'
+// import CommentForm from './CommentForm'
 import { deleteComment } from '../apis'
 
 function Comment (props) {
@@ -12,7 +12,8 @@ function Comment (props) {
   const { userId, comment, fetchComments } = props
   return (
     <div>
-      <Routes>
+      <p>Hello World I am the Comment . JSX</p>
+      {/* <Routes>
         <Route
           path={`/users/${userId}/comments/${comment.id}`}
           render={(props) =>
@@ -24,30 +25,23 @@ function Comment (props) {
             />
           }
         />
-      </Routes>
-      <Routes>
-        <Route
-          path={`/users/${userId}`}
-          render={props => (
-            <div className="comment" key={comment.id}>
-              <p>
-                <span className="comment-content">{comment.comment}</span>
-                <span className="comment-date">Date Posted: {new Date(comment.datePosted).toDateString()}</span>
+      </Routes> */}
+      <div className="comment" key={comment.id}>
+        <p>
+          <span className="comment-content">{comment.comment}</span>
+          <span className="comment-date">Date Posted: {new Date(comment.datePosted).toDateString()}</span>
 
-                <Link to={`/users/${userId}/comments/${comment.id}`}>
-                  <button className='pure-button'>Edit</button>
-                </Link>
+          <Link to={`/users/${userId}/comments/${comment.id}`}>
+            <button className='pure-button'>Edit</button>
+          </Link>
 
-                <button
-                  className='pure-button'
-                  onClick={handleDeleteComment}>
+          <button
+            className='pure-button'
+            onClick={handleDeleteComment}>
                   Delete
-                </button>
-              </p>
-            </div>
-          )}
-        />
-      </Routes>
+          </button>
+        </p>
+      </div>
     </div>
   )
 }

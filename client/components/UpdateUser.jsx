@@ -41,7 +41,7 @@ const EditUser = ({ id, updateTheUser }) => {
 
   return (
     <div>
-      <button className='edit' onClick={() => { setShowForm(!showForm) }}>Click to Edit</button>
+      <button className='edit' onClick={() => { setShowForm(!showForm) }}>Update Profile Info</button>
       {showForm &&
       <form onSubmit={evt => { handleSubmit(evt, id) }}>
         <ul><br/>
@@ -73,7 +73,7 @@ const EditUser = ({ id, updateTheUser }) => {
             <label htmlFor='instagram'><input placeholder='Instagram' id='instagram' onChange={handleChange} value={form.instagram} name='instagram'/></label>
           </li>
         </ul>
-        <button onClick={() => { refreshPage() }} className='edit'>Click to Submit</button>
+        <button onClick={() => { refreshPage() }} className='edit'>Make Changes</button>
       </form>}
     </div>
   )

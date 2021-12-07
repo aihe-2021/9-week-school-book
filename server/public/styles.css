@@ -117,11 +117,20 @@ ul {
   overflow: hidden;
 }
 
+.nameHeading {
+  font-size: 40px;
+  font-weight: 300;
+}
+
+.updateInstructions {
+  color: #3097aa;
+}
+
 .user__container-red {
   width: 100%;
   background: #e84e3d;
   text-align: center;
-  padding: 3%;
+  padding: 2%;
   color: white;
   font-weight: 800;
 }
@@ -133,9 +142,30 @@ ul {
 }
 
 .user-image {
+  object-fit: cover;
   width: 20%;
   margin-top: 50px;
   clip-path: circle(50% at 50% 50%);
+}
+
+.overlay-text {
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  color: #e84e3d;
+  font-size: large;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  background-color: black;
+  padding: 0.5em;
+}
+
+.container-image:hover .overlay-text {
+  opacity: 1;
 }
 
 .socialmedia {
@@ -151,6 +181,27 @@ ul {
 
 .fab:hover {
   color: #3097aa;
+}
+
+.githubProfile {
+  text-decoration: none;
+}
+
+.githubProfile:link {
+  color: white;
+}
+
+.githubProfile:visited {
+  color: white;
+}
+
+.commentButton {
+  background-color: #3097aa;
+  color: white;
+  padding: 5px;
+  margin: 10px 10px 10px 0px;
+  border-radius: 5px;
+  font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .user__container {
@@ -199,16 +250,16 @@ ul {
 }
 
 .user__profileImage-form {
-  max-width: 30%;
+  max-width: 90%;
   padding-top: 2%;
+  margin-bottom: 10%;
   margin-left: auto;
   margin-right: auto;
-  flex-direction: column;
   padding: 20px;
   margin-top: 10px;
   box-sizing: border-box;
   border-radius: 12px;
-  height: 450px;
+  height: auto;
   color: white;
   transition-duration: 0.8s;
 }

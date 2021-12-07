@@ -19,9 +19,9 @@ function CommentForm ({ userId }) {
         name='comment'
         value={comment}
         onChange={(e) => setComment(e.target.value)}
-      />
-
-      <button type='submit'>Submit</button>
+      /><br />
+      {/* <p>Add New Comment</p> */}
+      <button className="commentButton" type='submit'>Post Your Feelings</button>
     </form>
   )
 }

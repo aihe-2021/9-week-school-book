@@ -43,10 +43,12 @@ router.get('/:userId/comments', (req, res) => {
     })
 })
 
+
 router.post('/:userId', (req, res) => {
   const id = req.params.userId
   const comment = req.body.comment
   const { name, uid, email, picture, token } = req.user
+
   db.addComment(id, comment, uid)
     .then((commentId) => db.getComment(commentId))
     .then((comment) => res.json(comment))

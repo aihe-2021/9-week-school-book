@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom'
 
 export default function Home () {
   const { users } = useSelector(state => state)
-
   const [displayGroup, setDisplayGroup] = useState(users)
+  const [displayGroupName, setDisplayGroupName] = useState('Students and Teachers')
 
   useEffect(() => {
 
-  }, [users])
+  }, [displayGroup])
 
   // const [filter, setFilter] = useState('all')
   // const [teachers, setTeachers] = useState('Students and Teachers')
@@ -38,18 +38,21 @@ export default function Home () {
   function filterDisplayGroup (group, userData = users) {
     if (group === 'All') {
       setDisplayGroup(userData)
+      setDisplayGroupName('Students and Teachers')
     } else if (group === 'Teachers') {
       const teachers = userData.filter(user => user.teacher === 'true')
       setDisplayGroup(teachers)
+      setDisplayGroupName('Teachers')
     } else if (group === 'Students') {
       const students = userData.filter(user => user.teacher === 'false')
       setDisplayGroup(students)
+      setDisplayGroupName('Students')
     }
   }
 
   return (
     <>
-      {/* <h1 className='home_tittle'>{`${teachers}`}</h1> */}
+      <h1 className='home_tittle'>{`${displayGroupName}`}</h1>
       <div className='btn-container'>
         <button className='filter-btn' onClick={() => filterDisplayGroup('All')}>All</button>
         <button className='filter-btn' onClick={() => filterDisplayGroup('Teachers')}>Teachers</button>

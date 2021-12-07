@@ -4,7 +4,7 @@ import { Link, useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { setUsers } from '../actions'
 import UpdateUser from './UpdateUser'
-// import Comments from './Comments'
+import Comments from './Comments'
 import { getCommentsByUserId } from '../apis'
 import CommentForm from './CommentForm'
 
@@ -50,11 +50,14 @@ export default function User (props) {
 
     {/* INTRO CONTAINER  */}
     <div className='user__container-red'>
-      <h1>{user.name}</h1>
+      <h1 className="nameHeading" >&#x0007B; {user.name} &#x0007D;</h1>
     </div>
     <div className='user__container-image'>
 
-      {user.image && <img className='user-image' src={user.image} />}
+      <div className="container-image">
+        {user.image && <img className='user-image' src={user.image} />}
+        <div className='overlay-text content'>To change your profile picture <br/> update it on <a className="githubProfile" href="https://github.com/settings/profile">Github.</a></div>
+      </div>
 
       <div className="socialmedia">
         <label><a href={`${user.facebook}`}><i className="fab fa-facebook"></i></a></label>
@@ -71,32 +74,37 @@ export default function User (props) {
       {/* USER PROFILE  */}
 
       <div className='user__profile-info'>
-        <h2>User Information</h2>
-        <label><h3>Cohort:</h3><h4>{user.cohort}</h4></label><br />
+        <h2>Profile</h2>
+        {/* <label><h3>Cohort:</h3><h4>{user.cohort}</h4></label><br /> */}
+        {/* <label><h3 className ="updateInstructions" >Scroll Down to Update Profile Info</h3></label><br /> */}
         <label><h3>Email:</h3><h4>{user.email}</h4></label><br />
         <label><h3>Location:</h3><h4>{user.location}</h4></label><br />
         <label><h3>Quote:</h3><h4>{user.quote}</h4></label><br />
         <label><h3>Skill Set:</h3><h4>{user.skills}</h4></label><br />
+
+        {/* USER UPDATE  */}
+        <div className='user__profileImage-form'>
+          <div className='user__profileUpdate-form'>
+            <UpdateUser id={user.id} updateTheUser={updateTheUser} user={user} />
+          </div>
+        </div>
       </div>
 
       {/* USER COMMENT  */}
       <div className='use__profile-comment'>
-        <h2>Leave a comment</h2>
-      </div>
-      <CommentForm userId={userId}/>
-      <Link to={`/users/${userId}/comments`}>
-        <div className='comment-count'>
-          <p>
-            {comments.length} comments
-          </p>
-        </div>
-      </Link>
-    </div>
-
-    {/* USER UPDATE  */}
-    <div className='user__profileImage-form'>
-      <div className='user__profileUpdate-form'>
-        <UpdateUser id={user.id} updateTheUser={updateTheUser} user={user} />
+        <h2>Give Me Some Feedback</h2>
+        <CommentForm userId={userId}/>
+        <Link to={`/users/${userId}/comments`}>
+          <div className='comment-count'>
+            <p>
+              {comments.length} comments
+            </p>
+          </div>
+        </Link>
+        <Comments
+          userId={userId}
+          comments={comments}
+          fetchComments={fetchComments} />
       </div>
     </div>
   </>
