@@ -154,7 +154,7 @@ ul {
   clip-path: circle(50% at 50% 50%);
 }
 .overlay-text {
-  transition: .5s ease;
+  transition: 0.5s ease;
   opacity: 0;
   position: absolute;
   top: 50%;
@@ -169,7 +169,7 @@ ul {
   padding: 0.5em;
 }
 .container-image:hover .overlay-text {
-opacity: 1;
+  opacity: 1;
 }
 
 .socialmedia {
@@ -192,15 +192,15 @@ opacity: 1;
 }
 
 .githubProfile:link {
-  color:white
+  color: white;
 }
 
 .githubProfile:visited {
-  color:white
+  color: white;
 }
 
 .commentButton {
-  background-color:#3097aa;
+  background-color: #3097aa;
   color: white;
   padding: 5px;
   margin: 10px 10px 10px 0px;
@@ -261,19 +261,20 @@ opacity: 1;
 }
 
 .user__profileImage-form {
-  max-width: 30%;
+  max-width: 90%;
   padding-top: 2%;
+  margin-bottom: 10%;
   margin-left: auto;
   margin-right: auto;
-  flex-direction: column;
   padding: 20px;
   margin-top: 10px;
   box-sizing: border-box;
   border-radius: 12px;
-  height: 450px;
+  height: auto;
   color: white;
   transition-duration: 0.8s;
 }
+
 .user__profileImage-form:hover {
   background-color: rgba(0, 0, 0, 0.3);
 }
