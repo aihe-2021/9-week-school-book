@@ -1,7 +1,6 @@
 import React from 'react'
 import { Route, Routes, Link } from 'react-router-dom'
 import CommentForm from './CommentForm'
-// import User from './User'
 import { deleteComment } from '../apis'
 
 function Comment (props) {
@@ -49,17 +48,6 @@ function Comment (props) {
           )}
         />
       </Routes>
-      {/* <Routes>
-        <Route path='/users/:userId/comments/:commentId' render={(routerProps) => (
-          <User
-            fetchUsers={props.fetchUsers}
-            user={props.users.find(user => (
-              user.id === Number(routerProps.match.params.id)
-            ))}
-            {...routerProps}
-          />
-        )} />
-      </Routes> */}
     </div>
   )
 }

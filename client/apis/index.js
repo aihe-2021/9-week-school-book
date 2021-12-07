@@ -31,16 +31,18 @@ export function updateUser (id, user) {
 // comments functions
 
 export function getCommentsByUserId (userId) {
-  return request.get(`${userURL}/${userId}/comments`)
+  return request.get(`/api/v1/comments/${userId}`)
     .then(res => {
       return res.body
     })
 }
 
-export function addCommentByUserId (userId, comment) {
-  return request.post(`${userURL}/${userId}/comments`)
-    .send(comment)
+export function addCommentByUserId (userId, comment, token) {
+  return request.post(`/api/v1/comments/${userId}`)
+    .send({ comment })
+    .set('authorization', `Bearer ${token}`)
     .then(res => {
+      console.log(res.body)
       return res.body
     })
 }

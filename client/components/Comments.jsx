@@ -9,7 +9,7 @@ function Comments (props) {
       <p>
         <Link
           className='pure-button'
-          to={`/users/${props.userId}/comments/new`}>
+          to={`/users/${userId}/comments/new`}>
             Add A New Comment
         </Link>
       </p>

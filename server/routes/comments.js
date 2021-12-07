@@ -1,6 +1,7 @@
 const express = require('express')
 const db = require('../db/users')
 const router = express.Router()
+const checkJwt = require('../firebaseConfig/checkJwt')
 
 router.patch('/:commentId', (req, res) => {
   const id = req.params.commentId
@@ -44,14 +45,13 @@ router.get('/users/:userId/comments', (req, res) => {
     })
 })
 
-router.post('/:userId/comments/new', (req, res) => {
+router.post('/:userId', checkJwt, (req, res) => {
   const id = req.params.userId
   const comment = req.body.comment
-  db.addComment(id, comment)
-    .then((comment) => {
-      res.json(comment)
-      return null
-    })
+  const { uid } = req.user
+  db.addComment(id, comment, uid)
+    .then((commentId) => db.getComment(commentId))
+    .then((comment) => res.json(comment))
     .catch(e => {
       console.log(e.message)
       res.status(500).json({ message: 'database error' })

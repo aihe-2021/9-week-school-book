@@ -6,6 +6,7 @@ import { setUsers } from '../actions'
 import UpdateUser from './UpdateUser'
 // import Comments from './Comments'
 import { getCommentsByUserId } from '../apis'
+import CommentForm from './CommentForm'
 
 export default function User (props) {
   const params = useParams()
@@ -82,6 +83,7 @@ export default function User (props) {
       <div className='use__profile-comment'>
         <h2>Leave a comment</h2>
       </div>
+      <CommentForm userId={userId}/>
       <Link to={`/users/${userId}/comments`}>
         <div className='comment-count'>
           <p>
@@ -89,21 +91,6 @@ export default function User (props) {
           </p>
         </div>
       </Link>
-      <Link to ={`/users/${userId}/comments/new`}>
-        <div>
-          <p>Add a Comment</p>
-        </div>
-      </Link>
-      {/* <Comments /> */}
-      {/* {props.path !== '/' &&
-        <Comments
-          userId={userId}
-          comments={comments}
-          fetchComments={fetchComments}
-        />
-      }
-
-      {/* {errorMessage && errorMessage} */}
     </div>
 
     {/* USER UPDATE  */}
