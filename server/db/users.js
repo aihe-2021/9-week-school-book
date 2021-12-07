@@ -55,7 +55,6 @@ function getComment (commentId, db = connection) {
 }
 
 function addComment (userId, comment, commentBy, db = connection) {
-  console.log(userId, comment, commentBy, 'line56 of db')
   const datePosted = new Date(Date.now())
   return db('comments')
     .insert({

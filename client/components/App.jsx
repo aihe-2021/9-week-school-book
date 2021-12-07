@@ -13,8 +13,8 @@ import { fetchUsers } from '../actions'
 
 function App () {
   listenForUser()
-  const dispatch = useDispatch()
 
+  const dispatch = useDispatch()
   useEffect(() => {
     dispatch(fetchUsers())
   }, [])
