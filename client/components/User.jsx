@@ -74,11 +74,18 @@ export default function User (props) {
       <div className='user__profile-info'>
         <h2>Student Profile</h2>
         {/* <label><h3>Cohort:</h3><h4>{user.cohort}</h4></label><br /> */}
-        <label><h3 className ="updateInstructions" >Scroll Down to Update Profile Info</h3></label><br />
+        {/* <label><h3 className ="updateInstructions" >Scroll Down to Update Profile Info</h3></label><br /> */}
         <label><h3>Email:</h3><h4>{user.email}</h4></label><br />
         <label><h3>Location:</h3><h4>{user.location}</h4></label><br />
         <label><h3>Quote:</h3><h4>{user.quote}</h4></label><br />
         <label><h3>Skill Set:</h3><h4>{user.skills}</h4></label><br />
+
+        {/* USER UPDATE  */}
+        <div className='user__profileImage-form'>
+          <div className='user__profileUpdate-form'>
+            <UpdateUser id={user.id} updateTheUser={updateTheUser} user={user} />
+          </div>
+        </div>
       </div>
 
       {/* USER COMMENT  */}
@@ -95,11 +102,6 @@ export default function User (props) {
       </div>
     </div>
 
-    {/* USER UPDATE  */}
-    <div className='user__profileImage-form'>
-      <div className='user__profileUpdate-form'>
-        <UpdateUser id={user.id} updateTheUser={updateTheUser} user={user} />
-      </div>
-    </div>
+    
   </>
 }
