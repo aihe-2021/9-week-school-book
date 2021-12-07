@@ -7,8 +7,9 @@ import UpdateUser from './UpdateUser'
 import Comments from './Comments'
 import { getCommentsByUserId } from '../apis'
 import CommentForm from './CommentForm'
+import { IfAuthenticated } from './Authenticated'
 
-export default function User (props) {
+export default function User () {
   const params = useParams()
   const userId = Number(params.id)
   const users = useSelector(state => state.users)
@@ -83,24 +84,24 @@ export default function User (props) {
         <label><h3>Skill Set:</h3><h4>{user.skills}</h4></label><br />
 
         {/* USER UPDATE  */}
-        <div className='user__profileImage-form'>
-          <div className='user__profileUpdate-form'>
-            <UpdateUser id={user.id} updateTheUser={updateTheUser} user={user} />
+        <IfAuthenticated>
+          <div className='user__profileImage-form'>
+            <div className='user__profileUpdate-form'>
+              <UpdateUser id={user.id} updateTheUser={updateTheUser} user={user} />
+            </div>
           </div>
-        </div>
+        </IfAuthenticated>
       </div>
 
       {/* USER COMMENT  */}
       <div className='use__profile-comment'>
         <h2>Give Me Some Feedback</h2>
-        <CommentForm userId={userId}/>
-        {/* <Link to={`/users/${userId}/comments`}>
-          <div className='comment-count'>
-            <p>
-              {comments.length} comments
-            </p>
-          </div>
-        </Link> */}
+        <IfAuthenticated>
+          <CommentForm
+            userId={userId}
+            setComments={setComments} />
+        </IfAuthenticated>
+
         <Comments
           userId={userId}
           comments={comments}

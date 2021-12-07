@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { updateUser } from '../apis'
+import { useSelector } from 'react-redux'
 
 const EditUser = ({ id, updateTheUser }) => {
   const formInfo = {
@@ -16,10 +17,11 @@ const EditUser = ({ id, updateTheUser }) => {
 
   const [form, setForm] = useState(formInfo)
   const [showForm, setShowForm] = useState(false)
+  const token = useSelector(state => state.user.token)
 
   function handleSubmit (evt, id) {
     evt.preventDefault()
-    updateUser(id, form)
+    updateUser(id, form, token)
       .then((updatedUser) => {
         updateTheUser(updatedUser)
         return null

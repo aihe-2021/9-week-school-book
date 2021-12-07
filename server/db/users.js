@@ -65,7 +65,7 @@ function addComment (userId, comment, commentBy, db = connection) {
     })
 }
 
-function updateComment (commentId, comment, db = connection) {
+function updateComment (commentId, comment, token, db = connection) {
   return db('comments')
     .update({ comment })
     .where({ id: commentId })

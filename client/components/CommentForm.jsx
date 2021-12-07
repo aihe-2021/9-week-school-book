@@ -1,14 +1,24 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
-import { addCommentByUserId } from '../apis'
+import { addCommentByUserId, getCommentsByUserId } from '../apis'
 
-function CommentForm ({ userId }) {
+function CommentForm (props) {
+  const { userId, setComments } = props
   const [comment, setComment] = useState('')
   const token = useSelector(state => state.user.token)
 
   function handleSubmit (event, userId, comment, token) {
     event.preventDefault()
     addCommentByUserId(userId, comment, token)
+      .then(() => {
+        return getCommentsByUserId(userId)
+      })
+      .then((comments) => {
+        setComments(comments)
+        console.log(comments)
+        return null
+      })
+      .catch(err => console.log(err))
     return setComment('')
   }
 
@@ -20,7 +30,6 @@ function CommentForm ({ userId }) {
         value={comment}
         onChange={(e) => setComment(e.target.value)}
       /><br />
-      {/* <p>Add New Comment</p> */}
       <button className="commentButton" type='submit'>Post Your Feelings</button>
     </form>
   )

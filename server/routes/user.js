@@ -19,17 +19,15 @@ router.get('/', (req, res) => {
     const userIdExists = await checkUserIdExists(userObj.authId)
     if (!userIdExists[0].n) {
       const userNameExists = await checkUserNameExists(userObj.name)
-      return () => {
-        if (userNameExists[0].n) {
-          return updateUserId(userObj)
-            .then(() => getUserData(userObj))
-            .then(userdata => res.json(Object.assign(userdata[0], { token })))
-            .catch(error => console.log(error))
-        } else {
-          return addUser(userObj)
-            .then(() => getUserData(userObj))
-            .then(userdata => res.json(Object.assign(userdata[0], { token })))
-        }
+      if (userNameExists[0].n) {
+        return updateUserId(userObj)
+          .then(() => getUserData(userObj))
+          .then(userdata => res.json(Object.assign(userdata[0], { token })))
+          .catch(error => console.log(error))
+      } else {
+        return addUser(userObj)
+          .then(() => getUserData(userObj))
+          .then(userdata => res.json(Object.assign(userdata[0], { token })))
       }
     } else {
       return getUserData(userObj)
