@@ -8,7 +8,7 @@ export default function Home () {
   const [displayGroupName, setDisplayGroupName] = useState('Students and Teachers')
 
   useEffect(() => {
-    filterDisplayGroup('All')
+
   }, [displayGroup])
 
   // const [filter, setFilter] = useState('all')
