@@ -139,9 +139,28 @@ ul {
 }
 
 .user-image {
+  object-fit: cover;
   width: 20%;
   margin-top: 50px;
   clip-path: circle(50% at 50% 50%);
+}
+.overlay-text {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  color: #e84e3d;
+  font-size: large;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  background-color: black;
+  padding: 0.5em;
+}
+.container-image:hover .overlay-text {
+opacity: 1;
 }
 
 .socialmedia {
@@ -157,6 +176,18 @@ ul {
 
 .fab:hover {
   color: #3097aa;
+}
+
+.githubProfile {
+  text-decoration: none;
+}
+
+.githubProfile:link {
+  color:white
+}
+
+.githubProfile:visited {
+  color:white
 }
 
 // SECOND CONTAINER ///////////////////////////
