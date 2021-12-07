@@ -7,6 +7,7 @@ import Home from './Home'
 import User from './User'
 import Intro from './Intro'
 import Footer from './Footer'
+import Comments from './Comments'
 import { fetchUsers } from '../actions'
 
 function App () {
@@ -22,9 +23,11 @@ function App () {
       <Router>
         <Navbar />
         <Routes>
-          <Route path='/home/users/:id' element={<User />} />
+          <Route path='/users/:id/*' element={<User />} />
           <Route path='/home' element={<Home />} />
           <Route path='/' element={<Intro />} />
+          <Route path='/users/:userId/comments/:commentId' element={<User />} />
+          <Route path='/users/:userId/comments' element={<Comments />} />
         </Routes>
         <Footer />
       </Router>

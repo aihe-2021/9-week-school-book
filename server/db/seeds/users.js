@@ -17,7 +17,8 @@ exports.seed = function (knex) {
           linkedin: 'dane@linkedin',
           twitter: 'dane@twitter',
           instagram: 'dane@instagram',
-          image: 'https://avatars.githubusercontent.com/u/89368577?v=4'
+          image: 'https://avatars.githubusercontent.com/u/89368577?v=4',
+          commentCount: 0
         },
         {
           id: 2,
@@ -34,7 +35,8 @@ exports.seed = function (knex) {
           linkedin: 'natalia@linkedin',
           twitter: 'natalia@twitter',
           instagram: 'dane@instagram',
-          image: 'https://avatars.githubusercontent.com/u/68573508?v=4'
+          image: 'https://avatars.githubusercontent.com/u/68573508?v=4',
+          commentCount: 0
         },
         {
           id: 3,
@@ -51,7 +53,8 @@ exports.seed = function (knex) {
           linkedin: 'callum@linkedin',
           twitter: 'callum@twitter',
           instagram: 'callum@instagram',
-          image: 'https://avatars.githubusercontent.com/u/55716886?v=4'
+          image: 'https://avatars.githubusercontent.com/u/55716886?v=4',
+          commentCount: 0
         },
         {
           id: 4,
@@ -68,7 +71,8 @@ exports.seed = function (knex) {
           linkedin: 'https://nz.linkedin.com/in/danny-goulter-97492227',
           twitter: 'http://www.twitter.com/dannyrambles',
           instagram: 'http://www.instagram.com/dannyrambles',
-          image: 'https://avatars.githubusercontent.com/u/89580994?v=4'
+          image: 'https://avatars.githubusercontent.com/u/89580994?v=4',
+          commentCount: 0
         },
         {
           id: 5,
@@ -85,7 +89,8 @@ exports.seed = function (knex) {
           linkedin: 'david@linkedin',
           twitter: 'david@twitter',
           instagram: 'david@instagram',
-          image: 'https://avatars.githubusercontent.com/u/89430266?v=4'
+          image: 'https://avatars.githubusercontent.com/u/89430266?v=4',
+          commentCount: 0
         },
         {
           id: 6,
@@ -102,7 +107,8 @@ exports.seed = function (knex) {
           linkedin: 'finn@linkedin',
           twitter: 'finn@twitter',
           instagram: 'finne@instagram',
-          image: 'https://avatars.githubusercontent.com/u/85616388?v=4'
+          image: 'https://avatars.githubusercontent.com/u/85616388?v=4',
+          commentCount: 0
         },
         {
           id: 7,
@@ -119,7 +125,8 @@ exports.seed = function (knex) {
           linkedin: 'gerard@linkedin',
           twitter: 'gerard@twitter',
           instagram: 'gerard@instagram',
-          image: 'https://avatars.githubusercontent.com/u/89118251?v=4'
+          image: 'https://avatars.githubusercontent.com/u/89118251?v=4',
+          commentCount: 0
         },
         {
           id: 8,
@@ -136,7 +143,8 @@ exports.seed = function (knex) {
           linkedin: 'jatin@linkedin',
           twitter: 'jatin@twitter',
           instagram: 'jatin@instagram',
-          image: 'https://avatars.githubusercontent.com/u/77951538?v=4'
+          image: 'https://avatars.githubusercontent.com/u/77951538?v=4',
+          commentCount: 0
         },
         {
           id: 9,
@@ -153,7 +161,8 @@ exports.seed = function (knex) {
           linkedin: 'jean@linkedin',
           twitter: 'jean@twitter',
           instagram: 'jean@instagram',
-          image: '/images/Jean.jpg'
+          image: '/images/Jean.jpg',
+          commentCount: 0
         },
         {
           id: 10,
@@ -170,7 +179,8 @@ exports.seed = function (knex) {
           linkedin: 'jojo@linkedin',
           twitter: 'jojo@twitter',
           instagram: 'jojo@instagram',
-          image: 'https://avatars.githubusercontent.com/u/89529995?v=4'
+          image: 'https://avatars.githubusercontent.com/u/89529995?v=4',
+          commentCount: 0
         },
         {
           id: 11,
@@ -187,7 +197,8 @@ exports.seed = function (knex) {
           linkedin: 'jv@linkedin',
           twitter: '@joshuavial',
           instagram: 'jv@instagram',
-          image: 'https://avatars.githubusercontent.com/u/72309?v=4'
+          image: 'https://avatars.githubusercontent.com/u/72309?v=4',
+          commentCount: 0
         },
         {
           id: 12,
@@ -204,7 +215,8 @@ exports.seed = function (knex) {
           linkedin: 'leilani@linkedin',
           twitter: 'leilani@twitter',
           instagram: 'leilani@instagram',
-          image: 'https://avatars.githubusercontent.com/u/73852663?v=4'
+          image: 'https://avatars.githubusercontent.com/u/73852663?v=4',
+          commentCount: 0
         },
         {
           id: 13,
@@ -221,7 +233,8 @@ exports.seed = function (knex) {
           linkedin: 'levi@linkedin',
           twitter: 'levi@twitter',
           instagram: 'levi@instagram',
-          image: 'https://avatars.githubusercontent.com/u/89329374?v=4'
+          image: 'https://avatars.githubusercontent.com/u/89329374?v=4',
+          commentCount: 0
         },
         {
           id: 14,
@@ -238,7 +251,8 @@ exports.seed = function (knex) {
           linkedin: 'micheal@linkedin',
           twitter: 'micheal@twitter',
           instagram: 'michealinstagram',
-          image: 'https://avatars.githubusercontent.com/u/89555193?v=4'
+          image: 'https://avatars.githubusercontent.com/u/89555193?v=4',
+          commentCount: 0
         },
         {
           id: 15,
@@ -255,7 +269,8 @@ exports.seed = function (knex) {
           linkedin: 'rodrigo@linkedin',
           twitter: 'rodrigo@twitter',
           instagram: 'rodrigo@instagram',
-          image: 'https://avatars.githubusercontent.com/u/51892785?v=4'
+          image: 'https://avatars.githubusercontent.com/u/51892785?v=4',
+          commentCount: 0
         },
         {
           id: 16,
@@ -272,7 +287,8 @@ exports.seed = function (knex) {
           linkedin: 'https://www.linkedin.com/in/rohan-fowler-harper/',
           twitter: 'rohan@twitter',
           instagram: 'rohan@instagram',
-          image: 'https://avatars.githubusercontent.com/u/88605753?v=4'
+          image: 'https://avatars.githubusercontent.com/u/88605753?v=4',
+          commentCount: 0
         },
         {
           id: 17,
@@ -289,7 +305,8 @@ exports.seed = function (knex) {
           linkedin: 'sarah@linkedin',
           twitter: 'sarah@twitter',
           instagram: 'sarah@instagram',
-          image: 'https://avatars.githubusercontent.com/u/70471216?v=4'
+          image: 'https://avatars.githubusercontent.com/u/70471216?v=4',
+          commentCount: 0
         },
         {
           id: 18,
@@ -306,7 +323,8 @@ exports.seed = function (knex) {
           linkedin: 'shaun@linkedin',
           twitter: 'shaun@twitter',
           instagram: 'shaun@instagram',
-          image: 'https://avatars.githubusercontent.com/u/89567829?v=4'
+          image: 'https://avatars.githubusercontent.com/u/89567829?v=4',
+          commentCount: 0
         },
         {
           id: 19,
@@ -323,7 +341,8 @@ exports.seed = function (knex) {
           linkedin: 'victoria@linkedin',
           twitter: 'victoria@twitter',
           instagram: 'victoria@instagram',
-          image: 'https://avatars.githubusercontent.com/u/53734799?v=4'
+          image: 'https://avatars.githubusercontent.com/u/53734799?v=4',
+          commentCount: 0
         },
         {
           id: 20,
@@ -340,7 +359,8 @@ exports.seed = function (knex) {
           linkedin: 'walid@linkedin',
           twitter: 'walid@twitter',
           instagram: 'walid@instagram',
-          image: 'https://avatars.githubusercontent.com/u/56755074?v=4'
+          image: 'https://avatars.githubusercontent.com/u/56755074?v=4',
+          commentCount: 0
         },
         {
           id: 21,
@@ -357,7 +377,8 @@ exports.seed = function (knex) {
           linkedin: 'ysabel@linkedin',
           twitter: 'ysabel@twitter',
           instagram: 'ysabel@instagram',
-          image: 'https://avatars.githubusercontent.com/u/77661073?v=4'
+          image: 'https://avatars.githubusercontent.com/u/77661073?v=4',
+          commentCount: 0
         },
         {
           id: 22,
@@ -374,7 +395,8 @@ exports.seed = function (knex) {
           linkedin: 'tom@linkedin',
           twitter: 'tom@twitter',
           instagram: 'tom@instagram',
-          image: '/images/Tom.jpg'
+          image: '/images/Tom.jpg',
+          commentCount: 0
         }
       ])
     })

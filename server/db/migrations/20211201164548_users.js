@@ -15,6 +15,7 @@ exports.up = (knex) => {
     table.string('twitter')
     table.string('instagram')
     table.string('image')
+    table.integer('commentCount').defaultsTo(0)
   }
   )
 }

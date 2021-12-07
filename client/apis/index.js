@@ -26,3 +26,35 @@ export function updateUser (id, user) {
       return res.body
     })
 }
+
+// comments functions
+
+export function getCommentsByUserId (userId) {
+  return request.get(`/api/v1/comments/${userId}`)
+    .then(res => {
+      return res.body
+    })
+}
+
+export function addCommentByUserId (userId, comment, token) {
+  return request.post(`/api/v1/comments/${userId}`)
+    .send({ comment })
+    .set('authorization', `Bearer ${token}`)
+    .then(res => {
+      console.log(res.body)
+      return res.body
+    })
+}
+
+export function updateComment (comment) {
+  return request.patch(`${userURL}/comments/${comment.id}`)
+    .send(comment)
+    .then(res => {
+      return res.body
+    })
+}
+
+export function deleteComment (commentId) {
+  return request.del(`${userURL}/comments/${commentId}`)
+    .then(res => res)
+}

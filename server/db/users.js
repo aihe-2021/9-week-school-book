@@ -11,6 +11,7 @@ function getUsers (db = connection) {
 }
 
 // RETURN  ONE USER
+
 function getOne (oneId, db = connection) {
   return db('users')
     .select()
@@ -40,8 +41,53 @@ function updateUser (id, data, db = connection) {
     })
 }
 
+// comment stuff
+
+function getComments (userId, db = connection) {
+  return db('comments').select().where({ userId })
+}
+
+function getComment (commentId, db = connection) {
+  return db('comments').select().where({ id: commentId }).first()
+}
+
+function addComment (userId, comment, commentBy, db = connection) {
+  console.log(userId, comment, commentBy)
+  const datePosted = new Date(Date.now())
+  return db('comments')
+    .insert({
+      user_id: userId,
+      comment,
+      date_posted: datePosted,
+      comment_by_user: commentBy
+    })
+}
+
+function updateComment (commentId, comment, db = connection) {
+  return db('comments')
+    .update({ comment })
+    .where({ id: commentId })
+    .then(() => {
+      return getComment(commentId)
+    })
+}
+
+function deleteComment (commentId, db = connection) {
+  return db('comments').where({ id: commentId }).delete()
+}
+
+function deleteCommentsByUserId (userId, db = connection) {
+  return db('comments').where({ user_id: userId }).delete()
+}
+
 module.exports = {
   getUsers,
   getOne,
-  updateUser
+  updateUser,
+  getComments,
+  getComment,
+  addComment,
+  updateComment,
+  deleteComment,
+  deleteCommentsByUserId
 }
