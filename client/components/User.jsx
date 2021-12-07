@@ -101,7 +101,5 @@ export default function User (props) {
         </Link>
       </div>
     </div>
-
-    
   </>
 }
