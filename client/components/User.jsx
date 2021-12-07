@@ -50,7 +50,7 @@ export default function User (props) {
 
     {/* INTRO CONTAINER  */}
     <div className='user__container-red'>
-      <h1>{user.name}</h1>
+      <h1 className="nameHeading" >&#x0007B; {user.name} &#x0007D;</h1>
     </div>
     <div className='user__container-image'>
       <div className="container-image">
@@ -72,8 +72,9 @@ export default function User (props) {
       {/* USER PROFILE  */}
 
       <div className='user__profile-info'>
-        <h2>User Information</h2>
-        <label><h3>Cohort:</h3><h4>{user.cohort}</h4></label><br />
+        <h2>Student Profile</h2>
+        {/* <label><h3>Cohort:</h3><h4>{user.cohort}</h4></label><br /> */}
+        <label><h3 className ="updateInstructions" >Scroll Down to Update Profile Info</h3></label><br />
         <label><h3>Email:</h3><h4>{user.email}</h4></label><br />
         <label><h3>Location:</h3><h4>{user.location}</h4></label><br />
         <label><h3>Quote:</h3><h4>{user.quote}</h4></label><br />
@@ -82,16 +83,16 @@ export default function User (props) {
 
       {/* USER COMMENT  */}
       <div className='use__profile-comment'>
-        <h2>Leave a comment</h2>
+        <h2>Leave a Comment</h2>
+        <CommentForm userId={userId}/>
+        <Link to={`/users/${userId}/comments`}>
+          <div className='comment-count'>
+            <p>
+              {comments.length} comments
+            </p>
+          </div>
+        </Link>
       </div>
-      <CommentForm userId={userId}/>
-      <Link to={`/users/${userId}/comments`}>
-        <div className='comment-count'>
-          <p>
-            {comments.length} comments
-          </p>
-        </div>
-      </Link>
     </div>
 
     {/* USER UPDATE  */}

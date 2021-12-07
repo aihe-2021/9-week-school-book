@@ -117,11 +117,20 @@ ul {
   overflow: hidden;
 }
 
+.nameHeading {
+  font-size: 40px;
+  font-weight: 300;
+}
+
+.updateInstructions {
+  color: #3097aa;
+}
+
 .user__container-red {
   width: 100%;
   background: #e84e3d;
   text-align: center;
-  padding: 3%;
+  padding: 2%;
   color: white;
   font-weight: 800;
 }
