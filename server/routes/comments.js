@@ -49,6 +49,7 @@ router.post('/:userId', checkJwt, (req, res) => {
   const id = req.params.userId
   const comment = req.body.comment
   const { uid } = req.user
+  console.log(uid)
   db.addComment(id, comment, uid)
     .then((commentId) => db.getComment(commentId))
     .then((comment) => res.json(comment))
