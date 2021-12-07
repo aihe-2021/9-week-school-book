@@ -83,7 +83,7 @@ export default function User (props) {
 
       {/* USER COMMENT  */}
       <div className='use__profile-comment'>
-        <h2>Leave a Comment</h2>
+        <h2>Give Me Some Feedback</h2>
         <CommentForm userId={userId}/>
         <Link to={`/users/${userId}/comments`}>
           <div className='comment-count'>

@@ -195,6 +195,15 @@ ul {
   color: white;
 }
 
+.commentButton {
+  background-color: #3097aa;
+  color: white;
+  padding: 5px;
+  margin: 10px 10px 10px 0px;
+  border-radius: 5px;
+  font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 .user__container {
   display: flex;
   height: auto;
