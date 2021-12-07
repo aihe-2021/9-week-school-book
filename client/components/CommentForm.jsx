@@ -1,24 +1,28 @@
 import React, { useState } from 'react'
+import { useParams } from 'react-router'
 import { addCommentByUserId, updateComment } from '../apis'
 
 function CommentForm (props) {
-  const [errorMessage, setErrorMessage] = useState('')
+  // const [errorMessage, setErrorMessage] = useState('')
   const [comment, setComment] = useState(props.comment || { comment: '' })
+  const params = useParams()
+  console.log(params)
 
   function handleSubmit (e) {
     e.preventDefault()
-    const { match, fetchComments, history } = props
-    if (props.comment) {
-      updateComment(comment)
-        .then(() => fetchComments(comment.userId))
-        .then(() => history.push(`/users/${comment.userId}`))
-        .catch(err => setErrorMessage(err.message))
-    } else {
-      addCommentByUserId(match.params.userId, comment)
-        .then(() => fetchComments(match.params.userId))
-        .then(() => history.push(`/users/${match.params.userId}`))
-        .catch(err => setErrorMessage(err.message))
-    }
+  //   const { match, fetchComments, history } = props
+  //   console.log(match)
+  //   if (props.comment) {
+  //     updateComment(comment)
+  //       .then(() => fetchComments(comment.userId))
+  //       .then(() => history.push(`/users/${comment.userId}`))
+  //       .catch(err => setErrorMessage(err.message))
+  //   } else {
+  //     addCommentByUserId(match.params.userId, comment)
+  //       .then(() => fetchComments(match.params.userId))
+  //       .then(() => history.push(`/users/${match.params.userId}`))
+  //       .catch(err => setErrorMessage(err.message))
+  //   }
   }
 
   return (
@@ -32,7 +36,6 @@ function CommentForm (props) {
         }}
       />
       <input className='pure-button' type='submit' />
-      <p>{errorMessage && errorMessage}</p>
     </form>
   )
 }

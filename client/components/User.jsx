@@ -4,14 +4,14 @@ import { Link, useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { setUsers } from '../actions'
 import UpdateUser from './UpdateUser'
-import Comments from './Comments'
+// import Comments from './Comments'
 import { getCommentsByUserId } from '../apis'
 
 export default function User (props) {
   const params = useParams()
   const userId = Number(params.id)
   const users = useSelector(state => state.users)
-  const [errorMessage, setErrorMessage] = useState('')
+  // const [errorMessage, setErrorMessage] = useState('')
   const [comments, setComments] = useState([])
 
   useEffect(() => {
@@ -26,7 +26,7 @@ export default function User (props) {
         setComments(comments)
         return null
       })
-      .catch(err => setErrorMessage(err.message))
+      .catch(err => console.log(err))
   }
 
   let user
@@ -82,15 +82,20 @@ export default function User (props) {
       <div className='use__profile-comment'>
         <h2>Leave a comment</h2>
       </div>
-      <Link to={`/users/${userId}`}>
+      <Link to={`/users/${userId}/comments`}>
         <div className='comment-count'>
           <p>
             {comments.length} comments
           </p>
         </div>
       </Link>
-
-      {props.path !== '/' &&
+      <Link to ={`/users/${userId}/comments/new`}>
+        <div>
+          <p>Add a Comment</p>
+        </div>
+      </Link>
+      {/* <Comments /> */}
+      {/* {props.path !== '/' &&
         <Comments
           userId={userId}
           comments={comments}
@@ -98,7 +103,7 @@ export default function User (props) {
         />
       }
 
-      {errorMessage && errorMessage}
+      {/* {errorMessage && errorMessage} */}
     </div>
 
     {/* USER UPDATE  */}

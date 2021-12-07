@@ -30,8 +30,9 @@ router.delete('/:commentId', (req, res) => {
     })
 })
 
-router.get('/:userId/comments', (req, res) => {
+router.get('/users/:userId/comments', (req, res) => {
   const id = req.params.userId
+  console.log(id)
   db.getComments(id)
     .then((comments) => {
       res.json(comments)
