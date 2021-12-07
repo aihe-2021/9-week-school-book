@@ -1,5 +1,5 @@
 import nock from 'nock'
-import { getUsers } from './'
+import { getUsers, updateUser } from './'
 
 describe('getUsers', () => {
   it('returns data from /api/v1/users', () => {
@@ -16,3 +16,19 @@ describe('getUsers', () => {
       })
   })
 })
+
+// describe('updateUser', () => {
+//   it('updates a users profile', () => {
+//     const scope = nock('http://localhost')
+//       .patch('/api/v1/users')
+//       .reply(200, [{ id: 1, name: 'test 1' }])
+
+//     expect.assertions(1)
+//     return updateUser()
+//       .then(actual => {
+//         scope.done()
+//         expect(actual).toEqual([{ id: 1, name: 'test 1' }])
+//         return null
+//       })
+//   })
+// })

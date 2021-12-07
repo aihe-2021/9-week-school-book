@@ -6,34 +6,10 @@ export default function Home () {
   const { users } = useSelector(state => state)
 
   const [displayGroup, setDisplayGroup] = useState(users)
-
+  console.log(displayGroup)
   useEffect(() => {
-
-  }, [users])
-
-  // const [filter, setFilter] = useState('all')
-  // const [teachers, setTeachers] = useState('Students and Teachers')
-  // const setTitle = (teachers) => {
-  //   setTeachers(teachers)
-  // }
-
-  // let filteredUsers = users
-  // if (filter === 'teachers') {
-  //   filteredUsers = users.filter((user) => {
-  //     return user.teacher === 'true'
-  //   })
-  // } else if (filter === 'students') {
-  //   filteredUsers = users.filter((user) => {
-  //     return user.teacher === 'false'
-  //   })
-  // }
-
-  // get the users
-
-  // filter by group
-  // return a value to display
-
-  // let filteredUsers = users
+    filterDisplayGroup('All')
+  }, [])
 
   function filterDisplayGroup (group, userData = users) {
     if (group === 'All') {
@@ -46,10 +22,8 @@ export default function Home () {
       setDisplayGroup(students)
     }
   }
-
   return (
     <>
-      {/* <h1 className='home_tittle'>{`${teachers}`}</h1> */}
       <div className='btn-container'>
         <button className='filter-btn' onClick={() => filterDisplayGroup('All')}>All</button>
         <button className='filter-btn' onClick={() => filterDisplayGroup('Teachers')}>Teachers</button>
