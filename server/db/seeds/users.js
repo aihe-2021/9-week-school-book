@@ -4,7 +4,7 @@ exports.seed = function (knex) {
       return knex('users').insert([
         {
           id: 1,
-          authId: '',
+          authId: '2VQXuq6Mpkh18MsmGgdZwjj8E1v1',
           name: 'Dane Williams',
           cohort: 'aihe-21',
           teacher: 'false',
