@@ -52,7 +52,7 @@ function getComment (commentId, db = connection) {
 }
 
 function addComment (userId, comment, commentBy, db = connection) {
-  console.log(userId, comment, commentBy)
+  console.log('db function: users 55', userId, comment, commentBy)
   const datePosted = new Date(Date.now())
   return db('comments')
     .insert({
