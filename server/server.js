@@ -1,18 +1,29 @@
 const express = require('express')
+const server = express()
 const path = require('path')
+const { handleRoutes } = require('./firebaseConfig/checkJwt')
+const loginSignup = require('./routes/user')
 
 const users = require('./routes/users')
 const comments = require('./routes/comments')
-const server = express()
 
-const loginSignup = require('./routes/user')
-
+const protectedRoutes = [
+  'login',
+  'POST'
+]
+// console.log(checkJwt)
 server.use(express.json())
 server.use(express.static(path.join(__dirname, 'public')))
 
+server.use(handleRoutes(protectedRoutes))
 server.use('/api/v1/users', users)
 server.use('/api/v1/comments', comments)
+
+// server.use(checkJwt)
 server.use('/api/v1/login', loginSignup)
+// server.use(function (err, req, res, next) {
+//   res.status(403).send(err.message)
+// })
 
 module.exports = server
 

@@ -1,7 +1,7 @@
 const express = require('express')
 const db = require('../db/users')
 const router = express.Router()
-const checkJwt = require('../firebaseConfig/checkJwt')
+// const checkJwt = require('../firebaseConfig/checkJwt')
 
 router.patch('/:commentId', (req, res) => {
   const id = req.params.commentId
@@ -21,7 +21,6 @@ router.delete('/:commentId', (req, res) => {
   const id = req.params.commentId
   db.deleteComment(id)
     .then((numDeleted) => {
-      console.log(numDeleted)
       res.status(200)
       return null
     })
@@ -33,7 +32,6 @@ router.delete('/:commentId', (req, res) => {
 
 router.get('/:userId', (req, res) => {
   const id = req.params.userId
-  console.log(id)
   db.getComments(id)
     .then((comments) => {
       res.json(comments)
@@ -45,11 +43,11 @@ router.get('/:userId', (req, res) => {
     })
 })
 
-router.post('/:userId', checkJwt, (req, res) => {
+router.post('/:userId', (req, res) => {
   const id = req.params.userId
   const comment = req.body.comment
-  const { uid } = req.user
-  console.log(uid, 'line52')
+  const { name, uid, email, picture, token } = req.user
+
   db.addComment(id, comment, uid)
     .then((commentId) => db.getComment(commentId))
     .then((comment) => res.json(comment))

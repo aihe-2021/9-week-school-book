@@ -53,10 +53,12 @@ export default function User (props) {
       <h1 className="nameHeading" >&#x0007B; {user.name} &#x0007D;</h1>
     </div>
     <div className='user__container-image'>
+
       <div className="container-image">
         {user.image && <img className='user-image' src={user.image} />}
         <div className='overlay-text content'>To change your profile picture <br/> update it on <a className="githubProfile" href="https://github.com/settings/profile">Github.</a></div>
       </div>
+
       <div className="socialmedia">
         <label><a href={`${user.facebook}`}><i className="fab fa-facebook"></i></a></label>
         <label><a href={`${user.linkedin}`}><i className="fab fa-linkedin"></i></a></label>
