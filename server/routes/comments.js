@@ -31,7 +31,7 @@ router.delete('/:commentId', (req, res) => {
     })
 })
 
-router.get('/users/:userId/comments', (req, res) => {
+router.get('/:userId/comments', (req, res) => {
   const id = req.params.userId
   console.log(id)
   db.getComments(id)
@@ -45,11 +45,11 @@ router.get('/users/:userId/comments', (req, res) => {
     })
 })
 
-router.post('/:userId', checkJwt, (req, res) => {
+router.post('/:userId/comments', checkJwt, (req, res) => {
   const id = req.params.userId
   const comment = req.body.comment
   const { uid } = req.user
-  console.log(uid)
+  console.log(uid, 'line52')
   db.addComment(id, comment, uid)
     .then((commentId) => db.getComment(commentId))
     .then((comment) => res.json(comment))

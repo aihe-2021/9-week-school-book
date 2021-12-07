@@ -4,7 +4,7 @@ import { Link, useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { setUsers } from '../actions'
 import UpdateUser from './UpdateUser'
-// import Comments from './Comments'
+import Comments from './Comments'
 import { getCommentsByUserId } from '../apis'
 import CommentForm from './CommentForm'
 
@@ -99,6 +99,10 @@ export default function User (props) {
             </p>
           </div>
         </Link>
+        <Comments
+          userId={userId}
+          comments={comments}
+          fetchComments={fetchComments} />
       </div>
     </div>
   </>

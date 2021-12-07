@@ -35,6 +35,7 @@ export function getCommentsByUserId (userId) {
       return res.body
     })
 }
+// working
 
 export function addCommentByUserId (userId, comment, token) {
   return request.post(`/api/v1/comments/${userId}`)
@@ -45,6 +46,8 @@ export function addCommentByUserId (userId, comment, token) {
       return res.body
     })
 }
+
+// working
 
 export function updateComment (comment) {
   return request.patch(`${userURL}/comments/${comment.id}`)

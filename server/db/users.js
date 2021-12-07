@@ -2,6 +2,8 @@ const knex = require('knex')
 const env = process.env.NODE_ENV || 'development'
 const config = require('./knexfile')[env]
 
+const allCommentsData = ['id', 'userId', 'comment_by_user', 'date_posted', 'comment']
+
 const connection = knex(config)
 
 // RETURN ALL USERS
@@ -44,15 +46,16 @@ function updateUser (id, data, db = connection) {
 // comment stuff
 
 function getComments (userId, db = connection) {
-  return db('comments').select().where({ userId })
+  console.log(userId)
+  return db('comments').select(allCommentsData).where({ userId })
 }
 
 function getComment (commentId, db = connection) {
-  return db('comments').select().where({ id: commentId }).first()
+  return db('comments').select(allCommentsData).where({ id: commentId }).first()
 }
 
 function addComment (userId, comment, commentBy, db = connection) {
-  console.log(userId, comment, commentBy)
+  console.log(userId, comment, commentBy, 'line56 of db')
   const datePosted = new Date(Date.now())
   return db('comments')
     .insert({
