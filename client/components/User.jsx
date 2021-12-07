@@ -32,7 +32,7 @@ export default function User () {
       <h1>{user.name}</h1>
     </div>
     <div className='user__container-image'>
-
+   
       {user.image && <img className='user-image' src={user.image} />}
 
       <div className="socialmedia">

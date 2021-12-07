@@ -16,7 +16,7 @@ export default function Navbar () {
           </li>
           <IfNotAuthenticated>
             <li>
-              <button onClick={login} className='navbar__right'>Signup | Login</button>
+              <button onClick={login} className='navbar__right'>Signup &#8739; Login</button>
             </li>
           </IfNotAuthenticated>
           <IfAuthenticated>
