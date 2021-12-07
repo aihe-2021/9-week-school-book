@@ -31,7 +31,7 @@ router.delete('/:commentId', (req, res) => {
     })
 })
 
-router.get('/:userId/comments', (req, res) => {
+router.get('/:userId', (req, res) => {
   const id = req.params.userId
   console.log(id)
   db.getComments(id)
@@ -45,7 +45,7 @@ router.get('/:userId/comments', (req, res) => {
     })
 })
 
-router.post('/:userId/comments', checkJwt, (req, res) => {
+router.post('/:userId', checkJwt, (req, res) => {
   const id = req.params.userId
   const comment = req.body.comment
   const { uid } = req.user

@@ -1,9 +1,9 @@
 const express = require('express')
 const path = require('path')
 
+const users = require('./routes/users')
 const comments = require('./routes/comments')
 const server = express()
-const users = require('./routes/users')
 
 const loginSignup = require('./routes/user')
 

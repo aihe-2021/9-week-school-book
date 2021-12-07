@@ -12,7 +12,7 @@ function Comment (props) {
   const { userId, comment, fetchComments } = props
   return (
     <div>
-      <p>Hello World I am the Comment . JSX</p>
+      {/* <p>Hello World I am the Comment . JSX</p> */}
       {/* <Routes>
         <Route
           path={`/users/${userId}/comments/${comment.id}`}
