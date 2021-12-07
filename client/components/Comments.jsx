@@ -7,14 +7,6 @@ function Comments (props) {
   console.log(props)
   return (
     <div>
-      <p>
-        Hello World
-        {/* <Link
-          className='pure-button'
-          to={`/users/${userId}/comments/new`}>
-            Add A New Comment
-        </Link> */}
-      </p>
       <div>
         {comments.map((comment) =>
           <Comment

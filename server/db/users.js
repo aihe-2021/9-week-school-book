@@ -58,7 +58,7 @@ function addComment (userId, comment, commentBy, db = connection) {
   const datePosted = new Date(Date.now())
   return db('comments')
     .insert({
-      user_id: userId,
+      userId: userId,
       comment,
       date_posted: datePosted,
       comment_by_user: commentBy

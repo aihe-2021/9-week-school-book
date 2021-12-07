@@ -1,6 +1,7 @@
 import request from 'superagent'
 const userURL = '/api/v1/users'
 const userVerification = '/api/v1/login'
+const comments = '/api/v1/comments'
 
 export function getUsers () {
   return request
@@ -30,7 +31,7 @@ export function updateUser (id, user) {
 // comments functions
 
 export function getCommentsByUserId (userId) {
-  return request.get(`/api/v1/comments/${userId}`)
+  return request.get(`${comments}/${userId}`)
     .then(res => {
       return res.body
     })
@@ -38,7 +39,7 @@ export function getCommentsByUserId (userId) {
 // working
 
 export function addCommentByUserId (userId, comment, token) {
-  return request.post(`/api/v1/comments/${userId}`)
+  return request.post(`${comments}/${userId}`)
     .send({ comment })
     .set('authorization', `Bearer ${token}`)
     .then(res => {
@@ -47,10 +48,8 @@ export function addCommentByUserId (userId, comment, token) {
     })
 }
 
-// working
-
 export function updateComment (comment) {
-  return request.patch(`${userURL}/comments/${comment.id}`)
+  return request.patch(`${comments}/${comment.id}`)
     .send(comment)
     .then(res => {
       return res.body
@@ -58,6 +57,6 @@ export function updateComment (comment) {
 }
 
 export function deleteComment (commentId) {
-  return request.del(`${userURL}/comments/${commentId}`)
+  return request.del(`${comments}/${commentId}`)
     .then(res => res)
 }

@@ -4,8 +4,8 @@ const path = require('path')
 const { handleRoutes } = require('./firebaseConfig/checkJwt')
 const loginSignup = require('./routes/user')
 
-const comments = require('./routes/comments')
 const users = require('./routes/users')
+const comments = require('./routes/comments')
 
 const protectedRoutes = [
   'login',

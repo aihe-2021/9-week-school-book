@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 import { useSelector } from 'react-redux'
 import { setUsers } from '../actions'
@@ -94,13 +94,13 @@ export default function User (props) {
       <div className='use__profile-comment'>
         <h2>Give Me Some Feedback</h2>
         <CommentForm userId={userId}/>
-        <Link to={`/users/${userId}/comments`}>
+        {/* <Link to={`/users/${userId}/comments`}>
           <div className='comment-count'>
             <p>
               {comments.length} comments
             </p>
           </div>
-        </Link>
+        </Link> */}
         <Comments
           userId={userId}
           comments={comments}
