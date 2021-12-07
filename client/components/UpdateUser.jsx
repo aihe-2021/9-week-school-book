@@ -41,7 +41,7 @@ const EditUser = ({ id, updateTheUser }) => {
 
   return (
     <div>
-      <button className='edit' onClick={() => { setShowForm(!showForm) }}>Update Student Profile Info</button>
+      <button className='edit' onClick={() => { setShowForm(!showForm) }}>Update Profile Info</button>
       {showForm &&
       <form onSubmit={evt => { handleSubmit(evt, id) }}>
         <ul><br/>

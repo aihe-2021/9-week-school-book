@@ -72,7 +72,7 @@ export default function User (props) {
       {/* USER PROFILE  */}
 
       <div className='user__profile-info'>
-        <h2>Student Profile</h2>
+        <h2>Profile</h2>
         {/* <label><h3>Cohort:</h3><h4>{user.cohort}</h4></label><br /> */}
         <label><h3 className ="updateInstructions" >Scroll Down to Update Profile Info</h3></label><br />
         <label><h3>Email:</h3><h4>{user.email}</h4></label><br />

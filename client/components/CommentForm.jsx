@@ -21,7 +21,7 @@ function CommentForm ({ userId }) {
         onChange={(e) => setComment(e.target.value)}
       /><br />
       {/* <p>Add New Comment</p> */}
-      <button className="commentButton" type='submit'>Post Your Comment</button>
+      <button className="commentButton" type='submit'>Post Your Feelings</button>
     </form>
   )
 }
