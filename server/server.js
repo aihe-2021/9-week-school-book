@@ -15,3 +15,5 @@ server.use('/api/v1/comments', comments)
 server.use('/api/v1/login', loginSignup)
 
 module.exports = server
+
+// if you use browser router then you need to return a wildcard

@@ -8,7 +8,7 @@ export function listenForUser () {
 
   auth.onAuthStateChanged((user) => {
     if (user) {
-      user.getIdToken()
+      return user.getIdToken()
         .then(token => dispatch(authenticateUser(token)))
         .catch(e => console.log(e)) // if the user was not verified => log error signing in to the account
     } else {
