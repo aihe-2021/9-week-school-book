@@ -260,7 +260,7 @@ ul {
 // COMMENT COMPONENT
 
 .comment-container {
-  border: 1px solid purple;
+  // border: 1px solid purple;
   margin-top: 10%;
   margin-bottom: 10%;
 }
@@ -464,7 +464,6 @@ footer p {
   }
 
   .user__container {
-    
     flex-direction: column;
     width: 100%;
   }
@@ -489,6 +488,23 @@ footer p {
     border-left: none;
     padding-right: 0;
     // border: 1px solid rgb(228, 135, 228);
+  }
+
+  .comment-content-by {
+    border: 1px solid blue;
+    width: 100%;
+    display: block;
+  }
+  
+  .comment-date {
+    border: 1px solid orange;
+    width: 100%;
+    display: block;
+  }
+  
+  .comment-content {
+  display: block;
+  border: 1px solid rgb(122, 22, 100);
   }
 }
 
