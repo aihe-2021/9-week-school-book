@@ -16,14 +16,14 @@ function Comment (props) {
     <div>
       <div className="comment" key={comment.id}>
         <p>
+          <span className="comment-content-by"><b>By:</b> {comment.name}</span>
+          <span className="comment-date">{new Date(comment.date).toDateString()}</span>
           <span className="comment-content">{comment.comment}</span>
-          <span className="comment-date">Date Posted: {new Date(comment.date).toDateString()}</span>
-          <span className="comment-content">Posted By:{comment.name}</span>
 
           <IfAuthenticated>
             {/* <Link to={`/users/${userId}/comments/${comment.id}`}>
               <button className='pure-button'>Edit</button>
-            </Link> */}
+            </Link> commented out - editing comments is stretch. */}
             <button
               className='pure-button'
               onClick={() => handleDeleteComment(token)}>

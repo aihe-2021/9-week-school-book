@@ -3,7 +3,7 @@ import { getUsers } from './'
 
 describe('getUsers', () => {
   it('returns data from /api/v1/users', () => {
-    const scope = nock('http://localhost')
+    const scope = nock('http://')
       .get('/api/v1/users')
       .reply(200, [{ id: 1, name: 'test 1' }])
 

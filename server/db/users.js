@@ -2,7 +2,7 @@ const knex = require('knex')
 const env = process.env.NODE_ENV || 'development'
 const config = require('./knexfile')[env]
 
-const allCommentsData = ['id', 'userId', 'comment_by_user', 'date_posted', 'comment']
+// const allCommentsData = ['id', 'userId', 'comment_by_user', 'date_posted', 'comment']
 
 const connection = knex(config)
 
@@ -65,7 +65,7 @@ function addComment (userId, comment, commentBy, db = connection) {
       comment,
       date_posted: datePosted,
       comment_by_user: commentBy
-    })
+    }, 'id')
 }
 
 function updateComment (commentId, comment, token, db = connection) {

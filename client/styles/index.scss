@@ -206,25 +206,21 @@ ul {
   margin: 10px 10px 10px 0px;
   border-radius: 5px;
   float: right;
-  // overflow: auto;  
 }
 
 .user__container {
-  // border: 1px solid blue;
   display: flex;
   height: auto;
   flex-direction: row;
 }
 
 .user__profile-info {
-  // border: 1px solid rgb(0, 255, 64);
   width: 100%;
   margin-top: 50px;
   flex-direction: row;
   padding: 2%;
   padding-left: 200px;
   border-right: 2px solid #e84e3d;
-  // border: 1px solid purple;
   padding-bottom: 5%;
 }
 
@@ -237,7 +233,6 @@ ul {
   text-align: center;
   margin-bottom: 10%;
   padding: 1%;
-  // border-bottom: 2px solid #cccccc;
 }
 
 .use__profile-comment {
@@ -247,43 +242,56 @@ ul {
   padding: 2%;
   padding-right: 100px;
   border-left: 2px solid #e84e3d;
-  // border: 1px solid aquamarine;
 }
 
 .use__profile-comment h2 {
   text-align: center;
   margin-bottom: 10%;
   padding: 1%;
-  // border-bottom: 2px solid #cccccc;
+}
+
+.comment-form {
+  height: auto;
+  padding-bottom: 80px;
 }
 
 // COMMENT COMPONENT
 
 .comment-container {
-  border: 1px solid purple;
-  margin-top: 10%;
   margin-bottom: 10%;
 }
 
 .comment {
-  border: 1px solid red;
-  padding-top: 10px;
-  padding: 20px;
   display: block;
   border-bottom: 1px solid #CCCCCC;
-  overflow: auto;  
-} 
+ } 
 
-.comment-content {
-  border: 1px solid blue;
+.comment-content-by {
+  width: 50%;
+  float: left;
 }
 
 .comment-date {
-  border: 1px solid orange;
+  width: 50%;
+  float: right;
+  text-align: right;
+}
+
+.comment-content {
+display: block;
 }
 
 .pure-button {
-  border: 1px solid green;
+  color: #3097AA;
+  background: transparent;
+  border-color: transparent;
+  cursor: pointer;
+  font-size: 1rem;
+  text-transform: capitalize;
+  border: 1px solid #e9e9e9;
+  border-radius: 8%;
+  margin-top: 1%;
+  padding: 5px;
 }
 
 .inputFields {
@@ -440,7 +448,6 @@ footer p {
   }
 
   .user__container {
-    
     flex-direction: column;
     width: 100%;
   }
@@ -464,7 +471,30 @@ footer p {
     margin-left: auto;
     border-left: none;
     padding-right: 0;
-    // border: 1px solid rgb(228, 135, 228);
+  }
+
+  
+  .comment {
+    padding-top: 10px;
+    padding: 20px;
+    display: block;
+    border-bottom: 1px solid #CCCCCC;
+    text-align: left;
+   } 
+
+  .comment-content-by {
+     width: 100%;
+    display: block;
+  }
+  
+  .comment-date {
+    width: 100%;
+    display: block;
+    text-align: left;
+  }
+  
+  .comment-content {
+  display: block;
   }
 }
 
@@ -504,5 +534,32 @@ footer p {
     margin-left: auto;
     border-left: none;
     padding-right: 0;
+  }
+
+  .comment {
+    padding-top: 10px;
+    padding: 20px;
+    display: block;
+    border-bottom: 1px solid #CCCCCC;
+    text-align: left;
+   } 
+
+  .comment-content-by {
+     width: 100%;
+    display: block;
+  }
+  
+  .comment-date {
+    width: 100%;
+    display: block;
+    text-align: left;
+  }
+  
+  .comment-content {
+  display: block;
+  }
+
+  .comment-container {
+    margin-bottom: 20%;
   }
 }
