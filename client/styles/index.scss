@@ -5,7 +5,7 @@
 }
 
 body {
-  font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Hind', sans-serif;
 }
 
 ul {
@@ -205,10 +205,9 @@ ul {
   padding: 5px;
   margin: 10px 10px 10px 0px;
   border-radius: 5px;
-  font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  float: right;
+  // overflow: auto;  
 }
-
-// SECOND CONTAINER ///////////////////////////
 
 .user__container {
   display: flex;
@@ -257,8 +256,38 @@ ul {
   // border-bottom: 2px solid #cccccc;
 }
 
+// COMMENT COMPONENT
+
+.comment {
+  border: 1px solid red;
+  padding-top: 10px;
+  padding: 20px;
+  display: block;
+  border-bottom: 1px solid #CCCCCC;
+  overflow: auto;  
+} 
+
+.comment-content {
+  border: 1px solid blue;
+}
+
+.comment-date {
+  border: 1px solid orange;
+}
+
+.pure-button {
+  border: 1px solid green;
+}
+
+
 .inputFields {
   text-align: right;
+}
+
+textarea {
+  resize: none;
+  width: 100%;
+  padding: 10px;
 }
 
 .user__profileImage-form {
@@ -274,6 +303,7 @@ ul {
   height: auto;
   color: white;
   transition-duration: 0.8s;
+
 }
 
 .user__profileImage-form:hover {

@@ -8,32 +8,8 @@ export default function Home () {
   const [displayGroupName, setDisplayGroupName] = useState('Students and Teachers')
 
   useEffect(() => {
-
-  }, [displayGroup])
-
-  // const [filter, setFilter] = useState('all')
-  // const [teachers, setTeachers] = useState('Students and Teachers')
-  // const setTitle = (teachers) => {
-  //   setTeachers(teachers)
-  // }
-
-  // let filteredUsers = users
-  // if (filter === 'teachers') {
-  //   filteredUsers = users.filter((user) => {
-  //     return user.teacher === 'true'
-  //   })
-  // } else if (filter === 'students') {
-  //   filteredUsers = users.filter((user) => {
-  //     return user.teacher === 'false'
-  //   })
-  // }
-
-  // get the users
-
-  // filter by group
-  // return a value to display
-
-  // let filteredUsers = users
+    setDisplayGroup(users)
+  }, [users])
 
   function filterDisplayGroup (group, userData = users) {
     if (group === 'All') {

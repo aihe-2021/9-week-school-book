@@ -23,7 +23,8 @@ function CommentForm (props) {
 
   return (
     <form type='submit' className="comment-form pure-form" onSubmit={(e) => handleSubmit(e, userId, comment, token)}>
-      <input
+      <textarea
+        rows='5'
         type='text'
         name='comment'
         value={comment}

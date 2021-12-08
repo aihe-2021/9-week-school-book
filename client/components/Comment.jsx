@@ -6,7 +6,7 @@ import { IfAuthenticated } from './Authenticated'
 
 function Comment (props) {
   const token = useSelector(state => state.user.token)
-
+  console.log(props)
   function handleDeleteComment (token) {
     return deleteComment(props.comment.id, token)
       .then(() => props.fetchComments(props.userId))

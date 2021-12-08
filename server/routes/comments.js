@@ -1,7 +1,6 @@
 const express = require('express')
 const db = require('../db/users')
 const router = express.Router()
-// const checkJwt = require('../firebaseConfig/checkJwt')
 
 router.patch('/:commentId', (req, res) => {
   const id = req.params.commentId

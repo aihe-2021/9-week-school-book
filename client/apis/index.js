@@ -43,10 +43,7 @@ export function addCommentByUserId (userId, comment, token) {
   return request.post(`${comments}/${userId}`)
     .send({ comment })
     .set('authorization', `Bearer ${token}`)
-    .then(res => {
-      console.log(res.body)
-      return res.body
-    })
+    .then(res => res.body)
 }
 
 export function updateComment (comment, token) {

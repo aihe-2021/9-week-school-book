@@ -43,15 +43,20 @@ function updateUser (id, data, db = connection) {
     })
 }
 
-// comment stuff
-
 function getComments (userId, db = connection) {
-  console.log(userId)
-  return db('comments').select(allCommentsData).where({ userId })
+  return db('comments')
+    .join('users', 'comments.comment_by_user', 'users.authId')
+    .select()
+    .where({ 'comments.userId': userId })
+    .first()
 }
 
 function getComment (commentId, db = connection) {
-  return db('comments').select(allCommentsData).where({ id: commentId }).first()
+  return db('comments')
+    .join('users', 'comments.comment_by_user', 'users.authId')
+    .select()
+    .where({ 'comments.id': commentId })
+    .first()
 }
 
 function addComment (userId, comment, commentBy, db = connection) {
