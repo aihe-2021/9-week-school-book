@@ -20,7 +20,10 @@ router.delete('/:commentId', (req, res) => {
 router.get('/:userId', (req, res) => {
   const id = req.params.userId
   db.getComments(id)
-    .then((comments) => res.json(comments))
+    .then((comments) => {
+      console.log(comments)
+      return res.json(comments)
+    })
     .catch(() => res.status(500).json({ message: 'database error' }))
 })
 
