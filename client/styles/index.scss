@@ -269,7 +269,7 @@ ul {
   border: 1px solid red;
   padding-top: 10px;
   padding: 20px;
-  
+  display: block;
   border-bottom: 1px solid #CCCCCC;
  } 
 
@@ -279,13 +279,22 @@ ul {
   display: table;
  } 
 
-.comment-content {
+.comment-content-by {
   border: 1px solid blue;
-  display: block;
+  
+  width: 50%;
+  float: left;
 }
 
 .comment-date {
   border: 1px solid orange;
+  width: 50%;
+  float: right;
+}
+
+.comment-content {
+display: block;
+border: 1px solid rgb(122, 22, 100);
 }
 
 .pure-button {
