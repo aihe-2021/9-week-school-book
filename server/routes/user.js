@@ -23,18 +23,17 @@ router.get('/', (req, res) => {
         return updateUserId(userObj)
           .then(() => getUserData(userObj))
           .then(userdata => res.json(Object.assign(userdata[0], { token })))
-          .catch(error => console.log(error))
+          .catch(error => res.status(404).send(error))
       } else {
         return addUser(userObj)
           .then(() => getUserData(userObj))
           .then(userdata => res.json(Object.assign(userdata[0], { token })))
+          .catch(error => res.status(404).send(error))
       }
     } else {
       return getUserData(userObj)
-        .then(userdata => {
-          return res.json(Object.assign(userdata[0], { token }))
-        })
-        .catch(error => console.log(error))
+        .then(userdata => res.json(Object.assign(userdata[0], { token })))
+        .catch(error => res.status(404).send(error))
     }
   }
   handleUser(userProfile, token)

@@ -103,7 +103,8 @@ export default function User () {
         <Comments
           userId={userId}
           comments={comments}
-          fetchComments={fetchComments} />
+          fetchComments={fetchComments}
+          setComments={setComments} />
       </div>
     </div>
   </>

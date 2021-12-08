@@ -24,16 +24,13 @@ export function updateUser (id, user, token) {
     .patch(`${userURL}/${id}`)
     .set('authorization', `Bearer ${token}`)
     .send(user)
-    .then(res => {
-      return res.body
-    })
+    .then(res => res.body)
 }
 
 export function getCommentsByUserId (userId) {
   return request.get(`${comments}/${userId}`)
-    .then(res => {
-      return res.body
-    })
+    .then(res => res.body)
+
 }
 
 export function addCommentByUserId (userId, comment, token) {
@@ -47,13 +44,11 @@ export function updateComment (comment, token) {
   return request.patch(`${comments}/${comment.id}`)
     .set('authorization', `Bearer ${token}`)
     .send(comment)
-    .then(res => {
-      return res.body
-    })
+    .then(res => res.body)
 }
 
 export function deleteComment (commentId, token) {
   return request.del(`${comments}/${commentId}`)
     .set('authorization', `Bearer ${token}`)
-    .then(res => res)
+    .then(res => res.body)
 }

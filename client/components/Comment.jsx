@@ -1,14 +1,14 @@
 import React from 'react'
-// import { Link } from 'react-router-dom'
 import { deleteComment } from '../apis'
 import { useSelector } from 'react-redux'
 import { IfAuthenticated } from './Authenticated'
 
 function Comment (props) {
   const token = useSelector(state => state.user.token)
+
   function handleDeleteComment (token) {
-    return deleteComment(props.comment.id, token)
-      .then(() => props.fetchComments(props.userId))
+    deleteComment(props.comment.id, token)
+    return props.fetchComments(props.userId)
   }
 
   const { comment } = props

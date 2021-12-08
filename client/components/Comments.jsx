@@ -2,8 +2,9 @@ import React from 'react'
 
 import Comment from './Comment'
 function Comments (props) {
-  const { userId, comments, fetchComments } = props
-  return (
+
+  const { userId, comments, fetchComments, setComments } = props
+=  return (
     <div>
       <div className='comment-container'>
         {comments.map((comment) =>
@@ -12,6 +13,7 @@ function Comments (props) {
             userId={userId}
             comment={comment}
             fetchComments={fetchComments}
+            setComments={setComments}
           />
         )}
       </div>
