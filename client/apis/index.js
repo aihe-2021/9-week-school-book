@@ -29,16 +29,10 @@ export function updateUser (id, user, token) {
     })
 }
 
-// comments functions
-
 export function getCommentsByUserId (userId) {
   return request.get(`${comments}/${userId}`)
-    .then(res => {
-      console.log('these are the api comments', res.body)
-      return res.body
-    })
+    .then(res => res.body)
 }
-// working
 
 export function addCommentByUserId (userId, comment, token) {
   return request.post(`${comments}/${userId}`)
