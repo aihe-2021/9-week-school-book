@@ -12,7 +12,6 @@ function Comment (props) {
   }
 
   const { comment } = props
-  console.log(comment)
   return (
     <div>
       <div className="comment" key={comment.id}>

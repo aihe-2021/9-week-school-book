@@ -32,7 +32,6 @@ export function updateUser (id, user, token) {
 export function getCommentsByUserId (userId) {
   return request.get(`${comments}/${userId}`)
     .then(res => {
-      console.log(res.body)
       return res.body
     })
 }
