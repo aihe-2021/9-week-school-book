@@ -15,7 +15,6 @@ function CommentForm (props) {
       })
       .then((comments) => {
         setComments(comments)
-        console.log(comments)
         return null
       })
       .catch(err => console.log(err))

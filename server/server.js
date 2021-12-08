@@ -23,4 +23,8 @@ server.use('/api/v1/users', users)
 server.use('/api/v1/comments', comments)
 server.use('/api/v1/login', loginSignup)
 
+server.get('*', (req, res) => {
+  res.sendFile(path.resolve('server/public/index.html'))
+})
+
 module.exports = server

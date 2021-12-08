@@ -7,40 +7,22 @@ router.patch('/:commentId', (req, res) => {
   const id = req.params.commentId
   const comment = req.body.comment
   db.updateComment(id, comment)
-    .then((comment) => {
-      res.json(comment)
-      return null
-    })
-    .catch(e => {
-      console.log(e.message)
-      res.status(500).json({ message: 'database error' })
-    })
+    .then((comment) => res.json(comment))
+    .catch(() => res.status(500).json({ message: 'database error' }))
 })
 
 router.delete('/:commentId', (req, res) => {
   const id = req.params.commentId
   db.deleteComment(id)
-    .then((numDeleted) => {
-      res.status(200)
-      return null
-    })
-    .catch(e => {
-      console.log(e.message)
-      res.status(500).json({ message: 'database error' })
-    })
+    .then((numDeleted) => res.status(200))
+    .catch(() => res.status(500).json({ message: 'database error' }))
 })
 
 router.get('/:userId', (req, res) => {
   const id = req.params.userId
   db.getComments(id)
-    .then((comments) => {
-      res.json(comments)
-      return null
-    })
-    .catch(e => {
-      console.log(e.message)
-      res.status(500).json({ message: 'database error' })
-    })
+    .then((comments) => res.json(comments))
+    .catch(() => res.status(500).json({ message: 'database error' }))
 })
 
 router.post('/:userId', (req, res) => {
@@ -51,10 +33,7 @@ router.post('/:userId', (req, res) => {
   db.addComment(id, comment, uid)
     .then((commentId) => db.getComment(commentId))
     .then((comment) => res.json(comment))
-    .catch(e => {
-      console.log(e.message)
-      res.status(500).json({ message: 'database error' })
-    })
+    .catch(() => res.status(500).json({ message: 'database error' }))
 })
 
 module.exports = router
