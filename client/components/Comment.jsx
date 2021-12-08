@@ -11,20 +11,20 @@ function Comment (props) {
       .then(() => props.fetchComments(props.userId))
   }
 
-  const { userId, comment } = props
+  const { comment } = props
   console.log(comment)
   return (
     <div>
       <div className="comment" key={comment.id}>
         <p>
+          <span className="comment-content">Posted By: {comment.name}</span>
           <span className="comment-content">{comment.comment}</span>
           <span className="comment-date">Date Posted: {new Date(comment.date).toDateString()}</span>
-          <span className="comment-content">Posted By:{comment.name}</span>
 
           <IfAuthenticated>
             {/* <Link to={`/users/${userId}/comments/${comment.id}`}>
               <button className='pure-button'>Edit</button>
-            </Link> */}
+            </Link> commented out - editing comments is stretch. */}
             <button
               className='pure-button'
               onClick={() => handleDeleteComment(token)}>

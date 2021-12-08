@@ -269,13 +269,19 @@ ul {
   border: 1px solid red;
   padding-top: 10px;
   padding: 20px;
-  display: block;
+  
   border-bottom: 1px solid #CCCCCC;
-  overflow: auto;  
-} 
+ } 
+
+.comment:after {
+  content: "";
+  clear: both;
+  display: table;
+ } 
 
 .comment-content {
   border: 1px solid blue;
+  display: block;
 }
 
 .comment-date {
