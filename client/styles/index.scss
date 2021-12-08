@@ -267,6 +267,7 @@ ul {
  } 
 
 .comment-content-by {
+  // margin-top: 1%;
   width: 50%;
   float: left;
 }
@@ -291,6 +292,7 @@ display: block;
   border: 1px solid #e9e9e9;
   border-radius: 8%;
   margin-top: 1%;
+  margin-bottom: 1%;
   padding: 5px;
 }
 
@@ -480,6 +482,7 @@ footer p {
     display: block;
     border-bottom: 1px solid #CCCCCC;
     text-align: left;
+    margin-bottom: 10px;
    } 
 
   .comment-content-by {
