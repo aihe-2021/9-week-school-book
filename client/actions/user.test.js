@@ -12,7 +12,6 @@ const fakeUser = {
 }
 
 describe('authenticateUser', () => {
-
   it('clears the user on failure', () => {
     expect.assertions(1)
     const fakeError = new Error('fake error')
@@ -22,20 +21,19 @@ describe('authenticateUser', () => {
 
     return authenticateUser(fakeUser)(dispatch)
       .then(() => {
-
         console.log(dispatch.mock.calls)
         // expect(dispatch.mock.calls[0][0].type).toEqual('SHOW_ERROR')
         // expect(dispatch.mock.calls[1][0].type).toEqual('CLEAR_USER')
         expect(dispatch.mock.calls).toEqual(fakeError)
-        // return null
+        return null
       })
   })
- })
+})
 //  describe('verifyUserHandler', () => {
 //     it('calls SET_CURRENT_USER on success', () => {
 //       const dispatch = jest.fn()
 //       verifyUser.mockReturnValue(Promise.resolve({ statusType: 2 }))
-  
+
 //       return verifyUserHandler(fakeUser)(dispatch).then(() => {
 //         expect(verifyUser).toHaveBeenCalledWith(fakeUser)
 //         expect(dispatch.mock.calls[0][0].type).toEqual('SET_CURRENT_USER')
@@ -57,6 +55,5 @@ describe('authenticateUser', () => {
 //       })
 //   })
 // })
-
 
 // https://github.com/aihe-2021/jobs-diary/blob/dev/client/actions/__tests__/users.test.js

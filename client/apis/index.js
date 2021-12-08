@@ -30,7 +30,6 @@ export function updateUser (id, user, token) {
 export function getCommentsByUserId (userId) {
   return request.get(`${comments}/${userId}`)
     .then(res => res.body)
-
 }
 
 export function addCommentByUserId (userId, comment, token) {
