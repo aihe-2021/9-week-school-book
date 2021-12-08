@@ -15,8 +15,6 @@ export function fetchUsers () {
       .then(users => {
         return dispatch(setUsers(users))
       })
-      .catch(e => {
-        console.log(e)
-      })
+      .catch(e => e)
   }
 }

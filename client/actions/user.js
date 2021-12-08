@@ -19,9 +19,6 @@ export function authenticateUser (token) {
   return (dispatch) => {
     return verifyUser(token)
       .then(users => dispatch(setUser(users)))
-      .catch(error => {
-        console.log(error)
-        return error
-      })
+      .catch(error => error)
   }
 }

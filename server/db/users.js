@@ -38,13 +38,11 @@ function updateUser (id, data, db = connection) {
       return getOne(id, db)
     })
     .catch(err => {
-      console.error(err)
       throw err
     })
 }
 
 function getComments (userId, db = connection) {
-  console.log(typeof userId)
   return db('users')
     .join('comments', 'users.authId', 'comments.comment_by_user')
     .select('comments.id as id', 'users.name as name', 'date_posted as date', 'comments.comment as comment')

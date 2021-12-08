@@ -6,17 +6,11 @@ function CommentForm (props) {
   const { userId, setComments } = props
   const [comment, setComment] = useState('')
   const token = useSelector(state => state.user.token)
-
   function handleSubmit (event, userId, comment, token) {
     event.preventDefault()
     addCommentByUserId(userId, comment, token)
-      .then(() => {
-        return getCommentsByUserId(userId)
-      })
-      .then((comments) => {
-        setComments(comments)
-        return null
-      })
+      .then(() => getCommentsByUserId(userId))
+      .then((comments) => setComments(comments))
       .catch(err => console.log(err))
     return setComment('')
   }
