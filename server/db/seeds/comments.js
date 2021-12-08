@@ -1,9 +1,9 @@
 exports.seed = (knex) => {
   // Deletes ALL existing entries
-  return knex('Comments').del()
+  return knex('comments').del()
     .then(() => {
       // Inserts seed entries
-      return knex('Comments').insert([
+      return knex('comments').insert([
         {
           id: 1,
           userId: 1,
