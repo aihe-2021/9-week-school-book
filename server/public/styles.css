@@ -258,6 +258,7 @@ ul {
 .comment {
   display: block;
   border-bottom: 1px solid #CCCCCC;
+  margin-bottom: 5%;
 }
 
 .comment-content-by {
@@ -476,7 +477,6 @@ footer p {
   }
 
   .comment-content-by {
-    padding-top: 3px;
     width: 100%;
     display: block;
   }
