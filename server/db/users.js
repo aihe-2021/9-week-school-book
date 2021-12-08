@@ -67,7 +67,7 @@ function addComment (userId, comment, commentBy, db = connection) {
       comment,
       date_posted: datePosted,
       comment_by_user: commentBy
-    })
+    }, 'id')
 }
 
 function updateComment (commentId, comment, token, db = connection) {

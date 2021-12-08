@@ -24,7 +24,7 @@ function updateUserId ({ name, authId, email, image }, db = connection) {
 
 function addUser (userObj, db = connection) {
   return db('users')
-    .insert(userObj)
+    .insert(userObj, 'id')
 }
 
 function getUserData ({ name, authId, image, email }, db = connection) {
