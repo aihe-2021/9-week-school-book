@@ -13,24 +13,21 @@ router.patch('/:commentId', (req, res) => {
 router.delete('/:commentId', (req, res) => {
   const id = req.params.commentId
   db.deleteComment(id)
-    .then((numDeleted) => res.status(200))
+    .then(() => res.status(200))
     .catch(() => res.status(500).json({ message: 'database error' }))
 })
 
 router.get('/:userId', (req, res) => {
   const id = req.params.userId
   db.getComments(id)
-    .then((comments) => {
-      console.log(comments)
-      return res.json(comments)
-    })
+    .then((comments) => res.json(comments))
     .catch(() => res.status(500).json({ message: 'database error' }))
 })
 
 router.post('/:userId', (req, res) => {
   const id = req.params.userId
   const comment = req.body.comment
-  const { name, uid, email, picture, token } = req.user
+  const { uid } = req.user
 
   db.addComment(id, comment, uid)
     .then((commentId) => db.getComment(commentId))

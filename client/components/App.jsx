@@ -27,7 +27,6 @@ function App () {
           <Route path='/users/:id/*' element={<User />} />
           <Route path='/home' element={<Home />} />
           <Route path='/' element={<Intro />} />
-          {/* <Route path='/users/:userId/comments/:commentId' element={<User />} /> */}
           <Route path='/users/:userId/comments' element={<Comments />} />
           <Route path-='/users/:id/comments/:commentid' element={<Comment />} />
         </Routes>

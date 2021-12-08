@@ -1,10 +1,8 @@
 import React from 'react'
-// import { Link } from 'react-router-dom'
 
 import Comment from './Comment'
 function Comments (props) {
-  // console.log('these are the props', props)
-  const { userId, comments, fetchComments } = props
+  const { userId, comments, fetchComments, setComments } = props
   return (
     <div>
       <div className='comment-container'>
@@ -14,6 +12,7 @@ function Comments (props) {
             userId={userId}
             comment={comment}
             fetchComments={fetchComments}
+            setComments={setComments}
           />
         )}
       </div>
