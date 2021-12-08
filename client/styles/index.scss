@@ -257,6 +257,10 @@ ul {
   // border-bottom: 2px solid #cccccc;
 }
 
+.comment-form {
+  border: 1px solid yellow;
+}
+
 // COMMENT COMPONENT
 
 .comment-container {
@@ -490,36 +494,28 @@ footer p {
     // border: 1px solid rgb(228, 135, 228);
   }
 
-  .comment-container {
-    border: 1px solid purple;
-    // margin-top: 10%;
-    // margin-bottom: 10%;
-    text-align: right;
-  }
   
   .comment {
-    border: 1px solid red;
     padding-top: 10px;
     padding: 20px;
     display: block;
     border-bottom: 1px solid #CCCCCC;
+    text-align: left;
    } 
 
   .comment-content-by {
-    border: 1px solid blue;
-    width: 100%;
+     width: 100%;
     display: block;
   }
   
   .comment-date {
-    border: 1px solid orange;
     width: 100%;
     display: block;
+    text-align: left;
   }
   
   .comment-content {
   display: block;
-  border: 1px solid rgb(122, 22, 100);
   }
 }
 

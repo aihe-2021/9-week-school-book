@@ -246,6 +246,10 @@ ul {
   padding: 1%;
 }
 
+.comment-form {
+  border: 1px solid yellow;
+}
+
 .comment-container {
   margin-top: 10%;
   margin-bottom: 10%;
@@ -474,34 +478,27 @@ footer p {
     padding-right: 0;
   }
 
-  .comment-container {
-    border: 1px solid purple;
-    text-align: right;
-  }
-
   .comment {
-    border: 1px solid red;
     padding-top: 10px;
     padding: 20px;
     display: block;
     border-bottom: 1px solid #CCCCCC;
+    text-align: left;
   }
 
   .comment-content-by {
-    border: 1px solid blue;
     width: 100%;
     display: block;
   }
 
   .comment-date {
-    border: 1px solid orange;
     width: 100%;
     display: block;
+    text-align: left;
   }
 
   .comment-content {
     display: block;
-    border: 1px solid #7a1664;
   }
 }
 /**************
