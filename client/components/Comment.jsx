@@ -14,7 +14,7 @@ function Comment (props) {
 
   const { userId, comment } = props
   return (
-    <div>
+    <div className='comment-container'>
       <div className="comment" key={comment.id}>
         <p>
           <span className="comment-content">{comment.comment}</span>

@@ -3,8 +3,8 @@ import React from 'react'
 
 import Comment from './Comment'
 function Comments (props) {
+  console.log('these are the props', props)
   const { userId, comments, fetchComments } = props
-  console.log(props)
   return (
     <div>
       <div>
