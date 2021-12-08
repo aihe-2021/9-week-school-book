@@ -16,8 +16,8 @@ function Comment (props) {
     <div>
       <div className="comment" key={comment.id}>
         <p>
-          <span className="comment-content-by">Posted By: {comment.name}</span>
-          <span className="comment-date">Date Posted: {new Date(comment.date).toDateString()}</span>
+          <span className="comment-content-by"><b>Posted By:</b> {comment.name}</span>
+          <span className="comment-date">{new Date(comment.date).toDateString()}</span>
           <span className="comment-content">{comment.comment}</span>
 
           <IfAuthenticated>

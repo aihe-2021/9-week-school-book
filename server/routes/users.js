@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
     })
 })
 
-// GET ONE USER:  http://localhost:3000/api/v1/users/1
+// GET ONE USER:
 router.get('/:id', (req, res) => {
   db.getOne(req.params.id)
     .then(user => res.json(user))
