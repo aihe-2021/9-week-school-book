@@ -258,39 +258,32 @@ ul {
 }
 
 .comment-form {
-  border: 1px solid yellow;
+  // border: 1px solid yellow;
+  height: auto;
+  padding-bottom: 80px;
 }
 
 // COMMENT COMPONENT
 
 .comment-container {
   // border: 1px solid purple;
-  margin-top: 10%;
   margin-bottom: 10%;
 }
 
 .comment {
-  border: 1px solid red;
-  padding-top: 10px;
-  padding: 20px;
+  // border: 1px solid red;
   display: block;
   border-bottom: 1px solid #CCCCCC;
  } 
 
-.comment:after {
-  content: "";
-  clear: both;
-  display: table;
- } 
-
 .comment-content-by {
-  border: 1px solid blue;
+  // border: 1px solid blue;
   width: 50%;
   float: left;
 }
 
 .comment-date {
-  border: 1px solid orange;
+  // border: 1px solid orange;
   width: 50%;
   float: right;
   text-align: right;
@@ -298,7 +291,7 @@ ul {
 
 .comment-content {
 display: block;
-border: 1px solid rgb(122, 22, 100);
+// border: 1px solid rgb(122, 22, 100);
 }
 
 .pure-button {
@@ -555,5 +548,32 @@ footer p {
     margin-left: auto;
     border-left: none;
     padding-right: 0;
+  }
+
+  .comment {
+    padding-top: 10px;
+    padding: 20px;
+    display: block;
+    border-bottom: 1px solid #CCCCCC;
+    text-align: left;
+   } 
+
+  .comment-content-by {
+     width: 100%;
+    display: block;
+  }
+  
+  .comment-date {
+    width: 100%;
+    display: block;
+    text-align: left;
+  }
+  
+  .comment-content {
+  display: block;
+  }
+
+  .comment-container {
+    margin-bottom: 20%;
   }
 }
