@@ -3,11 +3,11 @@ import React from 'react'
 
 import Comment from './Comment'
 function Comments (props) {
-  console.log('these are the props', props)
+  // console.log('these are the props', props)
   const { userId, comments, fetchComments } = props
   return (
     <div>
-      <div>
+      <div className='comment-container'>
         {comments.map((comment) =>
           <Comment
             key={comment.id}

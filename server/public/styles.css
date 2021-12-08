@@ -211,11 +211,11 @@ ul {
 }
 
 .user__profile-info {
+  width: 100%;
   margin-top: 50px;
   flex-direction: row;
-  width: 100%;
   padding: 2%;
-  padding-left: 300px;
+  padding-left: 200px;
   border-right: 2px solid #e84e3d;
   padding-bottom: 5%;
 }
@@ -232,11 +232,11 @@ ul {
 }
 
 .use__profile-comment {
+  width: 100%;
   margin-top: 50px;
   flex-direction: row;
-  width: 100%;
   padding: 2%;
-  padding-right: 300px;
+  padding-right: 100px;
   border-left: 2px solid #e84e3d;
 }
 
@@ -248,7 +248,8 @@ ul {
 
 .comment-container {
   border: 1px solid purple;
-  margin-bottom: 5%;
+  margin-top: 10%;
+  margin-bottom: 10%;
 }
 
 .comment {
