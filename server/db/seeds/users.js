@@ -40,7 +40,7 @@ exports.seed = function (knex) {
         },
         {
           id: 3,
-          authId: '',
+          authId: 'nsVl526ydneLlx2zCLQnlsZGm7R2',
           name: 'Callum Morris',
           cohort: 'aihe-21',
           teacher: 'false',
