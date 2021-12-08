@@ -490,6 +490,21 @@ footer p {
     // border: 1px solid rgb(228, 135, 228);
   }
 
+  .comment-container {
+    border: 1px solid purple;
+    // margin-top: 10%;
+    // margin-bottom: 10%;
+    text-align: right;
+  }
+  
+  .comment {
+    border: 1px solid red;
+    padding-top: 10px;
+    padding: 20px;
+    display: block;
+    border-bottom: 1px solid #CCCCCC;
+   } 
+
   .comment-content-by {
     border: 1px solid blue;
     width: 100%;

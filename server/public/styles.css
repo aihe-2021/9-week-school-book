@@ -474,6 +474,19 @@ footer p {
     padding-right: 0;
   }
 
+  .comment-container {
+    border: 1px solid purple;
+    text-align: right;
+  }
+
+  .comment {
+    border: 1px solid red;
+    padding-top: 10px;
+    padding: 20px;
+    display: block;
+    border-bottom: 1px solid #CCCCCC;
+  }
+
   .comment-content-by {
     border: 1px solid blue;
     width: 100%;
