@@ -44,9 +44,10 @@ function updateUser (id, data, db = connection) {
 }
 
 function getComments (userId, db = connection) {
-  return db('comments')
+  return db('users')
+    .join('comments', 'users.authId', 'comments.userId')
     .select()
-    .where({ userId })
+    .where('comments.userId', 'userId')
 }
 
 function getComment (commentId, db = connection) {

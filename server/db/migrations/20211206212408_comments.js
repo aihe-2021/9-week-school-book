@@ -1,5 +1,5 @@
 exports.up = (knex) => {
-  return knex.schema.createTable('Comments', (table) => {
+  return knex.schema.createTable('comments', (table) => {
     table.increments('id').primary()
     table.integer('userId')
     table.integer('comment_by_user') // this is auth id
@@ -9,5 +9,5 @@ exports.up = (knex) => {
 }
 
 exports.down = (knex) => {
-  return knex.schema.dropTable('Comments')
+  return knex.schema.dropTable('comments')
 }
