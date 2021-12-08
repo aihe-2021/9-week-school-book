@@ -473,10 +473,10 @@ footer p {
     display: block;
     border-bottom: 1px solid #CCCCCC;
     text-align: left;
-    margin-bottom: 10px;
   }
 
   .comment-content-by {
+    padding-top: 3px;
     width: 100%;
     display: block;
   }
