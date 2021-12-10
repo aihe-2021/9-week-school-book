@@ -58,7 +58,7 @@ exports.seed = function (knex) {
         },
         {
           id: 4,
-          authId: '',
+          authId: 'dIqoIS43ydazEO3msP0eR4lVsjW2',
           name: 'Danny Goulter',
           cohort: 'aihe-21',
           teacher: 'false',
